@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<classpath>
-	<classpathentry excluding="answers/Answer2.aj|answers/Answer3.aj|answers/Answer4.aj|answers/Answer5.aj|answers2/Answer1.aj|answers2/Answer2.aj|answers2/Answer3.aj|answers3/AccessControl.aj|answers3/Ex4.aj|answers4/Answer1.aj|answers4/Answer2a.aj|answers4/Answer2b.aj" kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
-	<classpathentry kind="con" path="org.eclipse.ajdt.core.ASPECTJRT_CONTAINER"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
-	<classpathentry kind="output" path="bin"/>
-</classpath>
