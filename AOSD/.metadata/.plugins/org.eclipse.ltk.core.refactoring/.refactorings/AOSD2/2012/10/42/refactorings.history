@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;answers.answer2.aj&apos; to &apos;Answer2.aj&apos;&#x0A;- Original project: &apos;AOSD2&apos;&#x0A;- Original element: &apos;answers.answer2.aj&apos;&#x0A;- Renamed element: &apos;answers.Answer2.aj&apos;" description="Rename compilation unit &apos;answer2.aj&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;answers{answer2.aj" name="Answer2.aj" references="false" stamp="1350406930497" version="1.0"/>
+</session>

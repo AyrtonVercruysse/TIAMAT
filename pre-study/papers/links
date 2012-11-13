@@ -1,0 +1,33 @@
+1. ASTs and AST manipulatie
+---------------------------
+Gewoon ASTs
+http://en.wikipedia.org/wiki/Abstract_syntax_tree
+
+A concept for editing Haskell as an ASt rather than text
+http://www.youtube.com/watch?v=v2ypDcUM06U
+
+
+
+2. IDE's op Smartphones/Tablets
+-------------------------------
+
+Touchdevelop, IDE op Windowsfoons
+https://www.touchdevelop.com/
+http://research.microsoft.com/en-us/projects/touchdevelop/
+http://blogs.msdn.com/b/nikolait/
+
+TouchStudio (TouchDevelop voor scripts)(voorloper touchdevelop)
+http://www.i-programmer.info/news/83-mobliephone/2497-touchstudio-update.html
+http://research.microsoft.com/en-us/projects/touchstudio/
+
+AIDE (Java IDE voor Android)(Niet zo intressant, vertrouwt op gebruik keyboard)
+er bestaan veel alternatieven, maar dit lijkt de intressantste.
+https://plus.google.com/101304250883271700981/posts
+Samenvatting van meedere
+http://www.techrepublic.com/blog/australia/programming-for-android-on-android/854
+http://android.appstorm.net/roundups/developer/15-apps-for-programming-on-android/
+
+
+
+
+

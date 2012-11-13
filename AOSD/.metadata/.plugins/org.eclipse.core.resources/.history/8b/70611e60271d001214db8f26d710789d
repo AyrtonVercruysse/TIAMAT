@@ -1,0 +1,17 @@
+package answers4;
+
+import java.awt.Rectangle;
+
+import figures.FigureElement;
+
+public aspect Answer2b {
+	private Rectangle Bounds = null;
+
+	pointcut ex1(): execution(* figures.Group.getBounds(..));
+
+	Rectangle around(figures.Group group): ex1() && target(group){
+		if (Bounds == null)
+			Bounds = proceed(group);
+		return Bounds;
+	}
+}

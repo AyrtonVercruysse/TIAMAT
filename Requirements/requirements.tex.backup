@@ -1,0 +1,112 @@
+\documentclass{article}
+\title{Requirements Tiamat}
+\author{Ayrton Vercruysse}
+\begin{document}
+\maketitle
+\tableofcontents
+\section{ASTs}
+\subsection{Making ASTs}
+\bf{Description: }Every piece of code used in the IDE will be directly linked to an AST. For this matter there has to be a possibility to create new ASTs from scratch.
+To create new AST trees we will need to implement the different parts of which an AST can exist. These different parts of an AST will be called a Node. We will start with
+a list of possible nodes with which basic programs can be made. Later extra kinds of nodes can be added to the AST.
+A superclass Node will be implemented which will organise the tree structure by providing operations like getParent(), wich gets the parent of a Node, setChild(oldChild, newChild)
+which will set a child of a node getChilderen() to get the childeren of a Node. By using these operations new trees can be created.
+ \newline
+\bf{Priority: High} \newline
+\bf{Status: } \newline
+\subsection{Deleting ASTs}
+\bf{Description: When we have an excisting AST and parts of this AST became irreleveant there should be a possibility to remove this AST. The removing of an AST, in total,
+or only a part of an AST will happen by replacing this AST by the Placeholder node. The actual replacing can happen should happen in the Node class, by using a function
+setChild(oldChild, newChild). } \newline
+\bf{Priority: High} \newline
+\bf{Status: } \newline
+\subsection{Manipulating ASTs}
+\subsubsection{Replacing parts of ASTs}
+\bf{Description: This can be done on a similar way as the deletion of ASTs, or parts of AST this will happen by replacing the current AST by a new AST which only contains
+the Placeholder node.} \newline
+\bf{Priority: High} \newline
+\bf{Status: } \newline
+\subsection{Rendering ASTs to textfile}
+\bf{Description: To be able to pass the constructed code to the AmbientTalk interpreter we have to convert the AST to an understandable format for the interpreter. The 
+interpreter works with a textfile containing AmbientTalk code. This means that the ASTs have to be converted to text and this text has to be written to a file. Converting an
+AST to a textfile should be a function within each Node, calling the same function recursively on all of it's childeren.} \newline
+\bf{Priority: High} \newline
+\bf{Status: } \newline
+\section{Templates} 
+\subsection{Templates creating ASTs}
+\bf{Description: } For convience we will make use of templates. Templates will be frequently used parts of code that will be saved. The way templates will be stored in the 
+memory will be by an AST. Every time a template is used withing the program a copy of this AST will be made and inserted into our current program.\newline
+\bf{Priority: High} \newline
+\bf{Status: } \newline
+\subsection{Creating templates from XML}
+\bf{Description: } When having an XML file containing a structure to create new Templates a function will be implemented that creates, from the XML file, a new AST, which 
+can be used as a Template within the program.\newline
+\bf{Priority: High} \newline
+\bf{Status: } \newline
+\subsection{Creating functions on the spot}
+\bf{Description: } Whenever a new function (or variable) is created within the program a link to call this function will be added to the menu's. This will be the call 
+of this function.\newline
+\bf{Priority: High} \newline
+\bf{Status: } \newline
+\subsection{Create templates from functions}
+\bf{Description: } When a newly created function is often used by the user and he wants to save this function, the possibility to write this function, in correct XML, to
+the existing XML file with all templates should be forseen.\newline
+\bf{Priority: High} \newline
+\bf{Status: } \newline
+\section{Interface}
+\subsection{Views}
+\subsubsection{Colorcoding}
+\bf{Description: As in many languages the use of colorcoding should be done here aswell. In our implementation we will make use of two sorts of colorcoding. First we will
+use colorcoding for the block around the code, wich will suggest the type of the code (e.g. Template, functionname, variablename), and on the other hand the usual colorcoding
+of special keywords will be implemented by changing the color of the names itselve.} \newline
+\bf{Priority: High} \newline
+\bf{Status: } \newline
+\subsubsection{Codefolding}
+\bf{Description: The use of AST should gives us the possibility to easily fold in certain parts (read piece of the AST) of our code. This can be done by just not
+rendering certain nodes, and it's childeren, of the AST.} \newline
+\bf{Priority: High} \newline
+\bf{Status: } \newline
+\subsubsection{Move code}
+\bf{Description: } \newline
+\bf{Priority: High} \newline
+\bf{Status: } \newline
+\subsection{Gestures}
+\subsubsection{Pinch to zoom}
+\bf{Description: } \newline
+\bf{Priority: High} \newline
+\bf{Status: } \newline
+\subsection{90° degrees turning for comments}
+\bf{Description: } \newline
+\bf{Priority: High} \newline
+\bf{Status: } \newline
+\subsection{Fast scrolldown}
+\bf{Description: } \newline
+\bf{Priority: High} \newline
+\bf{Status: } \newline
+\section{Evaluating code}
+\subsection{Writing code to textfile}
+\bf{Description: } \newline
+\bf{Priority: High} \newline
+\bf{Status: } \newline
+\subsection{Call external AmbientTalk app}
+\bf{Description: } \newline
+\bf{Priority: High} \newline
+\bf{Status: } \newline
+\subsection{Return to TIAMAt after evaluating code}
+\bf{Description: } \newline
+\bf{Priority: High} \newline
+\bf{Status: } \newline
+\section{Features}
+\subsection{Extra interface for comments}
+\bf{Description: } \newline
+\bf{Priority: High} \newline
+\bf{Status: } \newline
+\subsection{Speaking comments}
+\bf{Description: } \newline
+\bf{Priority: High} \newline
+\bf{Status: } \newline
+\subsection{Selector for Java classes}
+\bf{Description: } \newline
+\bf{Priority: High} \newline
+\bf{Status: } \newline
+\end{document}

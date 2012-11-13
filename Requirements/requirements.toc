@@ -1,0 +1,28 @@
+\contentsline {section}{\numberline {1}ASTs}{2}
+\contentsline {subsection}{\numberline {1.1}Making ASTs}{2}
+\contentsline {subsection}{\numberline {1.2}Deleting ASTs}{2}
+\contentsline {subsection}{\numberline {1.3}Manipulating ASTs}{2}
+\contentsline {subsubsection}{\numberline {1.3.1}Replacing parts of ASTs}{2}
+\contentsline {subsection}{\numberline {1.4}Rendering ASTs to text}{2}
+\contentsline {section}{\numberline {2}Templates}{3}
+\contentsline {subsection}{\numberline {2.1}Templates creating ASTs}{3}
+\contentsline {subsection}{\numberline {2.2}Creating templates from XML}{3}
+\contentsline {subsection}{\numberline {2.3}Creating functions on the spot}{3}
+\contentsline {subsection}{\numberline {2.4}Create templates from functions}{3}
+\contentsline {section}{\numberline {3}Interface}{4}
+\contentsline {subsection}{\numberline {3.1}Views}{4}
+\contentsline {subsubsection}{\numberline {3.1.1}Colorcoding}{4}
+\contentsline {subsubsection}{\numberline {3.1.2}Codefolding}{4}
+\contentsline {subsubsection}{\numberline {3.1.3}Move code}{4}
+\contentsline {subsection}{\numberline {3.2}Gestures}{4}
+\contentsline {subsection}{\numberline {3.3}Selection of code}{4}
+\contentsline {subsection}{\numberline {3.4}90° degrees turning for comments}{5}
+\contentsline {subsection}{\numberline {3.5}Fast scrolldown}{5}
+\contentsline {section}{\numberline {4}Evaluating code}{5}
+\contentsline {subsection}{\numberline {4.1}Writing code to textfile}{5}
+\contentsline {subsection}{\numberline {4.2}Call external AmbientTalk app}{5}
+\contentsline {subsection}{\numberline {4.3}Return to TIAMAt after evaluating code}{5}
+\contentsline {section}{\numberline {5}Features}{6}
+\contentsline {subsection}{\numberline {5.1}Extra interface for comments}{6}
+\contentsline {subsection}{\numberline {5.2}Speaking comments}{6}
+\contentsline {subsection}{\numberline {5.3}Selector for Java classes}{6}

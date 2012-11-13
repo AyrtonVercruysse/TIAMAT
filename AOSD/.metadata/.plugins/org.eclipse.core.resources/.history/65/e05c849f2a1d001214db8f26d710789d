@@ -1,0 +1,18 @@
+package answers4;
+
+import java.awt.Rectangle;
+
+import figures.FigureElement;
+
+abstract aspect Answer2c<T>{
+	private  T Var = null;
+
+	pointcut ex2(): execution(* T *.*(..));
+
+	T around(T t): ex1() && target(t){
+		if (Var == null)
+			Var = proceed(t);
+		return Var;
+	}
+}
+aspect A extends Answer2c<Rectangle>{};

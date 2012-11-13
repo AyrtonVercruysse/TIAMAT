@@ -1,0 +1,20 @@
+package answers4;
+
+import java.awt.Rectangle;
+
+import figures.FigureElement;
+
+abstract aspect Answer2c<T, Y>{
+	private  T Var = null;
+
+	abstract pointcut ex2();
+
+	T around(T t): ex2() && target(t){
+		if (Var == null)
+			Var = proceed(t);
+		return Var;
+	}
+}
+aspect A extends Answer2c<Rectangle>{
+	pointcut ex2(): execution(* figures.Group.getBounds(..));
+};

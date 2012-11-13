@@ -1,0 +1,39 @@
+/* *******************************************************************
+ * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
+ * All rights reserved.
+ * This program and the accompanying materials are made available
+ * under the terms of the Common Public License v1.0
+ * which accompanies this distribution and is available at
+ * http://www.eclipse.org/legal/cpl-v10.html
+ *
+ * Contributors:
+ *     PARC     initial implementation
+ * ******************************************************************/
+
+package tests;
+
+import figures.*;
+
+
+public class BoundsMovePostcondition extends CoreTest {
+
+    public static void main(String[] args) {
+        junit.textui.TestRunner.run(BoundsMovePostcondition.class);
+    }
+
+    public void testSloth() {
+        FigureElement fe = new SlothfulPoint(10, 10);
+        try {
+            fe.move(10, 10);
+            fail("should have thrown IllegalStateException");
+        } catch (IllegalStateException e) { }
+    }
+
+    public void testNonSloth() {
+        Point p1 = new Point(10, 100);
+        Point p2 = new Point(20, 200);
+        Line  l1 = new Line(p1, p2);
+
+        l1.move(3, 30);
+    }
+}

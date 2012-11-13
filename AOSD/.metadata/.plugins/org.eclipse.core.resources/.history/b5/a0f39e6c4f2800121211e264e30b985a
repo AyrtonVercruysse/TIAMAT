@@ -1,0 +1,5 @@
+package aspects;
+
+public aspect Ex2a_b {
+
+}
