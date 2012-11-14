@@ -6,107 +6,152 @@
 \tableofcontents
 \section{ASTs}
 \subsection{Making ASTs}
-\bf{Description: }Every piece of code used in the IDE will be directly linked to an AST. For this matter there has to be a possibility to create new ASTs from scratch.
+\textbf{Description: } Every piece of code used in the IDE will be directly linked to an AST. For this matter there has to be a possibility to create new ASTs from scratch.
 To create new AST trees we will need to implement the different parts of which an AST can exist. These different parts of an AST will be called a Node. We will start with
 a list of possible nodes with which basic programs can be made. Later extra kinds of nodes can be added to the AST.
-A superclass Node will be implemented which will organise the tree structure by providing operations like getParent(), wich gets the parent of a Node, setChild(oldChild, newChild)
-which will set a child of a node getChilderen() to get the childeren of a Node. By using these operations new trees can be created.
+A superclass Node will be implemented which will organise the tree structure by providing operations like getParent(), which gets the parent of a Node, setChild(oldChild, newChild)
+which will set a child of a node and getChilderen() to get the childeren of a Node. By using these operations new trees can be created. 
+The types of nodes that will be implemented are: Placeholder, Begin, Block, Definition, Value, Argument List, Function, Function Call, Function Definition, Operation, Table, Table Call
+Table Definition.
  \newline
-\bf{Priority: High} \newline
-\bf{Status: } \newline
+\textbf{Priority:} High \newline
+\textbf{Status: } \newline
 \subsection{Deleting ASTs}
-\bf{Description: When we have an excisting AST and parts of this AST became irreleveant there should be a possibility to remove this AST. The removing of an AST, in total,
-or only a part of an AST will happen by replacing this AST by the Placeholder node. The actual replacing can happen should happen in the Node class, by using a function
-setChild(oldChild, newChild). } \newline
-\bf{Priority: High} \newline
-\bf{Status: } \newline
-\subsection{Manipulating ASTs}
-\subsubsection{Replacing parts of ASTs}
-\bf{Description: This can be done on a similar way as the deletion of ASTs, or parts of AST this will happen by replacing the current AST by a new AST which only contains
-the Placeholder node.} \newline
-\bf{Priority: High} \newline
-\bf{Status: } \newline
-\subsection{Rendering ASTs to textfile}
-\bf{Description: To be able to pass the constructed code to the AmbientTalk interpreter we have to convert the AST to an understandable format for the interpreter. The 
-interpreter works with a textfile containing AmbientTalk code. This means that the ASTs have to be converted to text and this text has to be written to a file. Converting an
-AST to a textfile should be a function within each Node, calling the same function recursively on all of it's childeren.} \newline
-\bf{Priority: High} \newline
-\bf{Status: } \newline
+\textbf{Description: }When we have an excisting AST and parts of this AST became irreleveant there should be a possibility to remove this AST. The removing of an AST, in total,
+or only a part of an AST will happen by replacing this AST by the Placeholder node. This possibility will be, as said in 1.1 implemented in the Node class, by means of the 
+setChild(oldChild, newChild) function. \newline
+\textbf{Priority:} High \newline
+\textbf{Status: } \newline
+\subsection{Replacing parts of ASTs}
+\textbf{Description: }When new Nodes will be created it's childeren, if there are any, will be make by Placeholders. When making a function for example, we'll implement the operation,
+but the two operands will be initialized with a Placeholder node. To be able to change these Placeholders to more relevant Nodes we should be able to 
+replace existing Nodes by other Nodes, in this example maybe a Value, or an other Operation. This can be done on a similar way as the deletion of ASTs, by making use of the replaceChild(oldChild, newChild) method.\newline
+\textbf{Priority:} High \newline
+\textbf{Status: } \newline
+\subsection{Rendering ASTs to text}
+\textbf{Description: } To be able to pass the constructed code to the AmbientTalk interpreter we have to convert the AST to an understandable format for the interpreter. The 
+interpreter works with a textfile containing AmbientTalk code. This means that the ASTs have to be converted to text. Converting an
+AST to a text should be a function within each Node, calling the same function recursively on all of it's childeren.\newline
+\textbf{Priority:} High \newline
+\textbf{Status: } \newline
 \section{Templates} 
 \subsection{Templates creating ASTs}
-\bf{Description: } For convience we will make use of templates. Templates will be frequently used parts of code that will be saved. The way templates will be stored in the 
-memory will be by an AST. Every time a template is used withing the program a copy of this AST will be made and inserted into our current program.\newline
-\bf{Priority: High} \newline
-\bf{Status: } \newline
+\textbf{Description: } For convenience we will make use of templates. Templates will be frequently used parts of code that will be saved. The way templates will be stored in the 
+memory will be by an AST. Every time a template is used withing the program a copy of this AST will be made and inserted into our current program.
+These templates can be frequently used functions, but mainly these will be the ASTs representing basic elements of the language like the if-then-else sturcture, when-discovered,...\newline
+\textbf{Priority:} High \newline
+\textbf{Status: } \newline
 \subsection{Creating templates from XML}
-\bf{Description: } When having an XML file containing a structure to create new Templates a function will be implemented that creates, from the XML file, a new AST, which 
+\textbf{Description: } To keep a clear view on what template functions we have, and make it easy for users to add templates, without having to know the implementation
+of the entire program we will keep the Templates in a separate XML file. When having an XML file containing the structure to create new Templates a function will be implemented that creates, from the XML file, a new AST, which 
 can be used as a Template within the program.\newline
-\bf{Priority: High} \newline
-\bf{Status: } \newline
-\subsection{Creating functions on the spot}
-\bf{Description: } Whenever a new function (or variable) is created within the program a link to call this function will be added to the menu's. This will be the call 
-of this function.\newline
-\bf{Priority: High} \newline
-\bf{Status: } \newline
+\textbf{Priority:} High \newline
+\textbf{Status: } \newline
 \subsection{Create templates from functions}
-\bf{Description: } When a newly created function is often used by the user and he wants to save this function, the possibility to write this function, in correct XML, to
-the existing XML file with all templates should be forseen.\newline
-\bf{Priority: High} \newline
-\bf{Status: } \newline
+\textbf{Description: } When a newly created function is often used by the user and he wants to save this function, the possibility to write this function, in correct XML, to
+the existing XML file will be provided. This means that whenever the program is terminated functions can be stored inside the XML file.\newline
+\textbf{Priority:} High \newline
+\textbf{Status: } \newline
 \section{Interface}
+\subsection{Rendering of nodes}
+\textbf{Description: }Each type of node has to have a screen representation. For each node we need a function that displays the Node on the screen, and 
+that recursively calls the display function of all children of this node. We won't implement these displays within the separate types of nodes, discribed in 1.1, but 
+for each node we will implement a separate display function. This with as goal that we can re-use our AST implementation without having to dead
+with the program specific display possibilities.  \newline
+\textbf{Priority:} High \newline
+\textbf{Status: } \newline
+\subsection{Creating functions on the spot}
+\textbf{Description: } Whenever a new function (or variable) is created within the program a link to call this function will be added to the menu's. This means that we can
+easily re-use a made variable or have an easy way to call an earlier created function. \newline
+\textbf{Priority:} High \newline
+\textbf{Status: } \newline
+\subsection{Buttons}
+\subsubsection{Menu's}
+\textbf{Description: } To keep track of all templates or calls that can be made we will need a menu that gives us the possibility to insert templates in to the code.
+We will use one a menu with some submenu's, devided for each kind of templates. These can be provided functions self implemented function, used variables,... \newline
+\textbf{Priority:} High \newline
+\textbf{Status: } \newline
+\subsubsection{Run button}
+\textbf{Description: } Thanks to requirements 4.2 we can evaluate made code with an external AmbientTalk app. To do this we'll add a button
+to the main screen which will first make sure requirement 1.4 is done, the creation of a textfile with the current code, and later on run the AmbientTalk app, as described in requirement 4.2.
+
+\textbf{Priority:} High \newline
+\textbf{Status: } \newline
+\subsubsection{Delete button}
+\textbf{Description: } To be able to delete some code, as described in 1.2 we need a way to select what code will be deleted. Herefore we will
+implement a delete button on the screen, which deletes the current selected piece of code. This can be done by pressing this button or by dragging the selected code to this place. 
+\textbf{Priority:} High \newline
+\textbf{Status: } \newline
 \subsection{Views}
-\subsubsection{Colorcoding}
-\bf{Description: As in many languages the use of colorcoding should be done here aswell. In our implementation we will make use of two sorts of colorcoding. First we will
+\subsubsection{Colorcoding keywords}
+\textbf{Description: }As in many languages the use of colorcoding should be done here aswell. In our implementation we will make use of two sorts of colorcoding. First we will
 use colorcoding for the block around the code, wich will suggest the type of the code (e.g. Template, functionname, variablename), and on the other hand the usual colorcoding
-of special keywords will be implemented by changing the color of the names itselve.} \newline
-\bf{Priority: High} \newline
-\bf{Status: } \newline
+of special keywords will be implemented by changing the color of the names itselve. \newline
+\textbf{Priority:} High \newline
+\textbf{Status: } \newline
+\subsubsection{Colorcoding types}
+\textbf{Description: }As in many languages the use of colorcoding should be done here aswell. In our implementation we will make use of two sorts of colorcoding. First we will
+use colorcoding for the block around the code, wich will suggest the type of the code (e.g. Template, functionname, variablename), and on the other hand the usual colorcoding
+of special keywords will be implemented by changing the color of the names itselve. \newline
+\textbf{Priority:} High \newline
+\textbf{Status: } \newline
 \subsubsection{Codefolding}
-\bf{Description: The use of AST should gives us the possibility to easily fold in certain parts (read piece of the AST) of our code. This can be done by just not
-rendering certain nodes, and it's childeren, of the AST.} \newline
-\bf{Priority: High} \newline
-\bf{Status: } \newline
+\textbf{Description: }The use of AST should gives us the possibility to easily fold in certain parts (read piece of the AST) of our code. This can be done by just not
+rendering certain nodes, and it's childeren, of the AST. \newline
+\textbf{Priority:} High \newline
+\textbf{Status: } \newline
 \subsubsection{Move code}
-\bf{Description: } \newline
-\bf{Priority: High} \newline
-\bf{Status: } \newline
+\textbf{Description: } By using the possibility of deleting parts of ASTs and saving parts of ASTs a copy-pasty system, or even moving of code to places that make sense belongs
+to the possibilities.\newline
+\textbf{Priority:} High \newline
+\textbf{Status: } \newline
 \subsection{Gestures}
-\subsubsection{Pinch to zoom}
-\bf{Description: } \newline
-\bf{Priority: High} \newline
-\bf{Status: } \newline
+\subsection{Selection of code}
+\textbf{Description: } \newline
+\textbf{Priority:} High \newline
+\textbf{Status: } \newline
+\subsection{Pinch-to-zoom}
+\textbf{Description: }When starting on a piece of code by using the pinch-to-zoom function the selected part of code should be extended. This can be done by enlarging the selected
+area from the current AST to the parent of this AST. \newline
+\textbf{Priority:} High \newline
+\textbf{Status: } \newline
 \subsection{90° degrees turning for comments}
-\bf{Description: } \newline
-\bf{Priority: High} \newline
-\bf{Status: } \newline
+\textbf{Description: }When a piece of code is selected, and afterwards this piece of code gets turned around for 90 degrees, this piece of code should be commented out. 
+Commented code should not be written to the textfile when this is called on this AST. \newline
+\textbf{Priority:} High \newline
+\textbf{Status: } \newline
 \subsection{Fast scrolldown}
-\bf{Description: } \newline
-\bf{Priority: High} \newline
-\bf{Status: } \newline
+\textbf{Description: When we want to scroll down a longer piece of code we can use the scroll with two fingers getures to get us scroll faster.} \newline
+\textbf{Priority:} High \newline
+\textbf{Status: } \newline
 \section{Evaluating code}
 \subsection{Writing code to textfile}
-\bf{Description: } \newline
-\bf{Priority: High} \newline
-\bf{Status: } \newline
+\textbf{Description: }To make use of the AmbientTalk app we need a textfile with the AmbientTalk code. We can make use of the toText() function of each node to translate our
+current AST to plain text, and afterwards we will need to write this text, into a textfile.  \newline
+\textbf{Priority:} High \newline
+\textbf{Status: } \newline
 \subsection{Call external AmbientTalk app}
-\bf{Description: } \newline
-\bf{Priority: High} \newline
-\bf{Status: } \newline
+\textbf{Description: }The external AmbientTalk app, which makes use of the textfile from the previous - insert number- should be called. To get this app called we will implement
+a button on the screen, which first gets the textfile created and afterwards calls the AmbientTalk app. \newline
+\textbf{Priority:} High \newline
+\textbf{Status: } \newline
 \subsection{Return to TIAMAt after evaluating code}
-\bf{Description: } \newline
-\bf{Priority: High} \newline
-\bf{Status: } \newline
+\textbf{Description: } The AmbientTalk app will evaluate the program. After the evaluation of this program and returning the result we should get back the our application to
+create the possibility to edit our current program\newline
+\textbf{Priority:} High \newline
+\textbf{Status: } \newline
 \section{Features}
 \subsection{Extra interface for comments}
-\bf{Description: } \newline
-\bf{Priority: High} \newline
-\bf{Status: } \newline
+\textbf{Description: } An extra interface can be created in which we can store extra comments. This interface should only be called on object which could get any use of extra comments.
+ \newline
+\textbf{Priority:} High \newline
+\textbf{Status: } \newline
 \subsection{Speaking comments}
-\bf{Description: } \newline
-\bf{Priority: High} \newline
-\bf{Status: } \newline
+\textbf{Description: } \newline
+\textbf{Priority:} High \newline
+\textbf{Status: } \newline
 \subsection{Selector for Java classes}
-\bf{Description: } \newline
-\bf{Priority: High} \newline
-\bf{Status: } \newline
+\textbf{Description: } \newline
+\textbf{Priority:} High \newline
+\textbf{Status: } \newline
 \end{document}

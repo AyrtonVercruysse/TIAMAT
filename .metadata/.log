@@ -286,3 +286,13 @@ Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.pa
 
 !ENTRY org.eclipse.ui 4 4 2012-11-13 20:11:50.842
 !MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2012-11-14 09:36:15.842 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_24
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.modeling.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.modeling.product
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-11-14 09:36:33.915
+!MESSAGE Failed to load properties file for project 'mtj4-android'
