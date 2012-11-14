@@ -4,7 +4,10 @@ Gewoon ASTs
 http://en.wikipedia.org/wiki/Abstract_syntax_tree
 
 A concept for editing Haskell as an ASt rather than text
+(Heel intressant en gelijklopend, maar code is van gitHub gehaald, heeft wel
+changes aan emacs gemaakt voor Haskell, eens naar kijken)
 http://www.youtube.com/watch?v=v2ypDcUM06U
+http://chrisdone.com/posts/2011-12-17-concept-for-editing-asts-rather-than-text.html
 
 
 
