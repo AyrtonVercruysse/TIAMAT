@@ -120,7 +120,7 @@ Commented code should not be written to the textfile when this is called on this
 \textbf{Priority:} High \newline
 \textbf{Status: } \newline
 \subsection{Fast scrolldown}
-\textbf{Description: When we want to scroll down a longer piece of code we can use the scroll with two fingers getures to get us scroll faster.} \newline
+\textbf{Description: }When we want to scroll down a longer piece of code we can use the scroll with two fingers getures to get us scroll faster. \newline
 \textbf{Priority:} High \newline
 \textbf{Status: } \newline
 \section{Evaluating code}
@@ -147,11 +147,22 @@ create the possibility to edit our current program\newline
 \textbf{Status: } \newline
 \subsection{Speaking comments}
 \textbf{Description: } A nice feature is to add spoken comments to our program. The possibility to add spoken comments will be integrated in the
-extra interface for spoken comments, announced in requirement 5.1. \newline
+extra interface for spoken comments, announced in requirement 5.1. There will be added extra buttons to record comments and play these comments.\newline
 \textbf{Priority:} High \newline
 \textbf{Status: } \newline
 \subsection{Selector for Java classes}
-\textbf{Description: } \newline
-\textbf{Priority:} High \newline
+\textbf{Description: } Within the AmbientTalk language it's possible to make use of a Java class selector. Adding this feature to this implementation
+will make sure that our project becomes a better alternative to the pc one.\newline
+\textbf{Priority:} Low \newline
 \textbf{Status: } \newline
+\subsection{Multiple tabs}
+\textbf{Description: } If we want to make bigger programs it would be easy to be able to have multiple tabs. Certainly when big programs exsist of multiple files. To make this possible we would need
+to save multiple AST trees and implement a possibility to switch between the different tabs.\newline
+\textbf{Priority:} Low \newline
+\textbf{Status: }
+\subsection{Saving files}
+\textbf{Description: } As we will implement a write to XML to save new Template into an XML file we could use this procedure to save an entire program in XML, and later rebuild our AST and on this way 
+reconstruct our program. \newline
+\textbf{Priority:} Low \newline
+\textbf{Status: }
 \end{document}
