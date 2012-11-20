@@ -16,12 +16,12 @@ import org.mt4j.util.MT4jSettings;
 import org.mt4j.util.math.Vector3D;
 
 import processing.core.PImage;
+import vub.ast.Node;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.net.Uri;
-import AST.Node;
 /**
  * This class starts Tiamat.
  * @author Ayrton Vercruysse

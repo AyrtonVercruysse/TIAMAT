@@ -1,0 +1,29 @@
+package vub.ast;
+
+import java.io.Serializable;
+
+import vub.ast.Node;
+
+public class Comment extends Node implements Serializable {
+	Node item;
+
+	public Comment(Node parent, Node item) {
+		super(parent);
+		children.add(item);
+	}
+
+	public Node getContent() {
+		return children.get(0);
+	}
+
+	public void setContent(Node newContent) {
+		children.set(0, newContent);
+	}
+
+	@Override
+	public String toString() {
+		String string = " ";
+		return string;
+
+	}
+}

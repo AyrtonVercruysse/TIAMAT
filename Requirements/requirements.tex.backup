@@ -60,6 +60,10 @@ for each node we will implement a separate display function. This with as goal t
 with the program specific display possibilities.  \newline
 \textbf{Priority:} High \newline
 \textbf{Status: } \newline
+\subsection{Render manager}
+\textbf{Description: } 
+\textbf{Priority:} High \newline
+\textbf{Status: } \newline
 \subsection{Creating functions on the spot}
 \textbf{Description: } Whenever a new function (or variable) is created within the program a link to call this function will be added to the menu's. This means that we can
 easily re-use a made variable or have an easy way to call an earlier created function. \newline
@@ -74,7 +78,6 @@ We will use one a menu with some submenu's, devided for each kind of templates. 
 \subsubsection{Run button}
 \textbf{Description: } Thanks to requirements 4.2 we can evaluate made code with an external AmbientTalk app. To do this we'll add a button
 to the main screen which will first make sure requirement 1.4 is done, the creation of a textfile with the current code, and later on run the AmbientTalk app, as described in requirement 4.2.
-
 \textbf{Priority:} High \newline
 \textbf{Status: } \newline
 \subsubsection{Delete button}
@@ -84,30 +87,29 @@ implement a delete button on the screen, which deletes the current selected piec
 \textbf{Status: } \newline
 \subsection{Views}
 \subsubsection{Colorcoding keywords}
-\textbf{Description: }As in many languages the use of colorcoding should be done here aswell. In our implementation we will make use of two sorts of colorcoding. First we will
-use colorcoding for the block around the code, wich will suggest the type of the code (e.g. Template, functionname, variablename), and on the other hand the usual colorcoding
-of special keywords will be implemented by changing the color of the names itselve. \newline
-\textbf{Priority:} High \newline
+\textbf{Description: }As in many languages the use of colorcoding should be done here aswell. We  will try to achieve the same colorcoding as
+being used in the official AmbientTalk IDE in Eclipse. \newline
+\textbf{Priority:} Low \newline
 \textbf{Status: } \newline
 \subsubsection{Colorcoding types}
-\textbf{Description: }As in many languages the use of colorcoding should be done here aswell. In our implementation we will make use of two sorts of colorcoding. First we will
-use colorcoding for the block around the code, wich will suggest the type of the code (e.g. Template, functionname, variablename), and on the other hand the usual colorcoding
-of special keywords will be implemented by changing the color of the names itselve. \newline
-\textbf{Priority:} High \newline
+\textbf{Description: } Next to the colorcoding of keywords we will implement colorcoding on the types of words. This means that we will give
+Placeholders different colors, just like VariableNames,... \newline
+\textbf{Priority:} Low \newline
 \textbf{Status: } \newline
 \subsubsection{Codefolding}
 \textbf{Description: }The use of AST should gives us the possibility to easily fold in certain parts (read piece of the AST) of our code. This can be done by just not
 rendering certain nodes, and it's childeren, of the AST. \newline
-\textbf{Priority:} High \newline
+\textbf{Priority:} Low \newline
 \textbf{Status: } \newline
 \subsubsection{Move code}
 \textbf{Description: } By using the possibility of deleting parts of ASTs and saving parts of ASTs a copy-pasty system, or even moving of code to places that make sense belongs
 to the possibilities.\newline
-\textbf{Priority:} High \newline
+\textbf{Priority:} Low \newline
 \textbf{Status: } \newline
 \subsection{Gestures}
 \subsection{Selection of code}
-\textbf{Description: } \newline
+\textbf{Description: } To be able to replace, delete, move,... code we need a possibility to select certain parts of the code. This will be done
+by a tap or doubletap gesture. The selected code will be marked and it will be possible to makes changes to this code.\newline
 \textbf{Priority:} High \newline
 \textbf{Status: } \newline
 \subsection{Pinch-to-zoom}
@@ -118,11 +120,11 @@ area from the current AST to the parent of this AST. \newline
 \subsection{90° degrees turning for comments}
 \textbf{Description: }When a piece of code is selected, and afterwards this piece of code gets turned around for 90 degrees, this piece of code should be commented out. 
 Commented code should not be written to the textfile when this is called on this AST. \newline
-\textbf{Priority:} High \newline
+\textbf{Priority:} Low \newline
 \textbf{Status: } \newline
 \subsection{Fast scrolldown}
-\textbf{Description: When we want to scroll down a longer piece of code we can use the scroll with two fingers getures to get us scroll faster.} \newline
-\textbf{Priority:} High \newline
+\textbf{Description: }When we want to scroll down a longer piece of code we can use the scroll with two fingers getures to get us scroll faster. \newline
+\textbf{Priority:} Low \newline
 \textbf{Status: } \newline
 \section{Evaluating code}
 \subsection{Writing code to textfile}
@@ -144,14 +146,26 @@ create the possibility to edit our current program\newline
 \subsection{Extra interface for comments}
 \textbf{Description: } An extra interface can be created in which we can store extra comments. This interface should only be called on object which could get any use of extra comments.
  \newline
-\textbf{Priority:} High \newline
+\textbf{Priority:} Low \newline
 \textbf{Status: } \newline
 \subsection{Speaking comments}
-\textbf{Description: } \newline
-\textbf{Priority:} High \newline
+\textbf{Description: } A nice feature is to add spoken comments to our program. The possibility to add spoken comments will be integrated in the
+extra interface for spoken comments, announced in requirement 5.1. There will be added extra buttons to record comments and play these comments.\newline
+\textbf{Priority:} Low \newline
 \textbf{Status: } \newline
 \subsection{Selector for Java classes}
-\textbf{Description: } \newline
-\textbf{Priority:} High \newline
+\textbf{Description: } Within the AmbientTalk language it's possible to make use of a Java class selector. Adding this feature to this implementation
+will make sure that our project becomes a better alternative to the pc one.\newline
+\textbf{Priority:} Low \newline
 \textbf{Status: } \newline
+\subsection{Multiple tabs}
+\textbf{Description: } If we want to make bigger programs it would be easy to be able to have multiple tabs. Certainly when big programs exsist of multiple files. To make this possible we would need
+to save multiple AST trees and implement a possibility to switch between the different tabs.\newline
+\textbf{Priority:} Low \newline
+\textbf{Status: }
+\subsection{Saving files}
+\textbf{Description: } As we will implement a write to XML to save new Template into an XML file we could use this procedure to save an entire program in XML, and later rebuild our AST and on this way 
+reconstruct our program. \newline
+\textbf{Priority:} Low \newline
+\textbf{Status: }
 \end{document}

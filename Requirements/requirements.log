@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.25)  14 NOV 2012 21:15
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.11.20)  21 NOV 2012 00:36
 entering extended mode
  %&-line parsing enabled.
 **requirements.tex
@@ -103,7 +103,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 64--68
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 70--74
+Underfull \hbox (badness 10000) in paragraph at lines 69--73
 
  []
 
@@ -118,7 +118,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 80--84
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--90
+Underfull \hbox (badness 10000) in paragraph at lines 85--89
 
  []
 
@@ -132,13 +132,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 96--100
 
  []
 
-
+[5]
 Underfull \hbox (badness 10000) in paragraph at lines 101--105
 
  []
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 107--111
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--110
 
  []
 
@@ -147,24 +147,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--116
 
  []
 
-Missing character: There is no Â in font cmbx12!
-Missing character: There is no ° in font cmbx12!
 
 Underfull \hbox (badness 10000) in paragraph at lines 117--121
 
  []
 
+Missing character: There is no Â in font cmbx12!
+Missing character: There is no ° in font cmbx12!
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--125
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 127--131
+Underfull \hbox (badness 10000) in paragraph at lines 122--126
 
  []
 
 [6]
+Underfull \hbox (badness 10000) in paragraph at lines 127--130
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 132--136
 
  []
@@ -175,7 +175,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 137--141
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--147
+Underfull \hbox (badness 10000) in paragraph at lines 142--146
 
  []
 
@@ -186,6 +186,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 148--152
 
 [7]
 Underfull \hbox (badness 10000) in paragraph at lines 153--157
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--162
 
  []
 
@@ -203,7 +208,7 @@ Here is how much of TeX's memory you used:
 pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/sh
 are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-te
 xlive/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on requirements.pdf (8 pages, 95109 bytes).
+Output written on requirements.pdf (8 pages, 95076 bytes).
 PDF statistics:
  49 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

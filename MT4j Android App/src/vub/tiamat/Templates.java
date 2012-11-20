@@ -8,7 +8,7 @@ package vub.tiamat;
  */
 public class Templates {
 	String names;
-	AST.Node function;
+	vub.ast.Node function;
 
 	/**
 	 * Initializes a template.
@@ -18,7 +18,7 @@ public class Templates {
 	 * @param function
 	 *            The function for what the template is made.
 	 */
-	public Templates(String name, AST.Node function) {
+	public Templates(String name, vub.ast.Node function) {
 		names = name;
 		this.function = function;
 
@@ -38,7 +38,7 @@ public class Templates {
 	 * 
 	 * @return Returns the function of this template.
 	 */
-	public AST.Node getFunction() {
+	public vub.ast.Node getFunction() {
 		return function;
 	}
 }

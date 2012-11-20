@@ -1,0 +1,33 @@
+package vub.ast;
+
+import java.io.Serializable;
+
+import vub.ast.Node;
+
+
+public class Begin extends Node implements Serializable{
+	public Begin(Node parent) {
+		super(parent);
+		Node child = new Placeholder(this, "content", true);
+		addChild(child);
+	}
+
+		public Node getContent() {
+		return getChild(0);
+	}
+
+	public void setContent(Node newContent) {
+		setChild(0, newContent);
+	}
+
+	@Override
+	public String toString() {
+		String string = "{";
+		for (int i = 0; i < children.size(); i++) {
+			string = string + children.get(i).toString() + ";";
+		}
+		string = string + "}";
+		return string;
+
+	}
+}

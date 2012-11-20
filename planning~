@@ -1,0 +1,12 @@
+16/11 - 25/11 	Controle bestaande code.
+25/11 -  2/12  	XML, lezen +  schrijven(Req 2.2, Req 5.5)
+		Schrijven naar textfile
+ 2/12 -  9/12 	Lay-out engine + vervangen bestaande code door engine
+ 9-12 - 16/12 	Colorcoding keywords + types
+		Gestures (pinch-to-zoom, 90degrees turning, fast scrolldown(huidige achtergrond scrollable maken)
+16/12 - 23/12   Evaluating code (call externe app, returnen van externe app)
+  
+
+toevoegen Req: plaatser
+toevoegen planning: lettertype (eventueel met aanpassingen per scherm)
+

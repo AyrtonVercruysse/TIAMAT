@@ -1,0 +1,106 @@
+package vub.rendering;
+
+import org.mt4j.MTAndroidApplication;
+import org.mt4j.components.TransformSpace;
+import org.mt4j.components.visibleComponents.shapes.MTRectangle;
+import org.mt4j.components.visibleComponents.shapes.MTRectangle.PositionAnchor;
+import org.mt4j.components.visibleComponents.widgets.MTTextArea;
+import org.mt4j.input.gestureAction.TapAndHoldVisualizer;
+import org.mt4j.input.inputProcessors.IGestureEventListener;
+import org.mt4j.input.inputProcessors.MTGestureEvent;
+import org.mt4j.input.inputProcessors.componentProcessors.tapAndHoldProcessor.TapAndHoldEvent;
+import org.mt4j.input.inputProcessors.componentProcessors.tapAndHoldProcessor.TapAndHoldProcessor;
+import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapEvent;
+import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapProcessor;
+import org.mt4j.sceneManagement.AbstractScene;
+import org.mt4j.util.MTColor;
+import org.mt4j.util.font.FontManager;
+import org.mt4j.util.font.IFont;
+import org.mt4j.util.math.Vector3D;
+
+import vub.ast.Node;
+import vub.menus.miniMenu;
+import vub.tiamat.StartTiamat;
+import vub.tiamat.Tiamat;
+
+public abstract class Renderer<T extends Node> extends AbstractScene {
+	MTRectangle drawing; // The drawing in which the rendering of the node
+							// happens.
+	miniMenu menu;
+	MTAndroidApplication mtApplication;
+	//static IFont fontArial;
+	protected T node; // The AST node that needs to be rendered.
+
+	public Renderer(final MTAndroidApplication mtApplication, T ast) {
+		super(mtApplication, "Node:" + ast.getClass().getSimpleName());
+		this.mtApplication = mtApplication;
+		node = ast;
+		node.setComments(new Comments(mtApplication, ast));
+		//fontArial = FontManager.getInstance().createFont(mtApplication, 
+			//	"arial20.fnt",  
+				//40, 	//Font size
+				//black);	//Font outline color
+		drawing = new MTRectangle(mtApplication, 0, 0, 200, 200);
+		drawing.setNoFill(true);
+		drawing.setAnchor(PositionAnchor.UPPER_LEFT);
+		// The animation to be able to comment code.
+		
+	}
+
+	// Some colors.
+	static MTColor white = new MTColor(255, 255, 255);
+	static MTColor black = new MTColor(0, 0, 0);
+	static MTColor red = new MTColor(255, 0, 0);
+	static MTColor blue = new MTColor(0, 0, 255);
+	static MTColor green = new MTColor(0, 80, 0);
+
+	
+	public static MTTextArea makeText(MTAndroidApplication mtApplication,
+			String text) {
+
+		
+		MTTextArea temp = new MTTextArea(mtApplication, Tiamat.fontArial);
+		temp.setAnchor(PositionAnchor.UPPER_LEFT);
+		temp.setNoFill(true);
+		temp.setText(text);
+		temp.setPickable(false);
+		return temp;
+	}
+
+	static MTTextArea makeTextArea(MTAndroidApplication mtApplication,
+			String text, MTColor color) {
+		MTTextArea temp = makeText(mtApplication, text); // A normal text area
+															// get created.
+		temp.setFillColor(color); // And the color gets added.
+		temp.setNoFill(false);
+		temp.setPickable(false);
+		return temp;
+	}
+
+
+	abstract public void display(MTRectangle parent, Vector3D position);
+
+	public float getHeight() {
+		return drawing.getHeightXY(TransformSpace.RELATIVE_TO_PARENT);
+	}
+
+	public float getWidth() {
+		return drawing.getWidthXY(TransformSpace.RELATIVE_TO_PARENT);
+	}
+
+	public Vector3D getPosition() {
+		return drawing.getPosition(TransformSpace.RELATIVE_TO_PARENT);
+	}
+
+	public void unselect() {
+		drawing.setStrokeColor(white);
+	}
+
+	@Override
+	public void init() {
+	}
+
+	@Override
+	public void shutDown() {
+	}
+}

@@ -22,14 +22,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import processing.core.PImage;
-import rendering.RenderVisitor;
-import rendering.Renderer;
-import Menus.BeginMenu;
-import Menus.DefinitionsMenu;
-import Menus.FunctionsMenu;
-import Menus.MyFunctionsMenu;
-import Menus.OperationsMenu;
-import Menus.VariablesMenu;
+import vub.menus.BeginMenu;
+import vub.menus.DefinitionsMenu;
+import vub.menus.FunctionsMenu;
+import vub.menus.MyFunctionsMenu;
+import vub.menus.OperationsMenu;
+import vub.menus.VariablesMenu;
+import vub.rendering.RenderVisitor;
+import vub.rendering.Renderer;
 import vub.tiamat.StartTiamat;
 
 /**
@@ -45,7 +45,7 @@ public class Tiamat extends AbstractScene {
 										// (the root).
 	static RenderVisitor visitor; // The visitor to the renderers.
 
-	public static AST.Node main = new AST.Begin(null); // The root node.
+	public static vub.ast.Node main = new vub.ast.Begin(null); // The root node.
 	static MTAndroidApplication mtApplication;
 	static String name;
 	public static BeginMenu beginMenu;
@@ -148,10 +148,10 @@ public class Tiamat extends AbstractScene {
 							if (StartTiamat.selected == null) {
 								System.out.println("Nothing selected");
 							} else {
-								AST.Node parent = StartTiamat.selected
+								vub.ast.Node parent = StartTiamat.selected
 										.getParent();
 								parent.setChild(StartTiamat.selected,
-										new AST.Placeholder(parent, "deleted",
+										new vub.ast.Placeholder(parent, "deleted",
 												false));
 								StartTiamat.selected = null;
 								System.out.println("Deleting");
@@ -224,32 +224,32 @@ public class Tiamat extends AbstractScene {
 	 * */
 	// Definitions
 	public Templates Value() {
-		AST.Node node = new AST.Value(null, "Empty");
+		vub.ast.Node node = new vub.ast.Value(null, "Empty");
 		return new Templates("Value", node);
 	}
 
 	public Templates Definition() {
-		AST.Node node = new AST.Definition(null);
+		vub.ast.Node node = new vub.ast.Definition(null);
 		return new Templates("Definition", node);
 	}
 
 	public Templates FunctionDefinition() {
-		AST.Node node = new AST.FunctionDefinition(null, 0);
+		vub.ast.Node node = new vub.ast.FunctionDefinition(null, 0);
 		return new Templates("Function", node);
 	}
 
 	public Templates TableDefinition() {
-		AST.Node node = new AST.TableDefinition(null);
+		vub.ast.Node node = new vub.ast.TableDefinition(null);
 		return new Templates("Table", node);
 	}
 
 	public Templates Begin() {
-		AST.Node node = new AST.Begin(null);
+		vub.ast.Node node = new vub.ast.Begin(null);
 		return new Templates("Begin", node);
 	}
 
 	public Templates Block() {
-		AST.Node node = new AST.Block(null, 0);
+		vub.ast.Node node = new vub.ast.Block(null, 0);
 		return new Templates("Block", node);
 	}
 
@@ -257,81 +257,81 @@ public class Tiamat extends AbstractScene {
 	public Templates IfThenElse() {
 		String names[] = { "if:", "then:", "else:" };
 		String contents[] = { "predicate", "consequent", "alternative" };
-		AST.Node node = new AST.Function(null, names, contents);
+		vub.ast.Node node = new vub.ast.Function(null, names, contents);
 		return new Templates("If:Then:Else", node);
 	}
 
 	public Templates WhenDiscovered() {
 		String names[] = { "when:", "discovered:" };
 		String contents[] = { "predicate", "content" };
-		AST.Node node = new AST.Function(null, names, contents);
+		vub.ast.Node node = new vub.ast.Function(null, names, contents);
 		return new Templates("When:Discovered", node);
 	}
 
 	public Templates WheneverDiscovered() {
 		String names[] = { "whenever:", "discovered:" };
 		String contents[] = { "predicate", "content" };
-		AST.Node node = new AST.Function(null, names, contents);
+		vub.ast.Node node = new vub.ast.Function(null, names, contents);
 		return new Templates("Whenever:Discovered", node);
 	}
 
 	public Templates WhileDo() {
 		String names[] = { "while:", "do:" };
 		String contents[] = { "predicate", "content" };
-		AST.Node node = new AST.Function(null, names, contents);
+		vub.ast.Node node = new vub.ast.Function(null, names, contents);
 		return new Templates("While:Do", node);
 	}
 
 	public Templates WhenBecomes() {
 		String names[] = { "when:", "becomes:" };
 		String contents[] = { "predicate", "content" };
-		AST.Node node = new AST.Function(null, names, contents);
+		vub.ast.Node node = new vub.ast.Function(null, names, contents);
 		return new Templates("When:Becomes", node);
 	}
 
 	public Templates WheneverDisconnected() {
 		String names[] = { "whenever:", "disconnected:" };
 		String contents[] = { "predicate", "content" };
-		AST.Node node = new AST.Function(null, names, contents);
+		vub.ast.Node node = new vub.ast.Function(null, names, contents);
 		return new Templates("Whenever:Disconnected", node);
 	}
 
 	public Templates WheneverReconnected() {
 		String names[] = { "whenever:", "Reconnected:" };
 		String contents[] = { "predicate", "content" };
-		AST.Node node = new AST.Function(null, names, contents);
+		vub.ast.Node node = new vub.ast.Function(null, names, contents);
 		return new Templates("Whenever:Reconnected", node);
 	}
 
 	public Templates PrintLine() {
 		String names[] = { "system.prinln" };
 		String contents[] = { "content" };
-		AST.Node node = new AST.Function(null, names, contents);
+		vub.ast.Node node = new vub.ast.Function(null, names, contents);
 		return new Templates("PrintLine", node);
 	}
 
 	// Operations
 	public Templates Plus() {
-		AST.Node node = new AST.Operation(null, "+");
+		vub.ast.Node node = new vub.ast.Operation(null, "+");
 		return new Templates("+", node);
 	}
 
 	public Templates Minus() {
-		AST.Node node = new AST.Operation(null, "-");
+		vub.ast.Node node = new vub.ast.Operation(null, "-");
 		return new Templates("-", node);
 	}
 
 	public Templates Devide() {
-		AST.Node node = new AST.Operation(null, "/");
+		vub.ast.Node node = new vub.ast.Operation(null, "/");
 		return new Templates("/", node);
 	}
 
 	public Templates Multiply() {
-		AST.Node node = new AST.Operation(null, "*");
+		vub.ast.Node node = new vub.ast.Operation(null, "*");
 		return new Templates("*", node);
 	}
 	public Templates LesserThan() {
-		AST.Node node = new AST.Operation(null, "<");
+		vub.ast.Node node = new vub.ast.Operation(null, "<");
 		return new Templates("<", node);
 	}
 
