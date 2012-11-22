@@ -1,7 +1,7 @@
 \contentsline {section}{\numberline {1}ASTs}{2}
 \contentsline {subsection}{\numberline {1.1}Making ASTs}{2}
 \contentsline {subsection}{\numberline {1.2}Deleting ASTs}{2}
-\contentsline {subsection}{\numberline {1.3}Replacing parts of ASTs}{2}
+\contentsline {subsection}{\numberline {1.3}Replacing parts of ASTs}{3}
 \contentsline {subsection}{\numberline {1.4}Rendering ASTs to text}{3}
 \contentsline {section}{\numberline {2}Templates}{3}
 \contentsline {subsection}{\numberline {2.1}Templates creating ASTs}{3}
@@ -17,14 +17,14 @@
 \contentsline {subsubsection}{\numberline {3.4.3}Delete button}{5}
 \contentsline {subsection}{\numberline {3.5}Views}{5}
 \contentsline {subsubsection}{\numberline {3.5.1}Colorcoding keywords}{5}
-\contentsline {subsubsection}{\numberline {3.5.2}Colorcoding types}{5}
+\contentsline {subsubsection}{\numberline {3.5.2}Colorcoding types}{6}
 \contentsline {subsubsection}{\numberline {3.5.3}Codefolding}{6}
 \contentsline {subsubsection}{\numberline {3.5.4}Move code}{6}
 \contentsline {subsection}{\numberline {3.6}Gestures}{6}
-\contentsline {subsection}{\numberline {3.7}Selection of code}{6}
-\contentsline {subsection}{\numberline {3.8}Pinch-to-zoom}{6}
-\contentsline {subsection}{\numberline {3.9}90° degrees turning for comments}{6}
-\contentsline {subsection}{\numberline {3.10}Fast scrolldown}{7}
+\contentsline {subsubsection}{\numberline {3.6.1}Selection of code}{6}
+\contentsline {subsubsection}{\numberline {3.6.2}Pinch-to-zoom}{6}
+\contentsline {subsubsection}{\numberline {3.6.3}90° degrees turning for comments}{7}
+\contentsline {subsubsection}{\numberline {3.6.4}Fast scrolldown}{7}
 \contentsline {section}{\numberline {4}Evaluating code}{7}
 \contentsline {subsection}{\numberline {4.1}Writing code to textfile}{7}
 \contentsline {subsection}{\numberline {4.2}Call external AmbientTalk app}{7}

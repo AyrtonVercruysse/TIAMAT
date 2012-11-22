@@ -61,7 +61,8 @@ with the program specific display possibilities.  \newline
 \textbf{Priority:} High \newline
 \textbf{Status: } \newline
 \subsection{Render manager}
-\textbf{Description: } We will make a render manager, this manager will render all nodes and make 
+\textbf{Description: } We will make a render manager, this manager will render all nodes and make sure they are organised on a ordered way. The render mananger will use
+indetion to organise nodes across the screen.
 \textbf{Priority:} High \newline
 \textbf{Status: } \newline
 \subsection{Creating functions on the spot}
