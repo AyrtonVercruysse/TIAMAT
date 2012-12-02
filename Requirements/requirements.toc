@@ -9,7 +9,7 @@
 \contentsline {subsection}{\numberline {2.3}Create templates from functions}{4}
 \contentsline {section}{\numberline {3}Interface}{4}
 \contentsline {subsection}{\numberline {3.1}Rendering of nodes}{4}
-\contentsline {subsection}{\numberline {3.2}Render manager}{4}
+\contentsline {subsection}{\numberline {3.2}Lay-out engine}{4}
 \contentsline {subsection}{\numberline {3.3}Creating functions on the spot}{4}
 \contentsline {subsection}{\numberline {3.4}Buttons}{5}
 \contentsline {subsubsection}{\numberline {3.4.1}Menu's}{5}

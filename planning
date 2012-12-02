@@ -1,3 +1,5 @@
+PLANNING CODE
+-------------
 16/11 - 25/11 	Controle bestaande code.
 25/11 -  2/12  	XML, lezen +  schrijven(Req 2.2, Req 5.5)
 		Schrijven naar textfile
@@ -7,6 +9,13 @@
 		Gestures (pinch-to-zoom, 90degrees turning, fast scrolldown(huidige achtergrond scrollable maken)
 16/12 - 23/12   Evaluating code (call externe app, returnen van externe app)
   
+PLANNING DOCUMENT
+-----------------
+ 9-12  Voorwoord
+16-12  Related work Android apps
+23-12  Related work AST manipulation
+30-12  Geupdate versie van de requirements (status ingevult)
+
 
 toevoegen planning: lettertype (eventueel met aanpassingen per scherm)
 

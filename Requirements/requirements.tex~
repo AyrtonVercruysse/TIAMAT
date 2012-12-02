@@ -108,22 +108,22 @@ to the possibilities.\newline
 \textbf{Priority:} Low \newline
 \textbf{Status: } \newline
 \subsection{Gestures}
-\subsection{Selection of code}
+\subsubsection{Selection of code}
 \textbf{Description: } To be able to replace, delete, move,... code we need a possibility to select certain parts of the code. This will be done
 by a tap or doubletap gesture. The selected code will be marked and it will be possible to makes changes to this code.\newline
 \textbf{Priority:} High \newline
 \textbf{Status: } \newline
-\subsection{Pinch-to-zoom}
+\subsubsection{Pinch-to-zoom}
 \textbf{Description: }When starting on a piece of code by using the pinch-to-zoom function the selected part of code should be extended. This can be done by enlarging the selected
 area from the current AST to the parent of this AST. \newline
 \textbf{Priority:} High \newline
 \textbf{Status: } \newline
-\subsection{90° degrees turning for comments}
+\subsubsection{90° degrees turning for comments}
 \textbf{Description: }When a piece of code is selected, and afterwards this piece of code gets turned around for 90 degrees, this piece of code should be commented out. 
 Commented code should not be written to the textfile when this is called on this AST. \newline
 \textbf{Priority:} Low \newline
 \textbf{Status: } \newline
-\subsection{Fast scrolldown}
+\subsubsection{Fast scrolldown}
 \textbf{Description: }When we want to scroll down a longer piece of code we can use the scroll with two fingers getures to get us scroll faster. \newline
 \textbf{Priority:} Low \newline
 \textbf{Status: } \newline
