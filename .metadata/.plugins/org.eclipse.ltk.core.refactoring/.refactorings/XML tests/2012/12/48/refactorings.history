@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;templateReader.java&apos; to &apos;MT4j Android App/src/vub.templates&apos;&#x0A;- Original project: &apos;XML tests&apos;&#x0A;- Destination element: &apos;MT4j Android App/src/vub.templates&apos;&#x0A;- Original element: &apos;templateReader.java&apos;" description="Copy compilation unit" destination="=MT4j Android App/src&lt;vub.templates" element1="/src&lt;{templateReader.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1354405265046" units="1" version="1.0"/>
+</session>
