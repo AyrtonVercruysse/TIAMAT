@@ -1,5 +1,7 @@
 package vub.templates;
 import java.io.File;
+import java.io.InputStream;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
@@ -7,42 +9,61 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-public class templateReader {
+import android.app.Activity;
+import android.content.res.AssetManager;
 
-	public static void templateReader(String args[]) {
+import vub.tiamat.StartTiamat;
+
+/*
+ * StartTiamat.functions.add(IfThenElse());
+public Templates IfThenElse() {
+	String names[] = { "if:", "then:", "else:" };
+	String contents[] = { "predicate", "consequent", "alternative" };
+	vub.ast.Node node = new vub.ast.Function(null, names, contents);
+	return new Templates("If:Then:Else", node);
+}
+*/
+
+public class templateReader extends Activity{
+
+	public static void templateReader() {
+		AssetManager assetManager = getAssets();
+		InputStream templates = null;
 		try {
 
-			File templates = new File("src/templates.xml");
+			System.out.println("In Template reader");
+			templates = assetManager.open("templates.xml");
+			//File templates = new File(inputStream);
+
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory
 					.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			
 			Document doc = dBuilder.parse(templates);
+			System.out.println("In Template reader");
 			doc.getDocumentElement().normalize();
 
-			System.out.println("root of xml file "
-					+ doc.getDocumentElement().getNodeName());
 			NodeList nodes = doc.getElementsByTagName("function");
 			NodeList operations = doc.getElementsByTagName("operation");
-			System.out.println("==========================");
+
 
 			for (int i = 0; i < nodes.getLength(); i++) {
 				Node node = nodes.item(i);
 
 				if (node.getNodeType() == Node.ELEMENT_NODE) {
 					Element element = (Element) node;
-
-					System.out.println("Function Title: "
-							+ getValue("title", element));
-
-					System.out.println("Function Name: "
-							+ getValue("name", element));
-					System.out.println("Function Name: "
-							+ getValues("name", element)[1]);
-					System.out.println("Function content: "
-							+ getValue("content", element));
-				}
+					String title = getValue("title", element);
+					String[] names = getValues("name", element);
+					String[] content = getValues("content", element);
+					vub.ast.Node node1 = new vub.ast.Function(null, names, content);
+					Templates template =  new Templates(title, node1);
+					StartTiamat.functions.add(template);
+					System.out.println("Templates" + title);
+					
+					}
 			}
 		} catch (Exception ex) {
+			System.out.println("TemplatesError");
 			ex.printStackTrace();
 		}
 	}

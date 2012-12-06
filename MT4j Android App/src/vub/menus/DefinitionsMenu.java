@@ -21,8 +21,8 @@ import android.content.DialogInterface;
 import android.text.Editable;
 import android.widget.EditText;
 import vub.ast.Node;
+import vub.templates.Templates;
 import vub.tiamat.StartTiamat;
-import vub.tiamat.Templates;
 import vub.tiamat.Tiamat;
 
 public class DefinitionsMenu extends Menu {
@@ -324,7 +324,7 @@ public class DefinitionsMenu extends Menu {
 		mapMenu.addChild(list);
 		// The menu buttons get added.
 		for (int i = 0; i < StartTiamat.definitions.size(); i++) {
-			vub.tiamat.Templates template = StartTiamat.definitions.get(i); // For
+			vub.templates.Templates template = StartTiamat.definitions.get(i); // For
 																			// eacht
 																			// element
 																			// in

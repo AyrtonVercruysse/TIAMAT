@@ -30,6 +30,8 @@ import vub.menus.OperationsMenu;
 import vub.menus.VariablesMenu;
 import vub.rendering.RenderVisitor;
 import vub.rendering.Renderer;
+import vub.templates.Templates;
+import vub.templates.templateReader;
 import vub.tiamat.StartTiamat;
 
 /**
@@ -194,14 +196,15 @@ public class Tiamat extends AbstractScene {
 	 */
 	public void makeTemplates() {
 		// Functions
-		StartTiamat.functions.add(IfThenElse());
+	/*	StartTiamat.functions.add(IfThenElse());
 		StartTiamat.functions.add(WhenDiscovered());
 		StartTiamat.functions.add(WheneverDiscovered());
 		StartTiamat.functions.add(WhileDo());
 		StartTiamat.functions.add(WhenBecomes());
 		StartTiamat.functions.add(WheneverDisconnected());
 		StartTiamat.functions.add(WheneverReconnected());
-		StartTiamat.functions.add(PrintLine());
+		StartTiamat.functions.add(PrintLine());*/
+		new templateReader().templateReader();
 
 		// Definitions
 		StartTiamat.definitions.add(Value());

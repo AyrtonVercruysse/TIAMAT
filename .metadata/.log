@@ -1055,3 +1055,41 @@ org.eclipse.core.internal.resources.ResourceException: Resource is out of sync w
 
 !ENTRY com.android.ide.eclipse.adt 2 0 2012-12-02 15:30:23.900
 !MESSAGE No projects found for [/home/ayvercru/Tiamat/XML tests/src/config2.xml]
+!SESSION 2012-12-05 23:41:11.945 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_24
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.modeling.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.modeling.product
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-12-05 23:41:31.493
+!MESSAGE Failed to load properties file for project 'mtj4-android'
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2012-12-06 01:10:18.173
+!MESSAGE No valid Android XML Editor Delegate found for file /XML tests/src/config2.xml [Res null, type null]
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-12-06 01:10:18.974
+!MESSAGE Failed to load properties file for project 'XML tests'
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2012-12-06 01:12:08.944
+!MESSAGE No valid Android XML Editor Delegate found for file /MT4j Android App/src/vub/templates/templates.xml [Res null, type null]
+
+!ENTRY org.eclipse.ui 4 4 2012-12-06 01:42:06.747
+!MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2012-12-06 09:56:03.542 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_24
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.modeling.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.modeling.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2012-12-06 09:56:08.720
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-12-06 09:56:28.124
+!MESSAGE Failed to load properties file for project 'mtj4-android'
+
+!ENTRY org.eclipse.ui 4 4 2012-12-06 10:14:02.790
+!MESSAGE Invalid preference page path: XML Syntax

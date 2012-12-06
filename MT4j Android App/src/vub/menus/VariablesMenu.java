@@ -73,7 +73,7 @@ public class VariablesMenu extends Menu {
 		mapMenu.addChild(list);
 		// Creates the buttons of the menu.
 		for (int i = 0; i < StartTiamat.variables.size(); i++) {
-			vub.tiamat.Templates template = StartTiamat.variables.get(i);		// For each element in the variables vector a button gets created.
+			vub.templates.Templates template = StartTiamat.variables.get(i);		// For each element in the variables vector a button gets created.
 			list.addListElement(this.createListCell(mtApplication,
 					template.getName(), template.getFunction(), Tiamat.menuFont,
 					cellWidth, cellHeight, cellFillColor, cellPressedFillColor));

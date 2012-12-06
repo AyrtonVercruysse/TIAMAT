@@ -102,7 +102,7 @@ public class FunctionsMenu extends Menu {
 		// The buttons get created.
 
 		for (int i = 0; i < StartTiamat.functions.size(); i++) {
-			vub.tiamat.Templates template = StartTiamat.functions.get(i); // For
+			vub.templates.Templates template = StartTiamat.functions.get(i); // For
 																			// each
 																			// element
 																			// in

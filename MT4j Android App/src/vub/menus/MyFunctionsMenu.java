@@ -74,7 +74,7 @@ public class MyFunctionsMenu extends Menu {
 		mapMenu.addChild(list);
 		// Makes the buttons of the menu.
 		for (int i = 0; i < StartTiamat.myFunctions.size(); i++) {
-			vub.tiamat.Templates template = StartTiamat.myFunctions.get(i);		// For each element in the myFunctions vector a button gets created.
+			vub.templates.Templates template = StartTiamat.myFunctions.get(i);		// For each element in the myFunctions vector a button gets created.
 			list.addListElement(this.createListCell(mtApplication,
 					template.getName(), template.getFunction(), Tiamat.menuFont,
 					cellWidth, cellHeight, cellFillColor, cellPressedFillColor));

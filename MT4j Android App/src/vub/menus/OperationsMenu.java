@@ -73,7 +73,7 @@ public class OperationsMenu extends Menu {
 		mapMenu.addChild(list);
 		// Creates the buttons of the menu.
 		for (int i = 0; i < StartTiamat.operations.size(); i++) {
-			vub.tiamat.Templates template = StartTiamat.operations.get(i);	// For eacht element in the operations vector a button gets created.
+			vub.templates.Templates template = StartTiamat.operations.get(i);	// For eacht element in the operations vector a button gets created.
 			list.addListElement(this.createListCell(mtApplication,
 					template.getName(), template.getFunction(), Tiamat.menuFont,
 					cellWidth, cellHeight, cellFillColor, cellPressedFillColor));
