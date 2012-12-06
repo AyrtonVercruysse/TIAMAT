@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;Templates.java&apos; to &apos;MT4j Android App/src/vub.templates&apos;&#x0A;- Original project: &apos;MT4j Android App&apos;&#x0A;- Destination element: &apos;MT4j Android App/src/vub.templates&apos;&#x0A;- Original element: &apos;vub.tiamat.Templates.java&apos;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;vub.templates" element1="/src&lt;vub.tiamat{Templates.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1354747381737" units="1" version="1.0"/>
+</session>
