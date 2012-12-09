@@ -1,14 +1,5 @@
 <templates>
-<template name="if:then:else:">
-    <edu.vub.ast.FunctionCall>
-        <name>if:then:else:</name>
-        <args>
-            <edu.vub.ast.PlaceHolder hint="condition" />
-            <edu.vub.ast.PlaceHolder hint="consequent" type="block"/>
-            <edu.vub.ast.PlaceHolder hint="alternative" type="block" />
-        </args>
-    </edu.vub.ast.FunctionCall>
-</template>
+
     <function>
         <title>
  If:Then:Else

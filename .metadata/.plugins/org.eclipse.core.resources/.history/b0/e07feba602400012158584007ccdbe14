@@ -24,7 +24,7 @@ public Templates IfThenElse() {
 }
 */
 
-public class templateReader{
+public class templateReader extends Activity{
 
 	public static void templateReader() {
 		AssetManager assetManager = getAssets();
