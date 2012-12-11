@@ -16,9 +16,9 @@
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="120" y="30"/>
 <coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="76" y="30"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="104" y="30"/>
-<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="152" y="30"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="68" y="30"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="68" y="30"/>
 <coolItem id="org.eclipse.amalgam.discovery.modeling.toolbars.sampleToolbar" itemType="typeToolBarContribution" x="40" y="30"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="184" y="30"/>
@@ -40,13 +40,14 @@
 <part id="3"/>
 <part id="4"/>
 <part id="5"/>
+<part id="6"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="StartTiamat.java" partName="StartTiamat.java" path="/home/ayvercru/Tiamat/MT4j Android App/src/vub/tiamat/StartTiamat.java" title="StartTiamat.java" tooltip="MT4j Android App/src/vub/tiamat/StartTiamat.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MT4j Android App/src/vub/tiamat/StartTiamat.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1627" selectionTopPixel="483"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1777" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Templates.java" partName="Templates.java" path="/home/ayvercru/Tiamat/MT4j Android App/src/vub/templates/Templates.java" title="Templates.java" tooltip="MT4j Android App/src/vub/templates/Templates.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MT4j Android App/src/vub/templates/Templates.java"/>
@@ -54,18 +55,22 @@
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Tiamat.java" partName="Tiamat.java" path="/home/ayvercru/Tiamat/MT4j Android App/src/vub/tiamat/Tiamat.java" title="Tiamat.java" tooltip="MT4j Android App/src/vub/tiamat/Tiamat.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MT4j Android App/src/vub/tiamat/Tiamat.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="8360" selectionTopPixel="3305"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="7436" selectionTopPixel="2624"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="templateReader.java" partName="templateReader.java" path="/home/ayvercru/Tiamat/MT4j Android App/src/vub/templates/templateReader.java" title="templateReader.java" tooltip="MT4j Android App/src/vub/templates/templateReader.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="templateReader.java" partName="templateReader.java" path="/home/ayvercru/Tiamat/MT4j Android App/src/vub/templates/templateReader.java" title="templateReader.java" tooltip="MT4j Android App/src/vub/templates/templateReader.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MT4j Android App/src/vub/templates/templateReader.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="716" selectionTopPixel="0"/>
-</editor>
-<editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="templates.xml" partName="templates.xml" path="/home/ayvercru/Tiamat/MT4j Android App/src/vub/templates/templates.xml" title="templates.xml" tooltip="MT4j Android App/src/vub/templates/templates.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MT4j Android App/src/vub/templates/templates.xml"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1368" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Function.java" partName="Function.java" path="/home/ayvercru/Tiamat/MT4j Android App/src/vub/rendering/Function.java" title="Function.java" tooltip="MT4j Android App/src/vub/rendering/Function.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MT4j Android App/src/vub/rendering/Function.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="548"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RenderManager.java" partName="RenderManager.java" path="/home/ayvercru/Tiamat/MT4j Android App/src/vub/rendering/RenderManager.java" title="RenderManager.java" tooltip="MT4j Android App/src/vub/rendering/RenderManager.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MT4j Android App/src/vub/rendering/RenderManager.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="templates.xml" partName="templates.xml" path="/home/ayvercru/Tiamat/MT4j Android App/assets/templates.xml" title="templates.xml" tooltip="MT4j Android App/assets/templates.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MT4j Android App/assets/templates.xml"/>
 </editor>
 </editors>
 <views>
@@ -77,6 +82,9 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Errors"/>
+</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="105" org.eclipse.ui.ide.markerType="711" org.eclipse.ui.ide.pathField="140" org.eclipse.ui.ide.resourceField="105" org.eclipse.ui.ide.severityAndDescriptionField="719"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -128,7 +136,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="com.android.ide.eclipse.editors.CommonXmlEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -273,162 +281,159 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MT4j Android App/src/vub/templates/Templates.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MT4j Android App/src/vub/tiamat/StartTiamat.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MT4j Android App/src/vub/tiamat/Tiamat.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MT4j Android App/src/vub/templates/templateReader.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MT4j Android App/src/vub/tiamat/Tiamat.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MT4j Android App/src/vub/tiamat/StartTiamat.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MT4j Android App/src/vub/templates/Templates.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/MT4j Android App/src/vub/templates/templates.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MT4j Android App/src/vub/rendering/Function.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MT4j Android App/src/vub/tiamat/StartTiamat.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MT4j Android App/src/vub/tiamat/Tiamat.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MT4j Android App/src/vub/rendering/RenderManager.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/MT4j Android App/src/vub/templates/templates.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/MT4j Android App/assets/templates.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MT4j Android App/src/vub/templates/Templates.java"/>
 </editors>
-<item historyLabel="templateReader.java" index="3">
-<position info="not_deleted" x="1344" y="0"/>
-</item>
-<item historyLabel="templateReader.java" index="3">
-<position info="not_deleted" x="654" y="0"/>
-</item>
-<item historyLabel="Tiamat.java" index="2">
-<position info="not_deleted" x="7319" y="0"/>
-</item>
-<item historyLabel="Tiamat.java" index="2">
-<position/>
-</item>
-<item historyLabel="Tiamat.java" index="2">
-<position info="not_deleted" x="7279" y="40"/>
-</item>
-<item historyLabel="templateReader.java" index="3">
-<position info="not_deleted" x="1718" y="0"/>
-</item>
-<item historyLabel="Templates.java" index="0">
-<position info="not_deleted" x="300" y="0"/>
-</item>
-<item historyLabel="templateReader.java" index="3">
-<position info="not_deleted" x="654" y="0"/>
-</item>
-<item historyLabel="Templates.java" index="0">
-<position info="not_deleted" x="300" y="0"/>
-</item>
-<item historyLabel="Tiamat.java" index="2">
-<position info="not_deleted" x="7319" y="0"/>
-</item>
-<item historyLabel="templateReader.java" index="3">
-<position info="not_deleted" x="711" y="0"/>
-</item>
-<item historyLabel="Templates.java" index="0">
-<position info="not_deleted" x="300" y="0"/>
-</item>
-<item historyLabel="Tiamat.java" index="2">
-<position info="not_deleted" x="7319" y="0"/>
-</item>
-<item historyLabel="StartTiamat.java" index="1">
-<position info="not_deleted" x="132" y="0"/>
-</item>
-<item historyLabel="Templates.java" index="0">
-<position info="not_deleted" x="300" y="0"/>
-</item>
-<item historyLabel="Tiamat.java" index="2">
-<position info="not_deleted" x="7318" y="0"/>
-</item>
-<item historyLabel="templateReader.java" index="3">
-<position info="not_deleted" x="711" y="0"/>
-</item>
-<item historyLabel="templateReader.java" index="3">
-<position info="not_deleted" x="858" y="0"/>
-</item>
-<item historyLabel="templateReader.java" index="3">
-<position/>
-</item>
-<item historyLabel="templateReader.java" index="3">
-<position/>
-</item>
-<item historyLabel="templateReader.java" index="3">
-<position/>
-</item>
-<item historyLabel="templateReader.java" index="3">
-<position info="not_deleted" x="954" y="0"/>
-</item>
-<item historyLabel="templateReader.java" index="3">
-<position/>
-</item>
-<item historyLabel="templateReader.java" index="3">
+<item historyLabel="templateReader.java" index="0">
 <position info="not_deleted" x="907" y="9"/>
 </item>
-<item historyLabel="templateReader.java" index="3">
-<position/>
-</item>
-<item historyLabel="templateReader.java" index="3">
-<position/>
-</item>
-<item historyLabel="templateReader.java" index="3">
-<position info="not_deleted" x="725" y="8"/>
-</item>
-<item historyLabel="templateReader.java" index="3">
-<position info="not_deleted" x="807" y="0"/>
-</item>
-<item historyLabel="templateReader.java" index="3">
-<position info="not_deleted" x="919" y="12"/>
-</item>
-<item historyLabel="templateReader.java" index="3">
-<position info="not_deleted" x="956" y="0"/>
-</item>
-<item historyLabel="templateReader.java" index="3">
-<position info="not_deleted" x="907" y="9"/>
-</item>
-<item historyLabel="templateReader.java" index="3">
+<item historyLabel="templateReader.java" index="0">
 <position info="not_deleted" x="957" y="0"/>
 </item>
-<item historyLabel="templateReader.java" index="3">
+<item historyLabel="templateReader.java" index="0">
 <position info="not_deleted" x="849" y="0"/>
 </item>
-<item historyLabel="templateReader.java" index="3">
+<item historyLabel="templateReader.java" index="0">
 <position info="not_deleted" x="805" y="9"/>
 </item>
-<item historyLabel="templateReader.java" index="3">
+<item historyLabel="templateReader.java" index="0">
 <position info="not_deleted" x="606" y="0"/>
 </item>
-<item historyLabel="templateReader.java" index="3">
+<item historyLabel="templateReader.java" index="0">
 <position info="not_deleted" x="805" y="9"/>
 </item>
-<item historyLabel="Tiamat.java" index="4">
+<item historyLabel="Tiamat.java" index="1">
 <position info="not_deleted" x="7318" y="0"/>
 </item>
-<item historyLabel="Tiamat.java" index="4">
+<item historyLabel="Tiamat.java" index="1">
 <position info="not_deleted" x="1499" y="6"/>
 </item>
-<item historyLabel="StartTiamat.java" index="5">
+<item historyLabel="StartTiamat.java" index="2">
 <position info="not_deleted" x="1727" y="0"/>
 </item>
-<item historyLabel="templateReader.java" index="3">
+<item historyLabel="templateReader.java" index="0">
 <position info="not_deleted" x="762" y="0"/>
 </item>
-<item historyLabel="StartTiamat.java" index="5">
+<item historyLabel="StartTiamat.java" index="2">
 <position info="not_deleted" x="1627" y="0"/>
 </item>
-<item historyLabel="templateReader.java" index="3">
+<item historyLabel="templateReader.java" index="0">
 <position info="not_deleted" x="762" y="0"/>
 </item>
-<item historyLabel="Templates.java" index="6">
+<item historyLabel="Templates.java" index="3">
 <position info="not_deleted" x="300" y="0"/>
 </item>
-<item historyLabel="Tiamat.java" index="4">
+<item historyLabel="Tiamat.java" index="1">
 <position info="not_deleted" x="1499" y="6"/>
 </item>
-<item historyLabel="templates.xml" index="7"/>
-<item historyLabel="Tiamat.java" index="4">
+<item historyLabel="templates.xml" index="4"/>
+<item historyLabel="Tiamat.java" index="1">
 <position info="not_deleted" x="8360" y="0"/>
 </item>
-<item historyLabel="Function.java" index="8">
+<item historyLabel="Function.java" index="5">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="templateReader.java" index="3">
+<item historyLabel="templateReader.java" index="0">
 <position info="not_deleted" x="814" y="0"/>
 </item>
-<item historyLabel="templates.xml" index="7"/>
-<item active="true" historyLabel="templateReader.java" index="3">
+<item historyLabel="templates.xml" index="4"/>
+<item historyLabel="templateReader.java" index="0">
 <position info="not_deleted" x="814" y="0"/>
 </item>
+<item historyLabel="StartTiamat.java" index="6">
+<position info="not_deleted" x="1677" y="0"/>
+</item>
+<item historyLabel="templateReader.java" index="0">
+<position info="not_deleted" x="785" y="0"/>
+</item>
+<item historyLabel="templateReader.java" index="0">
+<position info="not_deleted" x="896" y="0"/>
+</item>
+<item historyLabel="templateReader.java" index="0">
+<position info="not_deleted" x="868" y="0"/>
+</item>
+<item historyLabel="templateReader.java" index="0">
+<position info="not_deleted" x="896" y="0"/>
+</item>
+<item historyLabel="StartTiamat.java" index="6">
+<position info="not_deleted" x="1630" y="6"/>
+</item>
+<item historyLabel="StartTiamat.java" index="6">
+<position info="not_deleted" x="1677" y="0"/>
+</item>
+<item historyLabel="templateReader.java" index="0">
+<position info="not_deleted" x="884" y="1"/>
+</item>
+<item historyLabel="StartTiamat.java" index="6">
+<position info="not_deleted" x="1637" y="0"/>
+</item>
+<item historyLabel="templateReader.java" index="0">
+<position info="not_deleted" x="884" y="1"/>
+</item>
+<item historyLabel="templateReader.java" index="0">
+<position info="not_deleted" x="896" y="0"/>
+</item>
+<item historyLabel="templateReader.java" index="0">
+<position info="not_deleted" x="785" y="0"/>
+</item>
+<item historyLabel="StartTiamat.java" index="6">
+<position info="not_deleted" x="1637" y="0"/>
+</item>
+<item historyLabel="StartTiamat.java" index="6">
+<position info="not_deleted" x="1734" y="44"/>
+</item>
+<item historyLabel="Tiamat.java" index="7">
+<position info="not_deleted" x="8479" y="0"/>
+</item>
+<item historyLabel="Tiamat.java" index="7">
+<position info="not_deleted" x="2629" y="0"/>
+</item>
+<item historyLabel="Tiamat.java" index="7">
+<position info="not_deleted" x="2614" y="12"/>
+</item>
+<item historyLabel="StartTiamat.java" index="6">
+<position info="not_deleted" x="1777" y="0"/>
+</item>
+<item historyLabel="Tiamat.java" index="7">
+<position info="not_deleted" x="7436" y="0"/>
+</item>
+<item historyLabel="templateReader.java" index="0">
+<position info="not_deleted" x="785" y="0"/>
+</item>
+<item historyLabel="templateReader.java" index="0">
+<position info="not_deleted" x="1368" y="0"/>
+</item>
+<item historyLabel="RenderManager.java" index="8">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="templateReader.java" index="0">
+<position info="not_deleted" x="1368" y="0"/>
+</item>
+<item historyLabel="templates.xml" index="9"/>
+<item historyLabel="templateReader.java" index="0">
+<position info="not_deleted" x="1368" y="0"/>
+</item>
+<item historyLabel="templates.xml" index="10"/>
+<item historyLabel="templateReader.java" index="0">
+<position info="not_deleted" x="1368" y="0"/>
+</item>
+<item historyLabel="Templates.java" index="11">
+<position info="not_deleted" x="300" y="0"/>
+</item>
+<item historyLabel="templateReader.java" index="0">
+<position info="not_deleted" x="1368" y="0"/>
+</item>
+<item active="true" historyLabel="templates.xml" index="10"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
@@ -447,6 +452,12 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="templates.xml" tooltip="MT4j Android App/assets/templates.xml">
+<persistable path="/MT4j Android App/assets/templates.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RenderManager.java" tooltip="MT4j Android App/src/vub/rendering/RenderManager.java">
+<persistable path="/MT4j Android App/src/vub/rendering/RenderManager.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Function.java" tooltip="MT4j Android App/src/vub/rendering/Function.java">
 <persistable path="/MT4j Android App/src/vub/rendering/Function.java"/>
 </file>
@@ -485,12 +496,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DOMExampleJava.java" tooltip="XML tests/src/DOMExampleJava.java">
 <persistable path="/XML tests/src/DOMExampleJava.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="templates.xml" tooltip="MT4j Android App/res/xml/templates.xml">
-<persistable path="/MT4j Android App/res/xml/templates.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Templates.java" tooltip="MT4j Android App/src/vub/tiamat/Templates.java">
-<persistable path="/MT4j Android App/src/vub/tiamat/Templates.java"/>
 </file>
 </mruList>
 </workbench>

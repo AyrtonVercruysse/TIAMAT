@@ -26,8 +26,7 @@ public Templates IfThenElse() {
 
 public class templateReader{
 
-	public static void templateReader() {
-		AssetManager assetManager = getAssets();
+	public static void templateReader(AssetManager assetManager) {
 		InputStream templates = null;
 		try {
 

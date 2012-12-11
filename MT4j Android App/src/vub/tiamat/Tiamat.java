@@ -20,6 +20,7 @@ import org.mt4j.util.math.Vector3D;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.net.Uri;
 import processing.core.PImage;
 import vub.menus.BeginMenu;
@@ -59,6 +60,7 @@ public class Tiamat extends AbstractScene {
 	public static MTTextArea t;
 	public static IFont menuFont;
 	public static IFont fontArial;
+	AssetManager assetManager;
 	/**
 	 * Initializes a Tiamat instance.
 	 * 
@@ -67,8 +69,9 @@ public class Tiamat extends AbstractScene {
 	 * @param name
 	 *            The name of this surrouding.
 	 */
-	public Tiamat(MTAndroidApplication mtApplication, String name) {
+	public Tiamat(MTAndroidApplication mtApplication, String name, AssetManager am) {
 		super(mtApplication, name);
+		assetManager = am;
 		menuFont =FontManager.getInstance().createFont(mtApplication,"arial20.fnt", 12, MTColor.WHITE);
 		makeTemplates();
 		fontArial = FontManager.getInstance().createFont(mtApplication, 
@@ -204,7 +207,7 @@ public class Tiamat extends AbstractScene {
 		StartTiamat.functions.add(WheneverDisconnected());
 		StartTiamat.functions.add(WheneverReconnected());
 		StartTiamat.functions.add(PrintLine());*/
-		new templateReader().templateReader();
+		new templateReader().templateReader(assetManager);
 
 		// Definitions
 		StartTiamat.definitions.add(Value());

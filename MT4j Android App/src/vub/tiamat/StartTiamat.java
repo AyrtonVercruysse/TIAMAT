@@ -37,11 +37,12 @@ public class StartTiamat extends MTAndroidApplication {
 	public static Vector<Templates> myFunctions = new Vector<Templates>();
 	public static Vector<Templates> variables = new Vector<Templates>();
 	public static Vector<Templates> definitions = new Vector<Templates>();
+	public AssetManager assetManager = getAssets();
 
 	@Override
 	public void startUp() {
 		
-		addScene(new Tiamat(this, "vub.tiamat"));
+		addScene(new Tiamat(this, "vub.tiamat", assetManager));
 		
 	}
 	
