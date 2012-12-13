@@ -1198,3 +1198,32 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 
 !ENTRY com.android.ide.eclipse.adt 1 0 2012-12-10 01:02:40.656
 !MESSAGE No valid Android XML Editor Delegate found for file /MT4j Android App/assets/templates.xml [Res null, type null]
+!SESSION 2012-12-13 01:01:17.928 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_24
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.modeling.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.modeling.product
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2012-12-13 01:01:32.234
+!MESSAGE No valid Android XML Editor Delegate found for file /MT4j Android App/assets/templates.xml [Res null, type null]
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-12-13 01:01:45.996
+!MESSAGE Failed to load properties file for project 'mtj4-android'
+
+!ENTRY org.eclipse.ui 4 4 2012-12-13 01:59:53.338
+!MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2012-12-13 11:16:13.417 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_24
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.modeling.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.modeling.product
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2012-12-13 11:16:25.330
+!MESSAGE No valid Android XML Editor Delegate found for file /MT4j Android App/assets/templates.xml [Res null, type null]
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-12-13 11:16:36.371
+!MESSAGE Failed to load properties file for project 'mtj4-android'
