@@ -24,9 +24,9 @@ public class TableCall extends Renderer<vub.ast.TableCall>{
 		 */
 	public TableCall(MTAndroidApplication mtApplication, vub.ast.TableCall ast, Vector<Renderer<?>> children) {
 		super(mtApplication, ast);
-		openBracket = makeText(mtApplication, "[");
-		closeBracket = makeText(mtApplication, "]");
-		name = makeText(mtApplication, ast.getName());
+		openBracket = makeTextArea(mtApplication, "[");
+		closeBracket = makeTextArea(mtApplication, "]");
+		name = makeTextArea(mtApplication, ast.getName());
 		this.children = children;
 	}
 	@Override

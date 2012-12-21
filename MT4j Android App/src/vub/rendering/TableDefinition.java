@@ -23,8 +23,8 @@ public class TableDefinition extends Renderer<vub.ast.TableDefinition>{
 	 */
 	public TableDefinition(MTAndroidApplication mtApplication, vub.ast.TableDefinition ast, Vector<Renderer<?>> children) {
 		super(mtApplication, ast);
-		def = makeText(mtApplication, "def");
-		colequal = makeText(mtApplication, ":=");
+		def = makeTextArea(mtApplication, "def");
+		colequal = makeTextArea(mtApplication, ":=");
 		this.children = children;
 	}
 	@Override

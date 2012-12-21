@@ -19,6 +19,7 @@ import processing.core.PImage;
 import vub.ast.Node;
 import vub.templates.Templates;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
@@ -37,16 +38,13 @@ public class StartTiamat extends MTAndroidApplication {
 	public static Vector<Templates> myFunctions = new Vector<Templates>();
 	public static Vector<Templates> variables = new Vector<Templates>();
 	public static Vector<Templates> definitions = new Vector<Templates>();
-	public AssetManager assetManager = getAssets();
+	AssetManager assetManager;
 
 	@Override
 	public void startUp() {
-		
+		assetManager =  getAssets();
 		addScene(new Tiamat(this, "vub.tiamat", assetManager));
 		
 	}
-	
-
-	
 
 }

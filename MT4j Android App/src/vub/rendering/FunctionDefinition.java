@@ -23,8 +23,8 @@ public class FunctionDefinition extends Renderer<vub.ast.FunctionDefinition>{
 		 */
 	public FunctionDefinition(MTAndroidApplication mtApplication, vub.ast.FunctionDefinition ast, Vector<Renderer<?>> children) {
 		super(mtApplication, ast);
-		def = makeText(mtApplication, "def");
-		colequal = makeText(mtApplication, ":=");
+		def = makeTextArea(mtApplication, "def");
+		colequal = makeTextArea(mtApplication, ":=");
 		this.children = children;	
 
 		

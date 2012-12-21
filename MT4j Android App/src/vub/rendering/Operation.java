@@ -25,9 +25,9 @@ public class Operation extends Renderer<vub.ast.Operation>{
  */
 	public Operation(MTAndroidApplication mtApplication, vub.ast.Operation ast, Vector<Renderer<?>> children) {
 		super(mtApplication, ast);
-		open = makeText(mtApplication, "(");
-		close = makeText(mtApplication, ")");
-		operator = makeText(mtApplication, ast.getOperator());
+		open = makeTextArea(mtApplication, "(");
+		close = makeTextArea(mtApplication, ")");
+		operator = makeTextArea(mtApplication, ast.getOperator());
 		argument1 = children.get(0);
 		argument2 = children.get(1);
 		

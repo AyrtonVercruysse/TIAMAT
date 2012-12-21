@@ -48,6 +48,7 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 	static MTColor red = new MTColor(255, 0, 0);
 	static MTColor blue = new MTColor(0, 0, 255);
 	static MTColor green = new MTColor(0, 80, 0);
+	static MTColor orange = new MTColor(255,165,0);
 	
 	public void tap(){
 		drawing.registerInputProcessor(new TapProcessor(mtApplication, 25,
@@ -151,25 +152,21 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 				});
 		
 	}
-	public static MTTextArea makeText(MTAndroidApplication mtApplication,
-			String text) {
-
-		
+	public static MTTextArea makeTextArea(MTAndroidApplication mtApplication,String text) {
 		MTTextArea temp = new MTTextArea(mtApplication, Tiamat.fontArial);
 		temp.setAnchor(PositionAnchor.UPPER_LEFT);
 		temp.setNoFill(true);
+		temp.setFontColor(black);
 		temp.setText(text);
 		temp.setPickable(false);
 		return temp;
 	}
-
-	static MTTextArea makeTextArea(MTAndroidApplication mtApplication,
-			String text, MTColor color) {
-		MTTextArea temp = makeText(mtApplication, text); // A normal text area
+	
+	static MTTextArea makeTextArea(MTAndroidApplication mtApplication, String text, MTColor color) {
+		MTTextArea temp = makeTextArea(mtApplication, text); // A normal text area
 															// get created.
 		temp.setFillColor(color); // And the color gets added.
 		temp.setNoFill(false);
-		temp.setPickable(false);
 		return temp;
 	}
 

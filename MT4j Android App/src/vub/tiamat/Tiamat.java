@@ -71,7 +71,7 @@ public class Tiamat extends AbstractScene {
 	 */
 	public Tiamat(MTAndroidApplication mtApplication, String name, AssetManager am) {
 		super(mtApplication, name);
-		assetManager = am;
+		this.assetManager = am;
 		menuFont =FontManager.getInstance().createFont(mtApplication,"arial20.fnt", 12, MTColor.WHITE);
 		makeTemplates();
 		fontArial = FontManager.getInstance().createFont(mtApplication, 

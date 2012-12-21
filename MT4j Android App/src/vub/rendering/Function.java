@@ -34,7 +34,7 @@ public class Function extends Renderer<vub.ast.Function> {
 		String[] names = ast.getNames();
 		texts = new MTTextArea[names.length];
 		for (int i = 0; i < names.length; i++)
-			texts[i] = makeText(mtApplication, names[i]);
+			texts[i] = makeTextArea(mtApplication, names[i]);
 	}
 
 	@Override

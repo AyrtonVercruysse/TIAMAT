@@ -26,14 +26,14 @@ public class Block extends Renderer<vub.ast.Block>{
 		 */
 	public Block(MTAndroidApplication mtApplication, vub.ast.Block ast, Vector<Renderer<?>> children) {
 		super(mtApplication, ast);
-		open = makeText(mtApplication, "{");
-		close = makeText(mtApplication, "}");
-		bar1 = makeText(mtApplication, "|");
-		bar2 = makeText(mtApplication, "|");
+		open = makeTextArea(mtApplication, "{");
+		close = makeTextArea(mtApplication, "}");
+		bar1 = makeTextArea(mtApplication, "|");
+		bar2 = makeTextArea(mtApplication, "|");
 		this.children = children;
 		commas = new MTRectangle[children.size()]; 
 		for (int i = 0; i < children.size(); i++){
-			commas[i] = makeText(mtApplication, ",");
+			commas[i] = makeTextArea(mtApplication, ",");
 		}
 	}
 	@Override

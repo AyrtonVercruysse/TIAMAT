@@ -14,12 +14,12 @@ public class ArgumentList extends Renderer<vub.ast.ArgumentList>{
 	Vector<Renderer<?>> children;
 	public ArgumentList(MTAndroidApplication mtApplication, vub.ast.ArgumentList ast, Vector<Renderer<?>> children) {
 		super(mtApplication, ast);
-		open = makeText(mtApplication, "(");			// The opening bracet.
-		close = makeText(mtApplication, ")");			// The closing bracket.
+		open = makeTextArea(mtApplication, "(");			// The opening bracet.
+		close = makeTextArea(mtApplication, ")");			// The closing bracket.
 		this.children = children;
 		commas = new MTRectangle[children.size()]; 		// The comma's to separate the arguements.
 		for (int i = 0; i < children.size(); i++){
-			commas[i] = makeText(mtApplication, ",");
+			commas[i] = makeTextArea(mtApplication, ",");
 		}
 	}
 

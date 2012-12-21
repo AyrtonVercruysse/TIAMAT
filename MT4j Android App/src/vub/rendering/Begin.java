@@ -5,6 +5,7 @@ import java.util.Vector;
 import org.mt4j.MTAndroidApplication;
 import org.mt4j.components.TransformSpace;
 import org.mt4j.components.visibleComponents.shapes.MTRectangle;
+import org.mt4j.components.visibleComponents.widgets.MTTextArea;
 import org.mt4j.util.math.Vector3D;
 /**
  * The class to render a begin.
@@ -13,7 +14,7 @@ import org.mt4j.util.math.Vector3D;
  */
 public class Begin extends Renderer<vub.ast.Begin>{
 	MTRectangle open;
-	MTRectangle close;
+	MTTextArea close;
 	Vector<Renderer<?>> children;
 		/**
 		 * The initialisation of the class.
@@ -24,8 +25,8 @@ public class Begin extends Renderer<vub.ast.Begin>{
 	public Begin(MTAndroidApplication mtApplication, vub.ast.Begin ast, Vector<Renderer<?>> children) {
 		super(mtApplication, ast);
 		System.out.println("In den beginne");
-		open = makeText(mtApplication, "{");
-		close = makeText(mtApplication, "}");
+		open = makeTextArea(mtApplication, "{");
+		close = makeTextArea(mtApplication, "}");
 		this.children = children;
 	}
 	@Override

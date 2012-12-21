@@ -15,8 +15,8 @@ public class Definition extends Renderer<vub.ast.Definition>{
 	public Definition(MTAndroidApplication mtApplication, vub.ast.Definition ast, Vector<Renderer<?>> children) {
 		super(mtApplication, ast);
 		System.out.println("In den beginne");
-		def = makeText(mtApplication, "def");
-		colequal = makeText(mtApplication, ":=");
+		def = makeTextArea(mtApplication, "def");
+		colequal = makeTextArea(mtApplication, ":=");
 		this.children = children;
 	}
 	@Override

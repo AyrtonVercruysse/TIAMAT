@@ -25,9 +25,9 @@ public class FunctionCall extends Renderer<vub.ast.FunctionCall> {
 	public FunctionCall(MTAndroidApplication mtApplication,
 			vub.ast.FunctionCall ast, Vector<Renderer<?>> children) {
 		super(mtApplication, ast);
-		openBracket = makeText(mtApplication, "(");
-		closeBracket = makeText(mtApplication, ")");
-		name = makeText(mtApplication, ast.getName());
+		openBracket = makeTextArea(mtApplication, "(");
+		closeBracket = makeTextArea(mtApplication, ")");
+		name = makeTextArea(mtApplication, ast.getName());
 		this.children = children;
 	}
 

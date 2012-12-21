@@ -24,12 +24,12 @@ public class Table extends Renderer<vub.ast.Table>{
 	 */
 	public Table(MTAndroidApplication mtApplication, vub.ast.Table ast, Vector<Renderer<?>> children) {
 		super(mtApplication, ast);
-		open = makeText(mtApplication, "[");
-		close = makeText(mtApplication, "]");
+		open = makeTextArea(mtApplication, "[");
+		close = makeTextArea(mtApplication, "]");
 		this.children = children;
 		commas = new MTRectangle[children.size()]; 
 		for (int i = 0; i < children.size(); i++){
-			commas[i] = makeText(mtApplication, ",");
+			commas[i] = makeTextArea(mtApplication, ",");
 		}
 	}
 
