@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates>
 <template type="function" name="if:then:else:">
-    <edu.vub.ast.Function type="tester">
+    <vub.ast.Function type="tester">
         <name>if:then:else:</name>
         <args>
             <edu.vub.ast.PlaceHolder hint="condition">if</edu.vub.ast.PlaceHolder>
             <edu.vub.ast.PlaceHolder hint="consequent">then</edu.vub.ast.PlaceHolder>
             <edu.vub.ast.PlaceHolder hint="alternative">else</edu.vub.ast.PlaceHolder>
         </args>
-    </edu.vub.ast.Function>
+    </vub.ast.Function>
 </template>
 <!-- <template type="function" name="when:discovered:">
     <edu.vub.ast.Function>

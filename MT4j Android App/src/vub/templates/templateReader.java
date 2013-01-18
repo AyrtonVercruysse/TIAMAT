@@ -2,6 +2,7 @@ package vub.templates;
 import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Constructor;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -10,11 +11,13 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.w3c.dom.Text;
 import org.xml.sax.InputSource;
 
 import android.app.Activity;
 import android.content.res.AssetManager;
 
+import vub.ast.Function;
 import vub.tiamat.StartTiamat;
 
 /*
@@ -37,11 +40,28 @@ public class templateReader{
 		
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory
 					.newInstance();
+			
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			dbFactory.setValidating(true);
+			dbFactory.setIgnoringElementContentWhitespace(true);
 			Document doc = dBuilder.parse(is);
 			doc.getDocumentElement().normalize();
-
-			NodeList nodes = doc.getElementsByTagName("template");
+			
+			
+			
+			Node node = doc.getFirstChild();
+			removeWhitespaceNodes((Element) node);
+			node = node.getFirstChild().getFirstChild();
+			String name = node.getNodeValue();
+			String name2 = node.getNodeName();
+			Boolean bool = node.hasChildNodes();
+			Class node3 = Class.forName(name2);
+			Constructor intcon = node3.getConstructors()[0];
+			String names[] = { "if:", "then:", "else:" };
+			String contents[] = { "predicate", "consequent", "alternative" };
+			vub.ast.Node tester = (vub.ast.Node)intcon.newInstance(null, names, contents);
+			StartTiamat.functions.add(new Templates("If:Then:Else", tester));
+		/*	NodeList nodes = doc.getElementsByTagName("template");
 			//NodeList operations = doc.getElementsByTagName("operation");
 			System.out.println("In Template reader");
 
@@ -58,14 +78,24 @@ public class templateReader{
 						operation(element);
 					}else System.out.println("Wrong Type");
 					
-				/*	//String type = element.getAttribute("type");
+					//String type = element.getAttribute("type");
 					String name = element.getAttribute("name");
 					Element nam = (Element) element.getElementsByTagName("edu.vub.ast.Function").item(0);
-					String name2 = nam.getAttribute("type");
-					Element naom = (Element) nam.getElementsByTagName("name").item(0);
+					Node node2 = element.getFirstChild();
+					//Node tester = node2.getFirstChild();
+					boolean bool = node2.hasChildNodes();
+					//String name2 = nam.getAttribute("type");
+					
+					name = element.getNodeName();
+					String name2 ;//= nam.getTagName();
+					name2 = node2.getNodeName();*/
+					
+					
+					//Class<?> c = Class.forName(name2);
+					//Element naom = (Element) nam.getElementsByTagName("name").item(0);
 					//name2 = naom.getTextContent();
-					Node args = element.getElementsByTagName("args").item(0);
-					String lol = element.getFirstChild().getPrefix();
+					//Node args = element.getElementsByTagName("args").item(0);
+					//String lol = element.getFirstChild().getPrefix();
 					
 					//	System.out.println("Temp" + test);
 					//String[] names = getValues("name", element);
@@ -73,10 +103,10 @@ public class templateReader{
 					//vub.ast.Node node1 = new vub.ast.Function(null, names, content);
 					//Templates template =  new Templates(title, node1);
 					//StartTiamat.functions.add(template);
-					System.out.println("Templates" + name + name2 + type);
-					*/
-					} 
-			}
+					System.out.println("Templates"+ name +name2+ bool+tester);
+					
+					//} 
+			//}
 		} catch (Exception ex) {
 			System.out.println("TemplatesError");
 			ex.printStackTrace();
@@ -134,4 +164,16 @@ public class templateReader{
 
 		return node.getNodeValue();
 	}
+	public static void removeWhitespaceNodes(Element e) {
+		NodeList children = e.getChildNodes();
+		for (int i = children.getLength() - 1; i >= 0; i--) {
+		Node child = children.item(i);
+		if (child instanceof Text && ((Text) child).getData().trim().length() == 0) {
+		e.removeChild(child);
+		}
+		else if (child instanceof Element) {
+		removeWhitespaceNodes((Element) child);
+		}
+		}
+		}
 }

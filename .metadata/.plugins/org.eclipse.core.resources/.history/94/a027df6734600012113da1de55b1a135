@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+<template type="function" name="if:then:else:">
+    <vub.ast.Function type="tester">
+        <name>if:then:else:</name>
+        <args>
+            <edu.vub.ast.PlaceHolder hint="condition">if</edu.vub.ast.PlaceHolder>
+            <edu.vub.ast.PlaceHolder hint="consequent">then</edu.vub.ast.PlaceHolder>
+            <edu.vub.ast.PlaceHolder hint="alternative">else</edu.vub.ast.PlaceHolder>
+        </args>
+    </edu.vub.ast.Function>
+</template>
+<!-- <template type="function" name="when:discovered:">
+    <edu.vub.ast.Function>
+        <name>when:discovered:</name>
+        <args>
+            <edu.vub.ast.PlaceHolder text="when" hint="predicate" />
+            <edu.vub.ast.PlaceHolder text="discovered" type="block" />
+        </args>
+    </edu.vub.ast.Function>
+</template>
+<template type="function" name="while:do:">
+    <edu.vub.ast.Function>
+        <name>while:do:</name>
+        <args>
+            <edu.vub.ast.PlaceHolder text="while" hint="predicate" />
+            <edu.vub.ast.PlaceHolder text="do" type="block"/>
+        </args>
+    </edu.vub.ast.Function>
+</template>
+<template type="function" name="when:becomes:">
+    <edu.vub.ast.Function>
+        <name>when:becomes:</name>
+        <args>
+            <edu.vub.ast.PlaceHolder text="when" hint="predicate" />
+            <edu.vub.ast.PlaceHolder text="becomes" type="block" />
+        </args>
+    </edu.vub.ast.Function>
+</template>
+<template type="function" name="whenever:disconnected:">
+    <edu.vub.ast.Function>
+        <name>whenever:discovered:</name>
+        <args>
+            <edu.vub.ast.PlaceHolder text="whenever" hint="predicate" />
+            <edu.vub.ast.PlaceHolder text="disconnected" type="block" />
+        </args>
+    </edu.vub.ast.Function>
+</template>
+<template type="function" name="whenever:reconnected:">
+    <edu.vub.ast.Function>
+        <name>whenever:reconnected:</name>
+        <args>
+            <edu.vub.ast.PlaceHolder text="whenever" hint="predicate" />
+            <edu.vub.ast.PlaceHolder text="reconnected" type="block" />
+        </args>
+    </edu.vub.ast.Function>
+</template>
+<template type="function" name="PrintLine">
+    <edu.vub.ast.Function>
+        <name>printLn:</name>
+        <args>
+            <edu.vub.ast.PlaceHolder text="system.println" />
+        </args>
+    </edu.vub.ast.Function>
+</template>
+<template type="operation" name="plus">
+    <edu.vub.ast.Operation>
+        <name>+</name>
+        <args>
+            <edu.vub.ast.Placeholder />
+            <edu.vub.ast.Placeholder />
+        </args>
+    </edu.vub.ast.Operation>
+</template>
+<template type="operation" name="minus">
+    <edu.vub.ast.Operation>
+        <name>-</name>
+        <args>
+            <edu.vub.ast.Placeholder />
+            <edu.vub.ast.Placeholder />
+        </args>
+    </edu.vub.ast.Operation>
+</template>
+<template type="operation" name="multiplication">
+    <edu.vub.ast.Operation>
+        <name>*</name>
+        <args>
+            <edu.vub.ast.Placeholder />
+            <edu.vub.ast.Placeholder />
+        </args>
+    </edu.vub.ast.Operation>
+</template>
+<template type="operation" name="devision">
+    <edu.vub.ast.Operation>
+        <name>/</name>
+        <args>
+            <edu.vub.ast.Placeholder />
+            <edu.vub.ast.Placeholder />
+        </args>
+    </edu.vub.ast.Operation>
+</template>
+<template type="definition" name="value">
+    <edu.vub.ast.Value>
+        <name>value</name>
+        <args>
+            "empty"
+        </args>
+    </edu.vub.ast.Definition>
+</template>
+<template type="definition" name="definition">
+    <edu.vub.ast.Value>
+        <name>definition</name>
+        <args>
+          
+        </args>
+    </edu.vub.ast.Definition>
+</template>
+<template type="definition" name="functionDefinition">
+    <edu.vub.ast.FunctionDefinition>
+        <name>function</name>
+        <args>
+            0
+        </args>
+    </edu.vub.ast.FunctionDefinition>
+</template>
+<template type="definition" name="tableDefinition">
+    <edu.vub.ast.TableDefinition>
+        <name>table</name>
+        <args>
+        </args>
+    </edu.vub.ast.TableDefinition>
+</template>
+<template type="definition" name="begin">
+    <edu.vub.ast.Begin>
+        <name>begin</name>
+        <args>
+            <edu.vub.ast.Placeholder />
+        </args>
+    </edu.vub.ast.Begin>
+</template>
+<template type="definition" name="block">
+    <edu.vub.ast.block>
+        <name>block</name>
+        <args>
+        </args>
+    </edu.vub.ast.Block>
+</template>
+-->
+</templates>

@@ -15,6 +15,16 @@ public class Function extends Node implements Serializable{
 			addChild(child);
 		}
 	}
+	public Function(Node parent, String[] names, Node[] contents) {
+		super(parent);
+		int numberOfChildren = names.length;
+		this.names = names;
+		Node child;
+		for (int i = 0; i < numberOfChildren; i++) {
+			child = contents[i];
+			addChild(child);
+		}
+	}
 
 	public String[] getNames() {
 		return names;
