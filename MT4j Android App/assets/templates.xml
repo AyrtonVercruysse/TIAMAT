@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates>
 <template type="function" name="if:then:else:">
-    <vub.ast.Function type="tester">
+    <vub.ast.Function>
         <name>if:then:else:</name>
         <args>
-            <edu.vub.ast.PlaceHolder hint="condition">if</edu.vub.ast.PlaceHolder>
-            <edu.vub.ast.PlaceHolder hint="consequent">then</edu.vub.ast.PlaceHolder>
-            <edu.vub.ast.PlaceHolder hint="alternative">else</edu.vub.ast.PlaceHolder>
+            <vub.ast.Placeholder hint="condition" name="if"/>
+            <vub.ast.Placeholder hint="consequent" name="then"/>
+            <vub.ast.Placeholder hint="alternative" name="else"/>
         </args>
     </vub.ast.Function>
 </template>
-<!-- <template type="function" name="when:discovered:">
-    <edu.vub.ast.Function>
+<template type="function" name="when:discovered:">
+    <vub.ast.Function>
         <name>when:discovered:</name>
         <args>
-            <edu.vub.ast.PlaceHolder text="when" hint="predicate" />
-            <edu.vub.ast.PlaceHolder text="discovered" type="block" />
+            <vub.ast.Placeholder name="when" hint="predicate" />
+            <vub.ast.Block name="discovered" hint="block" />
         </args>
-    </edu.vub.ast.Function>
+    </vub.ast.Function>
 </template>
-<template type="function" name="while:do:">
+<!--  <template type="function" name="while:do:">
     <edu.vub.ast.Function>
         <name>while:do:</name>
         <args>

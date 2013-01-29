@@ -30,6 +30,7 @@ import vub.menus.FunctionsMenu;
 import vub.menus.MyFunctionsMenu;
 import vub.menus.OperationsMenu;
 import vub.menus.VariablesMenu;
+import vub.rendering.RenderManager;
 import vub.rendering.RenderVisitor;
 import vub.rendering.Renderer;
 import vub.templates.Templates;
@@ -48,7 +49,7 @@ public class Tiamat extends AbstractScene {
 	static Renderer<?> beginRenderer; // The renderer of the begin node
 										// (the root).
 	static RenderVisitor visitor; // The visitor to the renderers.
-
+	
 	public static vub.ast.Node main = new vub.ast.Begin(null); // The root node.
 	static MTAndroidApplication mtApplication;
 	static String name;
@@ -91,6 +92,7 @@ public class Tiamat extends AbstractScene {
 		variablesMenu = new VariablesMenu(mtApplication, name);
 		definitionsMenu = new DefinitionsMenu(mtApplication, name);
 		visitor = new RenderVisitor(mtApplication);
+		
 		redraw();
 	}
 
@@ -184,7 +186,10 @@ public class Tiamat extends AbstractScene {
 		beginRenderer = (Renderer<?>) visitor.visit(main); // Rendering the AST
 															// starting from the
 												// root.
-		beginRenderer.display(StartTiamat.general, pos); // Display the rendered
+		MTRectangle result =beginRenderer.display();
+		StartTiamat.general.addChild(result);
+		result.setPositionRelativeToParent(new Vector3D(250,20));
+		//beginRenderer.display(StartTiamat.general, pos); // Display the rendered
 											// AST.
 		beginMenu.Make(mtApplication, name, false); // Make the begin menu.
 

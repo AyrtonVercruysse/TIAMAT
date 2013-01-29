@@ -17,6 +17,7 @@ public class Operation extends Renderer<vub.ast.Operation>{
 	MTRectangle operator;
 	Renderer<?> argument1;
 	Renderer<?> argument2;
+	vub.ast.Node ast;
 /**
  * The initialisation of this class.
  * @param mtApplication
@@ -25,6 +26,7 @@ public class Operation extends Renderer<vub.ast.Operation>{
  */
 	public Operation(MTAndroidApplication mtApplication, vub.ast.Operation ast, Vector<Renderer<?>> children) {
 		super(mtApplication, ast);
+		this.ast = ast;
 		open = makeTextArea(mtApplication, "(");
 		close = makeTextArea(mtApplication, ")");
 		operator = makeTextArea(mtApplication, ast.getOperator());
@@ -52,5 +54,15 @@ public class Operation extends Renderer<vub.ast.Operation>{
 		width = width + close.getWidthXY(TransformSpace.RELATIVE_TO_PARENT);
 		drawing.setHeightLocal(close.getHeightXY(TransformSpace.RELATIVE_TO_PARENT));
         drawing.setWidthLocal(width);
+	}
+	
+	@Override
+	public MTRectangle display(){
+		RenderManager renderManager= new RenderManager(mtApplication, ast);
+		renderManager.render(open, "next", false);
+		renderManager.render(argument1.display(), "next", false);
+		renderManager.render(operator, "next", false);
+		renderManager.render(argument2.display(), "next", false);
+		return renderManager.render(close, "next", false);
 	}
 }

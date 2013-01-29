@@ -11,9 +11,11 @@ public class Definition extends Renderer<vub.ast.Definition>{
 	MTRectangle def;
 	MTRectangle colequal;
 	Vector<Renderer<?>> children;
+	vub.ast.Node ast;
 		
 	public Definition(MTAndroidApplication mtApplication, vub.ast.Definition ast, Vector<Renderer<?>> children) {
 		super(mtApplication, ast);
+		this.ast = ast;
 		System.out.println("In den beginne");
 		def = makeTextArea(mtApplication, "def");
 		colequal = makeTextArea(mtApplication, ":=");
@@ -41,6 +43,17 @@ public class Definition extends Renderer<vub.ast.Definition>{
 		contentHeight = content.getHeight();
 		newPos = new Vector3D(0,defHeight);
 		drawing.setHeightLocal(defHeight+contentHeight);
+	}
+	
+	@Override
+	public MTRectangle display(){
+		RenderManager renderManager= new RenderManager(mtApplication, ast);
+		Renderer<?> functionName = children.get(0);
+		Renderer<?> content = children.get(1);
+		renderManager.render(functionName.display(), "next", false);
+		renderManager.render(def, "next", false);
+		renderManager.render(colequal, "next", false);
+		return renderManager.render(content.display(), "next", false);
 	}
 	
 	@Override

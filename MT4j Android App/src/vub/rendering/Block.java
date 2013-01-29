@@ -18,6 +18,7 @@ public class Block extends Renderer<vub.ast.Block>{
 	MTRectangle bar2;
 	MTRectangle[] commas;
 	Vector<Renderer<?>> children;
+	vub.ast.Node ast;
 		/**
 		 * Initializes the class
 		 * @param mtApplication	
@@ -26,6 +27,7 @@ public class Block extends Renderer<vub.ast.Block>{
 		 */
 	public Block(MTAndroidApplication mtApplication, vub.ast.Block ast, Vector<Renderer<?>> children) {
 		super(mtApplication, ast);
+		this.ast = ast;
 		open = makeTextArea(mtApplication, "{");
 		close = makeTextArea(mtApplication, "}");
 		bar1 = makeTextArea(mtApplication, "|");
@@ -78,7 +80,26 @@ public class Block extends Renderer<vub.ast.Block>{
 		close.setPositionRelativeToParent(newPos);
 		drawing.setHeightLocal(openHeight+contentHeight+closeHeight);
 	}
-	
+	@Override
+	public MTRectangle display(){
+		RenderManager renderManager= new RenderManager(mtApplication, ast);
+		MTRectangle childRectangle;
+		renderManager.render(open, "next", false);
+		renderManager.render(bar1, "next", false);
+		for(int i = 0; i < children.size()-2; i++){
+        	Renderer<?> child = children.get(i);
+        	childRectangle = child.display();
+        	renderManager.render(childRectangle, "next", false);
+        	renderManager.render(commas[i], "next", false);
+        }
+		childRectangle = children.get(children.size()-2).display();
+		renderManager.render(bar2, "next", false);
+		renderManager.render(childRectangle, "next", false);
+		childRectangle = children.get(children.size()-1).display();
+		renderManager.render(childRectangle, "next", false);
+		return renderManager.render(close, "next", false);
+		
+	}
 	@Override
 	public void unselect() {
 		((MTRectangle)drawing).setStrokeColor(white);

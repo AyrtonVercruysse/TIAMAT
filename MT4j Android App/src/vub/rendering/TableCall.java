@@ -16,6 +16,7 @@ public class TableCall extends Renderer<vub.ast.TableCall>{
 	MTRectangle closeBracket;
 	MTRectangle name;
 	Vector<Renderer<?>> children;
+	vub.ast.Node ast;
 		/**
 		 * The initialsation of this class
 		 * @param mtApplication
@@ -24,6 +25,7 @@ public class TableCall extends Renderer<vub.ast.TableCall>{
 		 */
 	public TableCall(MTAndroidApplication mtApplication, vub.ast.TableCall ast, Vector<Renderer<?>> children) {
 		super(mtApplication, ast);
+		this.ast = ast;
 		openBracket = makeTextArea(mtApplication, "[");
 		closeBracket = makeTextArea(mtApplication, "]");
 		name = makeTextArea(mtApplication, ast.getName());
@@ -49,5 +51,15 @@ public class TableCall extends Renderer<vub.ast.TableCall>{
 		height = openBracket.getHeightXY(TransformSpace.RELATIVE_TO_PARENT);
 		drawing.setHeightLocal(height);
 		drawing.setWidthLocal(width);
+	}
+	
+	@Override
+	public MTRectangle display(){
+		RenderManager renderManager= new RenderManager(mtApplication, ast);
+		Renderer<?> index = children.get(0);
+		renderManager.render(name, "next", false);
+		renderManager.render(openBracket, "next", false);
+		renderManager.render(index.display(), "next", false);
+		return renderManager.render(closeBracket, "next", false);
 	}
 }

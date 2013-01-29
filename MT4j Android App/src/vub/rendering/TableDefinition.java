@@ -15,6 +15,7 @@ public class TableDefinition extends Renderer<vub.ast.TableDefinition>{
 	MTRectangle def;
 	MTRectangle colequal;
 	Vector<Renderer<?>> children;
+	vub.ast.Node ast;
 	/**
 	 * The initialisation of this class.	
 	 * @param mtApplication
@@ -23,6 +24,7 @@ public class TableDefinition extends Renderer<vub.ast.TableDefinition>{
 	 */
 	public TableDefinition(MTAndroidApplication mtApplication, vub.ast.TableDefinition ast, Vector<Renderer<?>> children) {
 		super(mtApplication, ast);
+		this.ast = ast;
 		def = makeTextArea(mtApplication, "def");
 		colequal = makeTextArea(mtApplication, ":=");
 		this.children = children;
@@ -49,5 +51,16 @@ public class TableDefinition extends Renderer<vub.ast.TableDefinition>{
 		contentHeight = content.getHeight();
 		newPos = new Vector3D(0,defHeight);
 		drawing.setHeightLocal(defHeight+contentHeight);
+	}
+	
+	@Override
+	public MTRectangle display(){
+		RenderManager renderManager= new RenderManager(mtApplication, ast);
+		Renderer<?> functionName = children.get(0);
+		Renderer<?> content = children.get(1);
+		renderManager.render(def, "next", false);
+		renderManager.render(functionName.display(), "next", false);
+		renderManager.render(colequal, "next", false);
+		return renderManager.render(content.display(), "next", false);
 	}
 }

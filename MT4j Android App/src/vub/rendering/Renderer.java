@@ -22,9 +22,9 @@ import vub.tiamat.StartTiamat;
 import vub.tiamat.Tiamat;
 
 public abstract class Renderer<T extends Node> extends AbstractScene {
-	MTRectangle drawing; // The drawing in which the rendering of the node
+	static MTRectangle drawing; // The drawing in which the rendering of the node
 							// happens.
-	miniMenu menu;
+	miniMenu menu; 
 	MTAndroidApplication mtApplication;
 	//static IFont fontArial;
 	protected T node; // The AST node that needs to be rendered.
@@ -37,6 +37,7 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 		drawing = new MTRectangle(mtApplication, 0, 0, 200, 200);
 		drawing.setNoFill(true);
 		drawing.setAnchor(PositionAnchor.UPPER_LEFT);
+		
 		tap();
 		tapandhold();
 
@@ -195,4 +196,6 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 	@Override
 	public void shutDown() {
 	}
+
+	abstract public MTRectangle display(); 
 }

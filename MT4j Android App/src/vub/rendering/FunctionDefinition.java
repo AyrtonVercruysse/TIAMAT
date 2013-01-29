@@ -15,6 +15,7 @@ public class FunctionDefinition extends Renderer<vub.ast.FunctionDefinition>{
 	MTRectangle def;
 	MTRectangle colequal;
 	Vector<Renderer<?>> children;
+	vub.ast.Node ast;
 		/**
 		 * The initialisation of this class.
 		 * @param mtApplication
@@ -23,6 +24,7 @@ public class FunctionDefinition extends Renderer<vub.ast.FunctionDefinition>{
 		 */
 	public FunctionDefinition(MTAndroidApplication mtApplication, vub.ast.FunctionDefinition ast, Vector<Renderer<?>> children) {
 		super(mtApplication, ast);
+		this.ast = ast;
 		def = makeTextArea(mtApplication, "def");
 		colequal = makeTextArea(mtApplication, ":=");
 		this.children = children;	
@@ -54,6 +56,20 @@ public class FunctionDefinition extends Renderer<vub.ast.FunctionDefinition>{
 		height = body.getHeight();
 		drawing.setHeightLocal(height);
 		drawing.setWidthLocal(width);
+		
+	}
+	
+	@Override
+	public MTRectangle display(){
+		RenderManager renderManager= new RenderManager(mtApplication, ast);
+		Renderer<?> functionName = children.get(0);
+		Renderer<?> arguments = children.get(1);
+		Renderer<?> body = children.get(2);
+		renderManager.render(def, "next", false);
+		renderManager.render(functionName.display(), "next", false);
+		renderManager.render(arguments.display(), "next", false);
+		renderManager.render(colequal, "next", false);
+		return renderManager.render(body.display(), "next", false);
 		
 	}
 }

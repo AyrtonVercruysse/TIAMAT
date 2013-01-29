@@ -16,6 +16,14 @@ public class Block extends Node implements Serializable {
 		this.numberOfParameters = numberOfParameters;
 		children.add(content);
 	}
+	
+	public Block(Node parent, String name) {
+		super(parent);
+		Node child = new Placeholder(this, "Par", true);
+		addChild(child);
+		Node content = new Placeholder(this, "Content", true);
+		children.add(content);
+	}
 
 	public Node getContent() {
 		return getChild(numberOfParameters);

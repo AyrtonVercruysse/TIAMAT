@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<templates>
-    <template>
-        <ast.Function type="if:then:else">
-            <args>5</args>
-        </ast.Function>
-    </template>
-</templates>

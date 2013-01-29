@@ -12,8 +12,10 @@ public class ArgumentList extends Renderer<vub.ast.ArgumentList>{
 	MTRectangle close;
 	MTRectangle[] commas;
 	Vector<Renderer<?>> children;
+	vub.ast.Node ast;
 	public ArgumentList(MTAndroidApplication mtApplication, vub.ast.ArgumentList ast, Vector<Renderer<?>> children) {
 		super(mtApplication, ast);
+		this.ast = ast;
 		open = makeTextArea(mtApplication, "(");			// The opening bracet.
 		close = makeTextArea(mtApplication, ")");			// The closing bracket.
 		this.children = children;
@@ -47,6 +49,20 @@ public class ArgumentList extends Renderer<vub.ast.ArgumentList>{
         // The width and the hight of the surrounding drawing gets set.
         drawing.setHeightLocal(close.getHeightXY(TransformSpace.RELATIVE_TO_PARENT));
         drawing.setWidthLocal(width+close.getWidthXY(TransformSpace.RELATIVE_TO_PARENT));
+		
+	}
+	
+	@Override
+	public MTRectangle display(){
+		RenderManager renderManager= new RenderManager(mtApplication, ast);
+		renderManager.render(open, "next", false);
+		for(int i = 0; i < children.size(); i++){
+        	Renderer<?> child = children.get(i);
+        	MTRectangle childRectangle = child.display();
+        	renderManager.render(childRectangle, "next", false);
+        	renderManager.render(commas[i], "next", false);
+        }
+		return renderManager.render(close, "next", false);
 		
 	}
 }

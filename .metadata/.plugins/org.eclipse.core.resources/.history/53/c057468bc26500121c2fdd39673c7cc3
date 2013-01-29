@@ -1,0 +1,82 @@
+package vub.rendering;
+
+import java.util.Vector;
+
+import org.mt4j.MTAndroidApplication;
+import org.mt4j.components.TransformSpace;
+import org.mt4j.components.visibleComponents.shapes.MTRectangle;
+import org.mt4j.util.math.Vector3D;
+
+import vub.ast.Definition;
+import vub.ast.Node;
+import vub.tiamat.StartTiamat;
+
+
+
+public class RenderManager  extends Renderer{
+	private float width;
+	private float heigth;
+	private int indentionsteps;
+	MTRectangle node;
+	MTRectangle parent = StartTiamat.general;
+	
+	public RenderManager(MTAndroidApplication mtApplication, Node ast) {
+		super(mtApplication, ast);
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public void render(MTRectangle node, String type, Boolean indent, Boolean resetIndent){
+		
+		if(resetIndent) indentionsteps=0;
+		render(node, type, indent);
+	}
+	public void render(MTRectangle node, String type, Boolean indent){
+		this.node = node;
+		
+		System.out.println("Renderer: Render");
+		float nodeHeight = node.getHeightXY(TransformSpace.RELATIVE_TO_PARENT);
+		float nodeWidth = node.getWidthXY(TransformSpace.RELATIVE_TO_PARENT);
+		if(indent) indentionsteps++;
+		
+		if(type == "next"){
+			next();
+		}else if (type == "under"){
+			under();
+		}else{
+			System.out.println("RenderManager: Wrong placementtype");
+		}
+			
+		//We enteren een block met een message "naast of onder, afhankelijk van de width en hight wordt gekeken waar dit moet komen
+		//Eventueel iets toevoegen voor vaste waarden splittable ofzo.
+		// we kunnen aan kindere width vragen, om afhankelijk daarvan te kiezen of we eronder of ernaast zetten.
+		
+	}
+	private void unindent(){
+		indentionsteps = 0;
+	}
+
+	private void under() {
+		System.out.println("Rendering under");
+		parent.addChild(drawing);
+		drawing.addChild(node);
+		Vector3D newPos = new Vector3D(500, 500);
+		heigth= node.getHeightXY(TransformSpace.RELATIVE_TO_PARENT);
+        width = node.getWidthXY(TransformSpace.RELATIVE_TO_PARENT);
+		node.setPositionRelativeToParent(newPos);
+		
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void next() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void display(MTRectangle parent, Vector3D position) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -13,6 +13,15 @@ public class Operation extends Node implements Serializable{
 		addChild(argument1);
 		addChild(argument2);
 	}
+	
+	public Operation(Node parent, String[] operator, Node[] args) {
+		super(parent);
+		this.operator = operator[0];
+		Node argument1 = new Placeholder(this, "Arg1", false);
+		Node argument2 = new Placeholder(this, "Arg2", false);
+		addChild(argument1);
+		addChild(argument2);
+	}
 
 	public String getOperator() {
 		return operator;

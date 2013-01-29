@@ -1,0 +1,108 @@
+package vub.rendering;
+
+import java.util.Vector;
+
+import org.mt4j.MTAndroidApplication;
+import org.mt4j.components.TransformSpace;
+import org.mt4j.components.visibleComponents.shapes.MTPolygon;
+import org.mt4j.components.visibleComponents.shapes.MTRectangle;
+import org.mt4j.components.visibleComponents.widgets.MTTextArea;
+import org.mt4j.util.math.Vector3D;
+
+import vub.ast.Definition;
+import vub.ast.Node;
+import vub.tiamat.StartTiamat;
+
+public class RenderManager {//extends Renderer {
+	private float width = 100;
+	private float heigth = 100;
+	private int indentionsteps;
+	private float nodeWidth;
+	private float nodeHeigth;
+	MTPolygon node;
+	MTPolygon parent;
+	MTRectangle drawing;
+
+	public RenderManager(MTAndroidApplication mtApplication, MTRectangle parent) {
+		//super(mtApplication, ast);
+		this.parent = parent;
+		// TODO Auto-generated constructor stub
+	}
+
+	public void render(MTRectangle node, String type, Boolean indent,
+			Boolean resetIndent) {
+
+		if (resetIndent)
+			indentionsteps = 0;
+		render(node, type, indent);
+	}
+
+	public void render(MTRectangle node, String type, Boolean indent) {
+		this.node = node;
+		System.out.println("Renderer: Render");
+		nodeHeigth = node.getHeightXY(TransformSpace.RELATIVE_TO_PARENT);
+		nodeWidth = node.getWidthXY(TransformSpace.RELATIVE_TO_PARENT);
+		if (indent)
+			indentionsteps++;
+
+		if (type == "next") {
+			next();
+		} else if (type == "under") {
+			under();
+		} else {
+			System.out.println("RenderManager: Wrong placementtype");
+		}
+	}
+
+	public void render(MTTextArea node, String type, Boolean indent) {
+		System.out.println("Renderer: Render");
+		node.setPositionRelativeToParent(new Vector3D(1,1));
+		drawing.setHeightLocal(nodeHeigth+2);
+		drawing.setWidthLocal(nodeWidth+2);
+		this.node = node;
+		if (indent)
+			indentionsteps++;
+
+		if (type == "next") {
+			next();
+		} else if (type == "under") {
+			under();
+		} else {
+			System.out.println("RenderManager: Wrong placementtype");
+		}
+
+		// We enteren een block met een message "naast of onder, afhankelijk van
+		// de width en hight wordt gekeken waar dit moet komen
+		// Eventueel iets toevoegen voor vaste waarden splittable ofzo.
+		// we kunnen aan kindere width vragen, om afhankelijk daarvan te kiezen
+		// of we eronder of ernaast zetten.
+
+	}
+
+	private void unindent() {
+		indentionsteps = 0;
+	}
+
+	private void under() {
+		System.out.println("Rendering under");
+		parent.addChild(drawing);
+		drawing.addChild(node);
+		Vector3D newPos = new Vector3D(heigth, width);
+		drawing.setPositionRelativeToParent(newPos);
+		heigth = heigth + node.getHeightXY(TransformSpace.RELATIVE_TO_PARENT);
+		width = width + node.getWidthXY(TransformSpace.RELATIVE_TO_PARENT);
+		//node.setPositionRelativeToParent(newPos);
+	//	drawing.setHeightLocal(height+2);
+	//	drawing.setWidthLocal(width+2);
+		// TODO Auto-generated method stub
+
+	}
+
+	private void next() {
+		// TODO Auto-generated method stub
+
+	}
+
+
+
+}

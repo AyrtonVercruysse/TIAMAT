@@ -7,6 +7,7 @@ import org.mt4j.components.TransformSpace;
 import org.mt4j.components.visibleComponents.shapes.MTRectangle;
 import org.mt4j.components.visibleComponents.widgets.MTTextArea;
 import org.mt4j.util.math.Vector3D;
+import vub.tiamat.Tiamat;
 /**
  * The class to render a begin.
  * @author Ayrton Vercruysse
@@ -14,8 +15,10 @@ import org.mt4j.util.math.Vector3D;
  */
 public class Begin extends Renderer<vub.ast.Begin>{
 	MTRectangle open;
-	MTTextArea close;
+	MTRectangle close;
 	Vector<Renderer<?>> children;
+	RenderManager renderManager;
+	vub.ast.Node ast;
 		/**
 		 * The initialisation of the class.
 		 * @param mtApplication	
@@ -24,20 +27,37 @@ public class Begin extends Renderer<vub.ast.Begin>{
 		 */
 	public Begin(MTAndroidApplication mtApplication, vub.ast.Begin ast, Vector<Renderer<?>> children) {
 		super(mtApplication, ast);
-		System.out.println("In den beginne");
+		this.ast=ast;
 		open = makeTextArea(mtApplication, "{");
 		close = makeTextArea(mtApplication, "}");
 		this.children = children;
+	}
+	
+	@Override
+	public MTRectangle display(){
+		renderManager= new RenderManager(mtApplication, ast);
+		renderManager.render(open, "next", false);
+		for(int i = 0; i < children.size(); i++){
+			Renderer<?> child = children.get(i);
+        	System.out.println("Render begin child");
+        	MTRectangle childRectangle = child.display();
+        	renderManager.render(childRectangle,"next", false); 
+        	
+		}
+		return renderManager.render(close, "next", false);
 	}
 	@Override
 	public void display(MTRectangle parent,Vector3D position) {
 		Vector3D newPos;
 		parent.addChild(drawing);
+		
+
+		
 		float openHeight;
 		float closeHeight;
 		float height;
 		drawing.setPositionRelativeToParent(position);
-		drawing.addChild(open);
+		//drawing.addChild(open);
 		drawing.addChild(close);
 		openHeight = open.getHeightXY(TransformSpace.RELATIVE_TO_PARENT);
         closeHeight = close.getHeightXY(TransformSpace.RELATIVE_TO_PARENT);

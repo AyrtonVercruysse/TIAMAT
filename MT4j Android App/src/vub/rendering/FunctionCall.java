@@ -16,6 +16,8 @@ public class FunctionCall extends Renderer<vub.ast.FunctionCall> {
 	MTRectangle closeBracket;
 	MTRectangle name;
 	Vector<Renderer<?>> children;
+	vub.ast.Node ast;
+	
 /**
  * The initialisation of this class
  * @param mtApplication
@@ -25,6 +27,7 @@ public class FunctionCall extends Renderer<vub.ast.FunctionCall> {
 	public FunctionCall(MTAndroidApplication mtApplication,
 			vub.ast.FunctionCall ast, Vector<Renderer<?>> children) {
 		super(mtApplication, ast);
+		this.ast = ast;
 		openBracket = makeTextArea(mtApplication, "(");
 		closeBracket = makeTextArea(mtApplication, ")");
 		name = makeTextArea(mtApplication, ast.getName());
@@ -52,5 +55,15 @@ public class FunctionCall extends Renderer<vub.ast.FunctionCall> {
 		height = openBracket.getHeightXY(TransformSpace.RELATIVE_TO_PARENT);
 		drawing.setHeightLocal(height);
 		drawing.setWidthLocal(width);
+	}
+	
+	@Override
+	public MTRectangle display(){
+		RenderManager renderManager= new RenderManager(mtApplication, ast);
+		renderManager.render(name, "next", false);
+		renderManager.render(openBracket, "next", false);
+		renderManager.render(children.get(0).display(), "next", false);
+		return renderManager.render(closeBracket, "next", false);
+		
 	}
 }

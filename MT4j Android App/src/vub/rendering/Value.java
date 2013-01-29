@@ -13,6 +13,7 @@ import org.mt4j.util.math.Vector3D;
  */
 public class Value extends Renderer<vub.ast.Value> {
 	MTRectangle text;
+	vub.ast.Node ast;
 	/**
 	 * The initialsation of this class
 	 * 
@@ -22,6 +23,7 @@ public class Value extends Renderer<vub.ast.Value> {
 	 */
 	public Value(MTAndroidApplication mtApplication, vub.ast.Value ast) {
 		super(mtApplication, ast);
+		this.ast = ast;
 		String contentName = ast.getName();
 		text = makeTextArea(mtApplication, contentName, blue);
 		Comments comments = new Comments(mtApplication, ast);
@@ -34,5 +36,11 @@ public class Value extends Renderer<vub.ast.Value> {
 		drawing.addChild(text);
 		drawing.setWidthLocal(text.getWidthXY(TransformSpace.RELATIVE_TO_PARENT));
 		drawing.setHeightLocal(text.getHeightXY(TransformSpace.RELATIVE_TO_PARENT));
+	}
+	
+	@Override
+	public MTRectangle display(){
+		RenderManager renderManager= new RenderManager(mtApplication, ast);
+		return renderManager.render(text, "next", false);
 	}
 }

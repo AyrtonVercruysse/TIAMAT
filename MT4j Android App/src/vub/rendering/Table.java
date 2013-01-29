@@ -16,6 +16,7 @@ public class Table extends Renderer<vub.ast.Table>{
 	MTRectangle close;
 	MTRectangle[] commas;
 	Vector<Renderer<?>> children;
+	vub.ast.Node ast;
 	/**
 	 * The initialisation of this class	
 	 * @param mtApplication
@@ -24,6 +25,7 @@ public class Table extends Renderer<vub.ast.Table>{
 	 */
 	public Table(MTAndroidApplication mtApplication, vub.ast.Table ast, Vector<Renderer<?>> children) {
 		super(mtApplication, ast);
+		this.ast = ast;
 		open = makeTextArea(mtApplication, "[");
 		close = makeTextArea(mtApplication, "]");
 		this.children = children;
@@ -56,5 +58,21 @@ public class Table extends Renderer<vub.ast.Table>{
         drawing.setHeightLocal(close.getHeightXY(TransformSpace.RELATIVE_TO_PARENT));
         drawing.setWidthLocal(width+close.getWidthXY(TransformSpace.RELATIVE_TO_PARENT));
 		
+	}
+	
+	@Override
+	public MTRectangle display(){
+		RenderManager renderManager= new RenderManager(mtApplication, ast);
+		renderManager.render(open, "under", false);
+        for(int i = 0; i < children.size(); i++){
+        	Renderer<?> child = children.get(i);
+        	renderManager.render(child.display(), "next", false);
+           	if(i < children.size()-1){
+        		renderManager.render(commas[i], "next", false);
+        	}
+        }
+
+		
+		return renderManager.render(close, "under", false);
 	}
 }

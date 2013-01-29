@@ -14,6 +14,7 @@ import org.mt4j.util.math.Vector3D;
  */
 public class Comment extends Renderer<vub.ast.Comment> {
 	Vector<Renderer<?>> children;
+	vub.ast.Node ast;
 
 	/**
 	 * Initializes the class
@@ -27,6 +28,7 @@ public class Comment extends Renderer<vub.ast.Comment> {
 	public Comment(MTAndroidApplication mtApplication, vub.ast.Comment ast,
 			Vector<Renderer<?>> children) {
 		super(mtApplication, ast);
+		this.ast = ast;
 		this.children = children;
 
 	}
@@ -40,5 +42,12 @@ public class Comment extends Renderer<vub.ast.Comment> {
 		children.get(0).display(drawing, new Vector3D(0, 0));
 		drawing.setHeightLocal(children.get(0).getHeight());
 		drawing.setWidthLocal(children.get(0).getWidth());
+	}
+	
+	@Override
+	public MTRectangle display(){
+		RenderManager renderManager= new RenderManager(mtApplication, ast);
+		drawing.setFillColor(green);
+		return renderManager.render(children.get(0).display(), "next", false);
 	}
 }
