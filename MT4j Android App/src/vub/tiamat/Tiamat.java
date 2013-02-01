@@ -1,6 +1,8 @@
 package vub.tiamat;
 
+import java.io.BufferedWriter;
 import java.io.FileOutputStream;
+import java.io.IOException;
 
 import org.mt4j.MTAndroidApplication;
 import org.mt4j.components.visibleComponents.shapes.MTRectangle;
@@ -84,6 +86,7 @@ public class Tiamat extends AbstractScene {
 		Tiamat.name = name;
 		StartTiamat.general = new MTRectangle(mtApplication, 0, 0, 1920, 3200);
 		StartTiamat.general.setPickable(false);
+		//runAT at = new runAT();
 		getCanvas().addChild(StartTiamat.general);
 		beginMenu = new BeginMenu(mtApplication, name);
 		functionsMenu = new FunctionsMenu(mtApplication, name);
@@ -120,8 +123,15 @@ public class Tiamat extends AbstractScene {
 							mtApplication.runOnUiThread(new Runnable() {
 								public void run() {
 									// * The Complete ProgressBar does not appear
-									runAT at = new runAT();
-									at.execute(main.toString());
+									//runAT at = new runAT();
+									try {
+										StartTiamat.out.write(main.toString());
+										StartTiamat.out.close();
+									} catch (IOException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+									//at.execute(main.toString());
 								}});
 
 							

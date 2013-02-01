@@ -15,7 +15,7 @@ import org.mt4j.util.math.Vector3D;
  * 
  */
 public class Function extends Renderer<vub.ast.Function> {
-	MTTextArea[] texts;
+	MTRectangle[] texts;
 	Vector<Renderer<?>> children;
 	vub.ast.Node ast;
 
@@ -61,15 +61,21 @@ public class Function extends Renderer<vub.ast.Function> {
 	}
 	@Override
 	public MTRectangle display(){
+		int i;
 		RenderManager renderManager= new RenderManager(mtApplication, ast);
 		renderManager.render(texts[0], "next", false);
-		renderManager.render(children.get(0).display(), "next",false);
-		for (int i = 1; i < texts.length; i++) {
-			renderManager.render(texts[i], "under", false);
-			renderManager.render(children.get(i).display(), "next",false);
+		Renderer<?> functionName;
+		functionName = children.get(0);
+		renderManager.render(functionName.display(), "next", false);
+		for (i = 1; i < texts.length-1; i++) {
+			functionName = children.get(i);
+			renderManager.render(texts[i], "next", false);
+			renderManager.render(functionName.display(), "next",false);
 			
 		}
-		return drawing;
+		functionName = children.get(i);
+		renderManager.render(texts[i], "next", false);
+		return renderManager.render(functionName.display(), "next",false);
 			
 	}
 			//drawing.addChild(texts[i]);

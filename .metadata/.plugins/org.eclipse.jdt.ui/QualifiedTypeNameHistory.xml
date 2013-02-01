@@ -13,11 +13,20 @@
 <fullyQualifiedTypeName name="vub.ast.Function"/>
 <fullyQualifiedTypeName name="org.w3c.dom.Text"/>
 <fullyQualifiedTypeName name="java.lang.reflect.Constructor"/>
-<fullyQualifiedTypeName name="vub.ast.Node"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTRectangle"/>
 <fullyQualifiedTypeName name="java.util.Vector"/>
 <fullyQualifiedTypeName name="vub.rendering.RenderManager"/>
 <fullyQualifiedTypeName name="vub.tiamat.StartTiamat"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTPolygon"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.widgets.MTTextArea"/>
+<fullyQualifiedTypeName name="vub.ast.Node"/>
+<fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.rotateProcessor.RotateProcessor"/>
+<fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.rotateProcessor.RotateEvent"/>
+<fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.AbstractComponentProcessor"/>
+<fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.scaleProcessor.ScaleProcessor"/>
+<fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragProcessor"/>
+<fullyQualifiedTypeName name="android.os.Environment"/>
+<fullyQualifiedTypeName name="java.io.FileWriter"/>
+<fullyQualifiedTypeName name="java.io.BufferedWriter"/>
+<fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragEvent"/>
 </qualifiedTypeNameHistroy>

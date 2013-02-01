@@ -1,7 +1,9 @@
 package vub.tiamat;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Vector;
 import org.mt4j.MTAndroidApplication;
@@ -24,6 +26,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.net.Uri;
+import android.os.Environment;
 /**
  * This class starts Tiamat.
  * @author Ayrton Vercruysse
@@ -39,12 +42,57 @@ public class StartTiamat extends MTAndroidApplication {
 	public static Vector<Templates> variables = new Vector<Templates>();
 	public static Vector<Templates> definitions = new Vector<Templates>();
 	AssetManager assetManager;
+	static BufferedWriter out;
+	static BufferedWriter templateBuffered;
 
 	@Override
 	public void startUp() {
 		assetManager =  getAssets();
+		
 		addScene(new Tiamat(this, "vub.tiamat", assetManager));
+		boolean mExternalStorageAvailable = false;
+		boolean mExternalStorageWriteable = false;
+		String state = Environment.getExternalStorageState();
+
+		if (Environment.MEDIA_MOUNTED.equals(state)) {
+		    // We can read and write the media
+		    mExternalStorageAvailable = mExternalStorageWriteable = true;
+		    System.out.println("Goowd");
+		    File root = Environment.getExternalStorageDirectory();
+            File file = new File(root, "sourcecode.txt");
+            File templates = new File(root, "templates.xml");
+      //     if (assignArr.size() > 0)
+      //        {
+                try {
+                        if (root.canWrite()){
+                        FileWriter filewriter = new FileWriter(file);
+                        FileWriter filewriter2 = new FileWriter(templates);
+                        out = new BufferedWriter(filewriter);
+                        templateBuffered = new BufferedWriter(filewriter2);
+                       // out.write("test");
+               /*         for (int i=0; i<assignArr.size(); i++)
+                        {
+                            out.write(assignArr.get(i) + "\n");
+                            Toast.makeText(MainActivity.this, "out: " + assignArr.get(i), Toast.LENGTH_LONG).show();
+                        }*/
+                    //    out.close();
+                    }
+                } catch (IOException e) {
+                  //  Log.e("TAG", "Could not write file " + e.getMessage());
+                }
+
+		} else if (Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
+		    // We can only read the media
+		    mExternalStorageAvailable = true;
+		    mExternalStorageWriteable = false;
+		    System.out.println("Goowd2");
+		} else {
+		    // Something else is wrong. It may be one of many other states, but all we need
+		    //  to know is we can neither read nor write
+		    mExternalStorageAvailable = mExternalStorageWriteable = false;
+		    System.out.println("Goowd3");
 		
 	}
 
+}
 }

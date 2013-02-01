@@ -8,6 +8,12 @@ import org.mt4j.components.visibleComponents.widgets.MTTextArea;
 import org.mt4j.input.gestureAction.TapAndHoldVisualizer;
 import org.mt4j.input.inputProcessors.IGestureEventListener;
 import org.mt4j.input.inputProcessors.MTGestureEvent;
+import org.mt4j.input.inputProcessors.componentProcessors.AbstractComponentProcessor;
+import org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragEvent;
+import org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragProcessor;
+import org.mt4j.input.inputProcessors.componentProcessors.rotateProcessor.RotateEvent;
+import org.mt4j.input.inputProcessors.componentProcessors.rotateProcessor.RotateProcessor;
+import org.mt4j.input.inputProcessors.componentProcessors.scaleProcessor.ScaleProcessor;
 import org.mt4j.input.inputProcessors.componentProcessors.tapAndHoldProcessor.TapAndHoldEvent;
 import org.mt4j.input.inputProcessors.componentProcessors.tapAndHoldProcessor.TapAndHoldProcessor;
 import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapEvent;
@@ -22,7 +28,7 @@ import vub.tiamat.StartTiamat;
 import vub.tiamat.Tiamat;
 
 public abstract class Renderer<T extends Node> extends AbstractScene {
-	static MTRectangle drawing; // The drawing in which the rendering of the node
+	static protected MTRectangle drawing; // The drawing in which the rendering of the node
 							// happens.
 	miniMenu menu; 
 	MTAndroidApplication mtApplication;
@@ -40,6 +46,7 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 		
 		tap();
 		tapandhold();
+		rotate();
 
 	}
 
@@ -152,6 +159,61 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 					}
 				});
 		
+	}
+	
+	public void rotate(){
+		for (AbstractComponentProcessor ip : drawing.getInputProcessors()){
+			if (ip instanceof ScaleProcessor) {
+				drawing.unregisterInputProcessor(ip);
+			}
+		}
+		drawing.removeAllGestureEventListeners(ScaleProcessor.class);
+	/*	for (AbstractComponentProcessor ip : drawing.getInputProcessors()){
+			if (ip instanceof DragProcessor) {
+				drawing.unregisterInputProcessor(ip);
+			}
+		}
+		drawing.removeAllGestureEventListeners(DragProcessor.class);*/
+		
+		drawing.registerInputProcessor(new RotateProcessor(mtApplication));
+		//drawing.addGestureListener(RotateProcessor.class, new RotateVisualizer(mtApplication, getCanvas()));
+		drawing.addGestureListener(RotateProcessor.class,
+				new IGestureEventListener() {
+					public boolean processGestureEvent(MTGestureEvent ge) {
+						RotateEvent th = (RotateEvent) ge;
+						switch (th.getId()) {
+						case RotateEvent.GESTURE_ENDED:
+							if (th.getRotationDegrees() > 1) {
+								th.setRotationDegrees(0);
+								System.out.print("Rotater yest!");
+						}else{
+							System.out.print("Rotaternot!");
+							System.out.print("Rotator" + th.getRotationDegrees());
+							th.setRotationDegrees(0);
+
+							Tiamat.redraw();
+						}
+						return false;
+					}
+						return false;
+					}
+				});
+		
+		
+		drawing.registerInputProcessor(new DragProcessor(mtApplication));
+		//drawing.addGestureListener(RotateProcessor.class, new RotateVisualizer(mtApplication, getCanvas()));
+		drawing.addGestureListener(DragProcessor.class,
+				new IGestureEventListener() {
+					public boolean processGestureEvent(MTGestureEvent ge) {
+						DragEvent th = (DragEvent) ge;
+						switch (th.getId()) {
+						case DragEvent.GESTURE_ENDED:
+							Tiamat.redraw();
+						return false;
+					}
+						return false;
+					}
+				});
 	}
 	public static MTTextArea makeTextArea(MTAndroidApplication mtApplication,String text) {
 		MTTextArea temp = new MTTextArea(mtApplication, Tiamat.fontArial);
