@@ -1,0 +1,55 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Goal}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}Scope}{3}{section.1.2}
+\contentsline {section}{\numberline {1.3}Definitions and Acronyms}{4}{section.1.3}
+\contentsline {section}{\numberline {1.4}Product Placement}{4}{section.1.4}
+\contentsline {section}{\numberline {1.5}Users}{4}{section.1.5}
+\contentsline {section}{\numberline {1.6}Used Software}{5}{section.1.6}
+\contentsline {subsection}{\numberline {1.6.1}AmbientTalk}{5}{subsection.1.6.1}
+\contentsline {subsection}{\numberline {1.6.2}Google Android}{6}{subsection.1.6.2}
+\contentsline {subsection}{\numberline {1.6.3}MT4j}{6}{subsection.1.6.3}
+\contentsline {chapter}{\numberline {2}Implementation}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}ASTs}{7}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Making ASTs}{7}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Deleting ASTs}{7}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Replacing parts of ASTs}{8}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Rendering ASTs to text}{8}{subsection.2.1.4}
+\contentsline {section}{\numberline {2.2}Templates}{8}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Templates creating ASTs}{8}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Creating templates from XML}{9}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Create templates from functions}{9}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Interface}{9}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Rendering of nodes}{9}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Lay-out engine}{10}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Creating functions on the spot}{10}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Buttons}{10}{subsection.2.3.4}
+\contentsline {subsubsection}{Menu's}{10}{section*.2}
+\contentsline {subsubsection}{Run button}{10}{section*.3}
+\contentsline {subsubsection}{Delete button}{11}{section*.4}
+\contentsline {subsection}{\numberline {2.3.5}Views}{11}{subsection.2.3.5}
+\contentsline {subsubsection}{Colorcoding keywords}{11}{section*.5}
+\contentsline {subsubsection}{Colorcoding types}{11}{section*.6}
+\contentsline {subsubsection}{Codefolding}{11}{section*.7}
+\contentsline {subsubsection}{Move code}{12}{section*.8}
+\contentsline {subsection}{\numberline {2.3.6}Gestures}{12}{subsection.2.3.6}
+\contentsline {subsubsection}{Selection of code}{12}{section*.9}
+\contentsline {subsubsection}{Pinch-to-zoom}{12}{section*.10}
+\contentsline {subsubsection}{90° degrees turning for comments}{12}{section*.11}
+\contentsline {subsubsection}{Fast scrolldown}{13}{section*.12}
+\contentsline {section}{\numberline {2.4}Evaluating code}{13}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Writing code to textfile}{13}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Call external AmbientTalk app}{13}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Return to TIAMAt after evaluating code}{13}{subsection.2.4.3}
+\contentsline {section}{\numberline {2.5}Features}{14}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Extra interface for comments}{14}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Speaking comments}{14}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}Selector for Java classes}{14}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {2.5.4}Multiple tabs}{14}{subsection.2.5.4}
+\contentsline {subsection}{\numberline {2.5.5}Saving files}{15}{subsection.2.5.5}
+\contentsline {chapter}{\numberline {3}Related work}{16}{chapter.3}
+\contentsline {section}{\numberline {3.1}TouchDevelop}{16}{section.3.1}
+\contentsline {section}{\numberline {3.2}Touch Scheme}{16}{section.3.2}
+\contentsline {section}{\numberline {3.3}Editting Haskell as AST rather than text}{17}{section.3.3}
+\contentsline {chapter}{\numberline {4}Evaluation}{18}{chapter.4}
+\contentsline {chapter}{\numberline {5}Conclusion}{19}{chapter.5}
