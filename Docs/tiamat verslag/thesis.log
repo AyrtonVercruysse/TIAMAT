@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.11.20)  13 FEB 2013 23:48
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.11.20)  15 FEB 2013 00:38
 entering extended mode
  %&-line parsing enabled.
 **thesis.tex
@@ -160,6 +160,14 @@ Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
 (/usr/share/texmf-texlive/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2009/10/09 v6.79a Hyperref driver for pdfTeX
 \Fld@listcount=\count95
+)
+(/usr/share/texmf-texlive/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen107
+\WF@size=\dimen108
+\c@WF@wrappedlines=\count96
+\WF@box=\box26
+\WF@everypar=\toks16
+Package: wrapfig 2003/01/31  v 3.6
 ) (./vubtitlepage.sty
 (/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
@@ -177,28 +185,28 @@ Package graphics Info: Driver file: pdftex.def on input line 91.
 
 (/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
-\Gread@gobject=\count96
+\Gread@gobject=\count97
 ))
-\Gin@req@height=\dimen107
-\Gin@req@width=\dimen108
+\Gin@req@height=\dimen109
+\Gin@req@width=\dimen110
 )) (./thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 25.
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -211,7 +219,7 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-Package hyperref Info: Link coloring ON on input line 24.
+Package hyperref Info: Link coloring ON on input line 25.
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
@@ -219,47 +227,47 @@ Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count97
+\c@section@level=\count98
 )
-LaTeX Info: Redefining \ref on input line 24.
-LaTeX Info: Redefining \pageref on input line 24.
+LaTeX Info: Redefining \ref on input line 25.
+LaTeX Info: Redefining \pageref on input line 25.
  (./thesis.out)
 (./thesis.out)
 \@outlinefile=\write3
 \openout3 = `thesis.out'.
 
-\AtBeginShipoutBox=\box26
+\AtBeginShipoutBox=\box27
  (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count98
-\scratchdimen=\dimen109
-\scratchbox=\box27
-\nofMPsegments=\count99
-\nofMParguments=\count100
-\everyMPshowfont=\toks16
-\MPscratchCnt=\count101
-\MPscratchDim=\dimen110
-\MPnumerator=\count102
-\everyMPtoPDFconversion=\toks17
+\scratchcounter=\count99
+\scratchdimen=\dimen111
+\scratchbox=\box28
+\nofMPsegments=\count100
+\nofMParguments=\count101
+\everyMPshowfont=\toks17
+\MPscratchCnt=\count102
+\MPscratchDim=\dimen112
+\MPnumerator=\count103
+\everyMPtoPDFconversion=\toks18
 ) <VUB_logo.pdf, id=175, 758.835pt x 153.57375pt>
 File: VUB_logo.pdf Graphic file (type pdf)
  <use VUB_logo.pdf>
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 26.
+(Font)              <12> on input line 27.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 26.
+(Font)              <8> on input line 27.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 26.
+(Font)              <6> on input line 27.
 
 <VUB_schild.pdf, id=176, 260.975pt x 259.97125pt>
 File: VUB_schild.pdf Graphic file (type pdf)
  <use VUB_schild.pdf>
-Overfull \hbox (88.74036pt too wide) in paragraph at lines 26--26
+Overfull \hbox (88.74036pt too wide) in paragraph at lines 27--27
 []|  []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 26--26
+Underfull \hbox (badness 10000) in paragraph at lines 27--27
 
  []
 
@@ -268,7 +276,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--26
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./VUB_logo.pdf> <./VUB_sch
 ild.pdf>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 27.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 28.
  (./thesis.toc
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
@@ -276,7 +284,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.47 ...numberline {2.5}Features}{14}{section.2.5}
+l.51 ...numberline {2.5}Features}{20}{section.2.5}
                                                    [1
 
 ])
@@ -286,95 +294,93 @@ l.47 ...numberline {2.5}Features}{14}{section.2.5}
  [2]
 Chapter 1.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 29.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 30.
 [3
 
 ] [4]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 73.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 74.
 
-Overfull \hbox (7.37334pt too wide) in paragraph at lines 78--81
+Overfull \hbox (7.37334pt too wide) in paragraph at lines 79--82
 []\OT1/ptm/m/n/12 AmbientTalk was orig-i-nally a part of a doc-tor-ate study ma
 de by Jessie Dedecker.
  []
 
 
-Overfull \hbox (13.01366pt too wide) in paragraph at lines 88--91
+Overfull \hbox (13.01366pt too wide) in paragraph at lines 89--92
 []\OT1/ptm/m/n/12 In 2006 Tom Van Cut-sem and Stijn Mostinckx started de-vel-op
 -ing Am-bi-entTalk/2,
  []
 
-[5] [6] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 159--181
+[5] <images/android.png, id=251, 508.94366pt x 508.94366pt>
+File: images/android.png Graphic file (type png)
+
+<use images/android.png>
+Underfull \hbox (badness 3724) in paragraph at lines 120--122
+[]\OT1/ptm/m/n/12 On oc-to-ber 17th 2005 Google
+ []
+
+
+<images/Android_historical_version_distribution.png, id=253, 602.25pt x 400.496
+25pt>
+File: images/Android_historical_version_distribution.png Graphic file (type png
+)
+ <use images/Android_historical_version_distribution.png> [6 <./images/android.
+png>] [7 <./images/Android_historical_version_distribution.png>]
+<images/Android-System-Architecture.png, id=269, 741.77126pt x 602.25pt>
+File: images/Android-System-Architecture.png Graphic file (type png)
+
+<use images/Android-System-Architecture.png> [8] [9 <./images/Android-System-Ar
+chitecture.png>]
+<images/ArchitectureOverview2.png, id=282, 701.62125pt x 606.265pt>
+File: images/ArchitectureOverview2.png Graphic file (type png)
+
+<use images/ArchitectureOverview2.png>
+Underfull \hbox (badness 10000) in paragraph at lines 180--207
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--181
+Underfull \hbox (badness 10000) in paragraph at lines 180--207
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--181
+Underfull \hbox (badness 10000) in paragraph at lines 180--207
 
  []
 
-[8] [9]
+[10] [11 <./images/ArchitectureOverview2.png (PNG copy)>] [12]
 Chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--208
+Underfull \hbox (badness 10000) in paragraph at lines 224--234
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 209--214
+Underfull \hbox (badness 10000) in paragraph at lines 235--241
 
  []
 
-[10
+[13
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 215--220
+Underfull \hbox (badness 10000) in paragraph at lines 242--248
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 221--226
+Underfull \hbox (badness 10000) in paragraph at lines 249--255
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--233
+Underfull \hbox (badness 10000) in paragraph at lines 257--262
 
  []
 
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 234--239
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 240--244
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 246--252
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 253--257
-
- []
-
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 258--262
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 264--268
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 263--268
 
  []
 
@@ -384,115 +390,140 @@ Underfull \hbox (badness 10000) in paragraph at lines 269--273
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 274--278
+Underfull \hbox (badness 10000) in paragraph at lines 275--282
 
  []
 
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 280--284
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 285--289
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 283--289
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 290--294
+Underfull \hbox (badness 10000) in paragraph at lines 290--295
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 295--299
+Underfull \hbox (badness 10000) in paragraph at lines 297--301
 
  []
 
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 301--305
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 302--306
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 306--310
+Underfull \hbox (badness 10000) in paragraph at lines 307--311
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 313--318
+
+ []
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 319--323
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--328
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 329--333
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 335--339
+
+ []
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 340--344
 
  []
 
 Missing character: There is no Â in font ptmb7t!
 Missing character: There is no ° in font ptmb7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--315
+Underfull \hbox (badness 10000) in paragraph at lines 345--349
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 316--319
-
- []
-
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 321--325
+Underfull \hbox (badness 10000) in paragraph at lines 350--353
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 326--330
+Underfull \hbox (badness 10000) in paragraph at lines 355--359
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--335
+Underfull \hbox (badness 10000) in paragraph at lines 360--364
+
+ []
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 365--369
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 337--341
-
- []
-
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 342--346
+Underfull \hbox (badness 10000) in paragraph at lines 371--375
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 347--351
+Underfull \hbox (badness 10000) in paragraph at lines 376--380
 
  []
 
-[17] [18]
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--385
+
+ []
+
+[20] [21]
 Chapter 3.
 
-Overfull \hbox (4.3177pt too wide) in paragraph at lines 363--367
+Overfull \hbox (4.3177pt too wide) in paragraph at lines 397--401
 \OT1/ptm/m/n/12 TouchDevelop is a pro-gram-ming en-v-ior-ment made for Win-dows
  phones. TouchDe-
  []
 
-[19
+[22
 
-] [20]
+] [23]
 Chapter 4.
-[21
+[24
 
 ]
 Chapter 5.
-[22
+[25
 
 ] (./thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 4691 strings out of 495061
- 67278 string characters out of 1182620
- 141482 words of memory out of 3000000
- 7719 multiletter control sequences out of 15000+50000
+ 4785 strings out of 495061
+ 68899 string characters out of 1182620
+ 142680 words of memory out of 3000000
+ 7797 multiletter control sequences out of 15000+50000
  21819 words of font info for 43 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 38i,16n,36p,251b,382s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,16n,36p,271b,382s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/s
 hare/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/f
 onts/type1/urw/times/utmr8a.pfb>
-Output written on thesis.pdf (23 pages, 120618 bytes).
+Output written on thesis.pdf (26 pages, 403115 bytes).
 PDF statistics:
- 370 PDF objects out of 1000 (max. 8388607)
- 85 named destinations out of 1000 (max. 500000)
- 355 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 396 PDF objects out of 1000 (max. 8388607)
+ 92 named destinations out of 1000 (max. 500000)
+ 375 words of extra memory for PDF output out of 10000 (max. 10000000)
 

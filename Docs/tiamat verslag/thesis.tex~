@@ -5,6 +5,7 @@
 \usepackage{times}
 \usepackage[english]{babel}
 \usepackage[colorlinks,urlcolor=blue,linkcolor=blue]{hyperref}
+\usepackage{wrapfig}
 
 \usepackage{vubtitlepage}
 \author{Ayrton Vercruysse}
@@ -51,15 +52,15 @@ is to let the bachelorstudents  participate in some actual research on the unive
   MT4j & Multi-Touch for Java \\
 \end{tabular}
 \section{Product Placement}
-This product is an IDE for AmbientTalk on Android device. AmbientTalk is a programminglanguage developed to mainly program within Mobile Ad-Hoc networks. MANETs are mostly used to program
+This product is an IDE for AmbientTalk on Android devices. AmbientTalk is a programminglanguage developed to mainly program within Mobile Ad-Hoc networks. MANETs are mostly used to program
 for mobile devices like smarphones and tablets. AmbientTalk is developed to be able to handle with possible disconnects within the MANET.
 
-As AmbientTalk programs are made for Android devices one should be able to program on the Andeoid device itselve. Currently on pc's AmbientTalk is programmed in Eclipse. There are currently
+As AmbientTalk programs are made for Android devices one should be able to program on the Andeoid device itselve. Currently, on pc's, AmbientTalk is programmed in Eclipse. There are currently
 several apps which port Eclipse to Android. The only drawback is that these are not developed to be really useable on these devices. Most of them even assume that a keyboard is connected to the
 tablet. Other drawbacks are that the screen of the pc version of Eclipse would not fit a much smaller tablet or smartphonescreen.   
 
 The goal of this product is to be a usefull alternative to program AmbientTalk code on an Android device. We won't make use of the exsisting technologies of Eclipse but we will develop an entire
-new technique basic on the usage the internal AST. We will manipulate the AST directly in stead of create a sequence of statements which will be mapped to an AST afterwards.
+new technique based on the usage of the internal AST. We will manipulate the AST directly in stead of create a sequence of statements which will be mapped to an AST afterwards.
 
 By manipulating the AST we can make use of predefined templates. This will help with the fact to create sourcecode without defining of sequence of statements. For every possible part of an AST
 a template is created which can be added to the current AST making it possible to create an entire program. 
@@ -80,13 +81,13 @@ was an expension of Pico. Pico was developed by professor Theo D'Hondt in 1996. 
 illustrate how programming languages are being made.
 
 Pico got it's design principes and concepts from Scheme. The goal of Pico was to be a programming language based on simple rules, easy to extend. Thanks to the simplicity and extandability of Pico
-this language is often used to do some research to possible extensions and features for programming languages. This is the reason why a lot of offsprings of Pico all created, all with their own
-special attention to certain problems or extensions. When AmbientTalk was being developed special attention was given create distributed programs within an ad-hoc network.
+this language is often used to do some research to possible extensions and features for programming languages. This is the reason why a lot of offsprings of Pico are created, all with their own
+special attention to certain problems or extensions. When AmbientTalk was being developed special attention was given create distributed programs within an ad-hoc networks.
 Momentarely AmbientTalk/2 is being used. It's the successor of the original AmbientTalk. Even though AmbientTalk/1 was already succesfull concerning the programmingfeatures for mobile Ad-Hoc
 networks it lacked some important features to create bigger software applications, such like exception handling,...
 
-In 2006 Tom Van Cutsem and Stijn Mostinckx started developing AmbientTalk/2, de current version of AmbientTalk. The changes between AbmientTalk/1 and AbmientTalk/2 are quite big. There has been
-made a new total new design for most aspects of the language, including the syntax. The reason to change the syntax was to make AmbientTalk more accesible for people who don't have any exerperiance
+In 2006 Tom Van Cutsem and Stijn Mostinckx started developing AmbientTalk/2, the current version of AmbientTalk. The changes between AbmientTalk/1 and AbmientTalk/2 are quite big. There has been
+made a total new design for most aspects of the language, including the syntax. The reason to change the syntax was to make AmbientTalk more accesible for people who don't have any exerperiance
 with Pico. 
 
 AmbtientTalk is still mainly used by students at the VUB to do some research. But, slowly but surely, AmbientTalk became a usefull, handy programming language which was usable to create some
@@ -98,16 +99,25 @@ one project.
 
 The renewing element of AmbientTalk is so big that it became the main subject of the Distributed and Mobile Programming Paradigms course teached at the VUB.
 \subsection{Google Android}
+
+
+
 \subsubsection{General}
+\begin{wrapfigure}{r}{0.5\textwidth}
+  \begin{center}
+    \includegraphics[width=0.48\textwidth]{images/android.png}
+  \end{center}
+  \caption{Android logo}
+\end{wrapfigure}
 Android is an open source platform, owned by Google, for mobile devices. Android is developed by Android Inc., a company bought by Google in 2005, which later placed it 
 within the OHA. 
 
 It's an on Linux based operating systeem and is mainly programmed in C (core), Java (UI) and C++.
 
-Android is originally created bu Android Inc., a company founded by Andy Rubin, Rich Miner, Nick Sears and Chris White in 2003. Their goal was to create an operatingsystem
+Android is originally created by Android Inc., a company founded by Andy Rubin, Rich Miner, Nick Sears and Chris White in 2003. Their goal was to create an operatingsystem
 for \" ... smarter mobile devices that are more aware of its owner's location and preferences\". 
 
-On october 17th 2005 Google bought Android Inc. and made is a part of their company. Even after Google bought the company founders Andy Rubin, Rich Miner and Chris White
+On october 17th 2005 Google bought Android Inc. and made it a part of their company. Even after Google bought the company founders Andy Rubin, Rich Miner and Chris White
 kept working for Android. Allready back then the goal of Google was to focus on the market of mobile devices with Android.
 
 Only on december 9th 2009, together with the founding of OHA, the first product of Google concerning the market of the mobile devices was announced; Android. An on Linux 
@@ -116,13 +126,19 @@ kernel version 2.6 based platform for mobile devices.
 According to estimations in the second quarter of 2009 approximatly 2.8\% of new smartphones had Android as operatingsystem. In the fourth quarter of 2010 this number
 was grown to 33\% what made it the best selling smartphone platform. In the third quater of 2011 this would allready been grown to 52.5\%. In febrauri 2012 Andy Rubin
 said that Google activates 850000 smartphones or tablets on a daily basis. 
+\begin{figure}
+  \centering
+    \includegraphics[width=0.99\textwidth]{images/Android_historical_version_distribution.png}
+  \caption{Android historical version distribution}
+\end{figure}
+
 \subsubsection{Versions}
 Through the years multiple versions of Android were released. In november 2007 there was a beta version released, but only on september 23th 2008 Android 1.0 was released.
 Android 1.0 was introduced on the HTC Dream. This version was allready equiped with the Android Market, an application which gives you the option to download and update
 new applications, camera support, synchronisation with, and use of, most Google products, like Gmail, Google Calendar, Google Contacts, Google Search, Google Talk,... 
 Also Wi-Fi and bluetooth were allready suported, just like a Youtube media player.
 
-After Android 1.0 in febrauri 2009 Android 1.1 was released. After Android 1.1 a next version of Android, Android 1.5 which was given the Cupcake was released followed by 
+After Android 1.0 in febrauri 2009 Android 1.1 was released. After Android 1.1 a next version of Android, Android 1.5 which was given the name Cupcake was released followed by 
 Android 1.6, called Donut. In october 2009 Android 2.0 got released. It was called Eclair. Eclair was followed by Froyo (2.2.x) and later the popular Gingerbread (2.3.x)
 Next to the 2.x series in februari 2011 the 3.x (Honeycomb) version got released. This version was created with focus on tablets and no longer on smathphones.
 
@@ -132,16 +148,21 @@ didn't need to keep two versions up to date but only one. On july 9th 2012 a new
 In Figure X one can see a chart showing global Android version distribution from November 2009 to December 2012.
 
 \subsubsection{Design}
-Android is based on a Linux kernel, with middelware, libraries and APIs written in C and applicationsoftware in Java. In Figure X the architecture of Android is shown.
-The top layer of the figure; the Application Layer are the application which are deployed on the phone when bought, like an SMS program, calendar, internetbrowser,...
+
+Android is based on a Linux kernel, with middleware, libraries and APIs written in C and applicationsoftware in Java. In Figure X the architecture of Android is shown.
+The top layer of the figure; the Application Layer are the applications which are deployed on the phone when bought, like an SMS program, calendar, internetbrowser,...
 All these applications are written in Java. The application framework is made to create an open developing platform. Android gives developers the possibility to develop
 rich and innovative applications, by giving them the liberty to make use of all hardware, like location information, setting alarms, add notifications to the statusbar,...
 
-The libraries layer contains a number of C/C++ libraries which are being used in multiple layers of the Android syste. Developers are able to explore these libraries
+The libraries layer contains a number of C/C++ libraries which are being used in multiple layers of the Android system. Developers are able to explore these libraries
 trough the Android Application framework for developers. Some of these libraries are SGL (a underlaying 2D engine), FreeType (a bitmap and vector renderer), MQLite (a 
 database engine),... The Android Runtime part are a number of core libraries which gives most Java functionalities. Last there is Linux kernel which provides safety, memory
-managment, procress managment, network stacking and driver models. It also functions as abstraction layer between the hardware and the rest of the software.
-
+managment, process managment, network stacking and driver models. It also functions as abstraction layer between the hardware and the rest of the software.
+\begin{figure}
+  \centering
+    \includegraphics[width=0.99\textwidth]{images/Android-System-Architecture.png}
+  \caption{Android System Architecture}
+\end{figure}
 \subsubsection{Open Handset Alliance}
 The Open Handset Alliance (OHA) is a consortsium of 84 firms to develop open standards for mobile devices. Practically this translates in promoting Android. OHA is founded
 on november 5th 2007, with as main founding company Google, together with 34 other firms. These firms are active in creating software, creating mobile devices or creating
@@ -156,8 +177,13 @@ Multi-Touch for Java is developed to make it possible to create multitouch appli
 shapes like rectangles, rounded rectangles, ellipses, polygones,... To each of these forms gestures can be attached. These can be in 2D or 3D. Next to the predefined shapes you can also make use 
 of buttons, textareas, sliders and a multitouch keyboard.
 \subsubsection{Architecture}
-The architecture of MT4j is built in multiple layers which communicate with each other. Using events messages are sent from one layer to another. The differnt layers within MT4j are the 
+The architecture of MT4j is built in multiple layers which communicate with each other. Using events messages are sent from one layer to another. The different layers within MT4j are the 
 Presentation Layer, Input Processing Layer, Input Hardware Abstraction Layer and the Input Hardware Layer.
+\begin{figure}
+  \centering
+    \includegraphics[width=0.99\textwidth]{images/ArchitectureOverview2.png}
+  \caption{MT4j Architecture}
+\end{figure}
 \\
 \\
 \textbf{Input Hardware Layer}
@@ -170,17 +196,17 @@ MT4j already has a number of input methods which are supported, like a keyboard,
 \\
 \textbf{Input Processing Layer}
 \\
-In MT4j the input processor gets used on twho moments within the input event flow. The first moment is when input directly from the Input Hardware Abstraction Layers comes, the other moment
+In MT4j the input processor gets used on two moments within the input event flow. The first moment is when input directly from the Input Hardware Abstraction Layers comes, the other moment
 is at the component level. This means one can recognize gestures which are ment for only one component.
 \\
 \\
 \textbf{Presentation Layer}
 \\
-The Presentation Layer within MT4j uses scenes. Scenes are made to be able to separate  different aspects of a program, input and output, in a nice clean encapsulated 
+The Presentation Layer within MT4j uses scenes. Scenes are made to be able to separate different aspects of a program, input and output, in a nice clean encapsulated 
 manner. An example of multiple scenes could be a game where there's one scene to create the menu and an other scene in which the actual game is played.
 
 Next to scenes MT4j also uses components. Components are parts of a program which can be connected in a hyrachical manner. So one can use a basic component and add multiple
-components within this component. Here we can see the basic component the background of the application, and within this componen one or more other components are used.
+components within this component. Here we can see as the basic component the background of the application, and within this component one or more other components are used.
 
 The most basic component of MT4j is a canvas. A canvas is the link between multiple components and the input of the hardware. It can check what other components are on
 what place within the screen at a given time.
