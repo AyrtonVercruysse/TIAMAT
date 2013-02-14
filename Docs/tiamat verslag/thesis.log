@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.11.20)  1 FEB 2013 17:53
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.11.20)  13 FEB 2013 23:48
 entering extended mode
  %&-line parsing enabled.
 **thesis.tex
@@ -276,7 +276,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.44 ...numberline {2.5}Features}{14}{section.2.5}
+l.47 ...numberline {2.5}Features}{14}{section.2.5}
                                                    [1
 
 ])
@@ -304,180 +304,195 @@ Overfull \hbox (13.01366pt too wide) in paragraph at lines 88--91
 -ing Am-bi-entTalk/2,
  []
 
-[5] [6]
+[5] [6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 159--181
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--181
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--181
+
+ []
+
+[8] [9]
 Chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 105--115
+Underfull \hbox (badness 10000) in paragraph at lines 198--208
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--121
+Underfull \hbox (badness 10000) in paragraph at lines 209--214
 
  []
 
-[7
+[10
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 122--127
+Underfull \hbox (badness 10000) in paragraph at lines 215--220
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--133
+Underfull \hbox (badness 10000) in paragraph at lines 221--226
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--140
-
- []
-
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 141--146
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 147--151
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 153--159
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 160--164
-
- []
-
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 165--169
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 171--175
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 176--180
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 181--185
-
- []
-
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 187--191
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 192--196
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 197--201
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 202--206
+Underfull \hbox (badness 10000) in paragraph at lines 228--233
 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 208--212
+Underfull \hbox (badness 10000) in paragraph at lines 234--239
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 213--217
+Underfull \hbox (badness 10000) in paragraph at lines 240--244
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--252
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 253--257
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 258--262
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 264--268
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--273
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 274--278
+
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 280--284
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 285--289
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--294
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--299
+
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 301--305
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--310
 
  []
 
 Missing character: There is no Â in font ptmb7t!
 Missing character: There is no ° in font ptmb7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--222
+Underfull \hbox (badness 10000) in paragraph at lines 311--315
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--226
+Underfull \hbox (badness 10000) in paragraph at lines 316--319
 
  []
 
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 228--232
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 233--237
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 321--325
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--242
+Underfull \hbox (badness 10000) in paragraph at lines 326--330
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--248
-
- []
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 249--253
+Underfull \hbox (badness 10000) in paragraph at lines 331--335
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--258
+Underfull \hbox (badness 10000) in paragraph at lines 337--341
 
  []
 
-[14] [15]
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 342--346
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 347--351
+
+ []
+
+[17] [18]
 Chapter 3.
 
-Overfull \hbox (4.3177pt too wide) in paragraph at lines 270--274
+Overfull \hbox (4.3177pt too wide) in paragraph at lines 363--367
 \OT1/ptm/m/n/12 TouchDevelop is a pro-gram-ming en-v-ior-ment made for Win-dows
  phones. TouchDe-
  []
 
-[16
+[19
 
-] [17]
+] [20]
 Chapter 4.
-[18
+[21
 
 ]
 Chapter 5.
-[19
+[22
 
 ] (./thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 4680 strings out of 495061
- 67172 string characters out of 1182620
+ 4691 strings out of 495061
+ 67278 string characters out of 1182620
  141482 words of memory out of 3000000
- 7718 multiletter control sequences out of 15000+50000
+ 7719 multiletter control sequences out of 15000+50000
  21819 words of font info for 43 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  38i,16n,36p,251b,382s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/s
 hare/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/f
 onts/type1/urw/times/utmr8a.pfb>
-Output written on thesis.pdf (20 pages, 110250 bytes).
+Output written on thesis.pdf (23 pages, 120618 bytes).
 PDF statistics:
- 349 PDF objects out of 1000 (max. 8388607)
- 75 named destinations out of 1000 (max. 500000)
+ 370 PDF objects out of 1000 (max. 8388607)
+ 85 named destinations out of 1000 (max. 500000)
  355 words of extra memory for PDF output out of 10000 (max. 10000000)
 
