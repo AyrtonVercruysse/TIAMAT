@@ -5,6 +5,7 @@
 \usepackage{times}
 \usepackage[english]{babel}
 \usepackage[colorlinks,urlcolor=blue,linkcolor=blue]{hyperref}
+\usepackage{wrapfig}
 
 \usepackage{vubtitlepage}
 \author{Ayrton Vercruysse}
@@ -27,18 +28,18 @@
 \tableofcontents
 \chapter{Introduction}
 \section{Goal}
-The goal of this document is to be a guide with the organisation, implementation and evaluation of the TIAMAT project. It will explain made choises concerning the implementaion and will evaluate
+This document is made to be a guide with the organisation, implementation and evaluation of the TIAMAT project. It will explain choises that have been made concerning the implementaion and will evaluate
 the relevances of the chosen solution. To illustrate this all the specifications of this project will be listed and we will explain how these are implemented.
-Next to a reflection about how we implemented the project we will alse provide some context. This being why the project is made, who will be using it and as last we will have a look at some 
+Next to a reflection about how we implemented the project we will also provide some context. This being why the project is made, who will be using it and as last we will have a look at some 
 related work.
 Next to the implementation we will have a social experiment with the application. We will distribute the app to several people and let them test the app. We will evaluate if the app is an 
 improvement to the old apps which provide the possibility to create some AmbientTalk programs. 
-Thanks to the implementationdetails the users of the application will be able to use this document as a reference to find what the possibilities of the app are. They can guide a user to use the
+Thanks to the implementation details the users of the application will be able to use this document as a reference to find what the possibilities of the app are. They can guide a user to use the
 app to it's fullest potential.
 
 \section{Scope}
 The scope of this project is a third bachelor thesis at the Vrije Universiteit Brussel. The 3th bachelor thesis is given at third bachelor students computersciences. The goal of this bachelorthesis
-is to let the bachelorstudents  participate in some actual research on the university. This has been chosen over giving the students a predifined task.
+is to let the bachelorstudents  participate in some actual research at the university. This has been chosen over giving the students a predefined task.
 \section{Definitions and Acronyms}
 
 \begin{tabular}{ l l }
@@ -47,60 +48,69 @@ is to let the bachelorstudents  participate in some actual research on the unive
   AST & Abstract Syntax Tree \\
   MANET 	& Mobile Ad-Hoc Network \\
   OHA & Open Handset Alliance \\
-  App & Application. Programs ons smartphones and tablets \\
+  App & Application. Programs on smartphones and tablets \\
   MT4j & Multi-Touch for Java \\
 \end{tabular}
 \section{Product Placement}
-This product is an IDE for AmbientTalk on Android devices. AmbientTalk is a programminglanguage developed to mainly program within Mobile Ad-Hoc networks. MANETs are mostly used to program
-for mobile devices like smarphones and tablets. AmbientTalk is developed to be able to handle with possible disconnects within the MANET.
+This product is an IDE for AmbientTalk on Android devices. AmbientTalk is a programming language developed to mainly program within Mobile Ad-Hoc networks. MANETs are mostly used to program
+for mobile devices like smarphones and tablets. AmbientTalk is developed to be able to handle with possible disconnects within a MANET.
 
-As AmbientTalk programs are made for Android devices one should be able to program on the Andeoid device itselve. Currently, on pc's, AmbientTalk is programmed in Eclipse. There are currently
-several apps which port Eclipse to Android. The only drawback is that these are not developed to be really useable on these devices. Most of them even assume that a keyboard is connected to the
+As AmbientTalk programs are made for Android devices one should be able to program on the Android device itselve. Currently, on pc's, AmbientTalk is programmed in Eclipse. There are currently
+several apps which port Eclipse to Android. The only drawback is that these are not developed to be really useable on these devices. Most of them even assume that there is a keyboard connected to the
 tablet. Other drawbacks are that the screen of the pc version of Eclipse would not fit a much smaller tablet or smartphonescreen.   
 
-The goal of this product is to be a usefull alternative to program AmbientTalk code on an Android device. We won't make use of the exsisting technologies of Eclipse but we will develop an entire
-new technique based on the usage of the internal AST. We will manipulate the AST directly in stead of create a sequence of statements which will be mapped to an AST afterwards.
+The goal of this product is to be a usefull alternative to program AmbientTalk code on an Android device. We won't make use of the existing technologies of Eclipse but instead we will develop an entire
+new technique based on the usage of the internal AST. We will manipulate the AST directly instead of creating a sequence of statements which will be mapped to an AST afterwards.
 
-By manipulating the AST we can make use of predefined templates. This will help with the fact to create sourcecode without defining of sequence of statements. For every possible part of an AST
-a template is created which can be added to the current AST making it possible to create an entire program. 
+By manipulating the AST we can make use of predefined templates. This will help to create sourcecode without defining a sequence of statements. For every possible part of an AST
+a template is created which can be added to the current AST, making it possible to create an entire program. 
 \section{Users}
 The goal of the Application is to be able to create programs on the Android devices. As AmbientTalk is programming language one should have basic knowledge of programming within the AmbientTalk
-enviorment. Without a knowledge of the AmbientTalk language it is not easy to create a sound program.
-As AmbientTalk is developed at the university and momentarely is used as an example on different conferences the app can be helpfull to create a small example of an AmbientTalk program instead 
-of always needing to use a computer.
+environment. Without a knowledge of the AmbientTalk language it is not easy to create a sound program.
+As AmbientTalk is developed at the university and momentarily is used as an example on different conferences the app can be helpfull to create a small example of an AmbientTalk program instead 
+of always need to use a computer.
 
 \section{Used Software}
 \subsection{AmbientTalk}
-AmbientTalk is a programming language develeped at the VUB in 2005. The goal of the language was to focus on making programs within Ad-Hoc networks. This means that AbmientTalk is developed mainly
+AmbientTalk is a programming language developed at the VUB in 2005. The goal of the language was to focus on making programs within Ad-Hoc networks. This means that AbmientTalk is developed mainly
 to create programs on mobile devices. AmbientTalk combines elements from other programming languages such like Scheme (closures), Smalltalk (pure OO), Self (prototypes and delegation) and some
 other languages.
 
-AmbientTalk was originally a part of a doctorate study made by Jessie Dedecker. His goals was to create an extension to the already excisting programminglanguage Pic\% (pic-oh-oh). Pic\% itselve
-was an expension of Pico. Pico was developed by professor Theo D'Hondt in 1996. Pico was developed merely to be used with educational purposes. Pico is being used as a programminglanguage to
+AmbientTalk was originally a part of a doctorate study made by Jessie Dedecker. His goal was to create an extension to the already existing programming language Pic\% (pic-oh-oh). Pic\% itselve
+was an extension of Pico. Pico was developed by professor Theo D'Hondt in 1996. Pico was developed merely to be used with an educational purposes. Pico is being used as a programming language to
 illustrate how programming languages are being made.
 
 Pico got it's design principes and concepts from Scheme. The goal of Pico was to be a programming language based on simple rules, easy to extend. Thanks to the simplicity and extandability of Pico
 this language is often used to do some research to possible extensions and features for programming languages. This is the reason why a lot of offsprings of Pico are created, all with their own
-special attention to certain problems or extensions. When AmbientTalk was being developed special attention was given create distributed programs within an ad-hoc networks.
+special attention to certain problems or extensions. When AmbientTalk was being developed special attention was given create distributed programs within ad-hoc networks.
 Momentarely AmbientTalk/2 is being used. It's the successor of the original AmbientTalk. Even though AmbientTalk/1 was already succesfull concerning the programmingfeatures for mobile Ad-Hoc
 networks it lacked some important features to create bigger software applications, such like exception handling,...
 
 In 2006 Tom Van Cutsem and Stijn Mostinckx started developing AmbientTalk/2, the current version of AmbientTalk. The changes between AbmientTalk/1 and AbmientTalk/2 are quite big. There has been
-made a total new design for most aspects of the language, including the syntax. The reason to change the syntax was to make AmbientTalk more accesible for people who don't have any exerperiance
+made an entire new design for most aspects of the language, including the syntax. The reason to change the syntax was to make AmbientTalk more accesible for people who don't have any experiance
 with Pico. 
 
 AmbtientTalk is still mainly used by students at the VUB to do some research. But, slowly but surely, AmbientTalk became a usefull, handy programming language which was usable to create some
-rather big programs. Because the focus of AmbientTalk lies within the distributed networks and this is still an area in which a lot of research being done there aren't a lot of good alternatives.
+rather big programs. Because the focus of AmbientTalk lies within the distributed networks and this is still an area in which a lot of research is being done there aren't a lot of good alternatives.
 This made AmbientTalk a good alternative to create some real-life software.
 
-The symbiosis with the underlaying Java Virtual Machine enables the possibility to use some parts of the Java programming languages within AmbientTalk, which makes it possible to combine within
+The symbiosis with the underlaying Java Virtual Machine enables the possibility to use some parts of the Java programming languages within AmbientTalk, which makes it possible to combine both languages within
 one project.
 
 The renewing element of AmbientTalk is so big that it became the main subject of the Distributed and Mobile Programming Paradigms course teached at the VUB.
 \subsection{Google Android}
+
+
+
 \subsubsection{General}
-Android is an open source platform, owned by Google, for mobile devices. Android is developed by Android Inc., a company bought by Google in 2005, which later placed it 
-within the OHA. 
+\begin{wrapfigure}{r}{0.5\textwidth}
+  \begin{center}
+    \includegraphics[width=0.48\textwidth]{images/android.png}
+  \end{center}
+  \caption{Android logo}
+\end{wrapfigure}
+Android is an open source platform for mobile devices, owned by Google. Android is developed by Android Inc., a company bought by Google in 2005, which later placed it 
+within the Open Handset Alliance (OHA). 
 
 It's an on Linux based operating systeem and is mainly programmed in C (core), Java (UI) and C++.
 
@@ -114,10 +124,16 @@ Only on december 9th 2009, together with the founding of OHA, the first product 
 kernel version 2.6 based platform for mobile devices.
 
 According to estimations in the second quarter of 2009 approximatly 2.8\% of new smartphones had Android as operatingsystem. In the fourth quarter of 2010 this number
-was grown to 33\% what made it the best selling smartphone platform. In the third quater of 2011 this would allready been grown to 52.5\%. In febrauri 2012 Andy Rubin
+had grown to 33\% what made it the best selling smartphone platform. In the third quater of 2011 this would allready have grown to 52.5\%. In febrauri 2012 Andy Rubin
 said that Google activates 850000 smartphones or tablets on a daily basis. 
+\begin{figure}
+  \centering
+    \includegraphics[width=0.99\textwidth]{images/Android_historical_version_distribution.png}
+  \caption{Android historical version distribution}
+\end{figure}
+
 \subsubsection{Versions}
-Through the years multiple versions of Android were released. In november 2007 there was a beta version released, but only on september 23th 2008 Android 1.0 was released.
+Through the years multiple versions of Android have been released. In november 2007 a beta version was released, but only on september 23th 2008 Android 1.0 was released.
 Android 1.0 was introduced on the HTC Dream. This version was allready equiped with the Android Market, an application which gives you the option to download and update
 new applications, camera support, synchronisation with, and use of, most Google products, like Gmail, Google Calendar, Google Contacts, Google Search, Google Talk,... 
 Also Wi-Fi and bluetooth were allready suported, just like a Youtube media player.
@@ -129,35 +145,45 @@ Next to the 2.x series in februari 2011 the 3.x (Honeycomb) version got released
 In october 2011 Android 4.0.1 (Ice Cream Sandwich) was presented. ICS was the version of Android which should combine the 2.x series and 3.x series to the 4.x series.
 This means that there will be no longer 2 parallel versions of Android, but only one working on both smartphones and tablets. This made it easier for Google, so they 
 didn't need to keep two versions up to date but only one. On july 9th 2012 a new version of the Android 4.x series was released named Jelly Bean (4.1).
-In Figure X one can see a chart showing global Android version distribution from November 2009 to December 2012.
+In Figure 1.2 one can see a chart showing global Android version distribution from November 2009 to December 2012.
 
 \subsubsection{Design}
-Android is based on a Linux kernel, with middleware, libraries and APIs written in C and applicationsoftware in Java. In Figure X the architecture of Android is shown.
+
+Android is based on a Linux kernel, with middleware, libraries and APIs written in C and applicationsoftware in Java. In Figure 1.3 the architecture of Android is shown.
 The top layer of the figure; the Application Layer are the applications which are deployed on the phone when bought, like an SMS program, calendar, internetbrowser,...
 All these applications are written in Java. The application framework is made to create an open developing platform. Android gives developers the possibility to develop
 rich and innovative applications, by giving them the liberty to make use of all hardware, like location information, setting alarms, add notifications to the statusbar,...
 
 The libraries layer contains a number of C/C++ libraries which are being used in multiple layers of the Android system. Developers are able to explore these libraries
-trough the Android Application framework for developers. Some of these libraries are SGL (a underlaying 2D engine), FreeType (a bitmap and vector renderer), MQLite (a 
-database engine),... The Android Runtime part are a number of core libraries which gives most Java functionalities. Last there is Linux kernel which provides safety, memory
+trough the Android Application framework for developers. Some of these libraries are SGL (an underlaying 2D engine), FreeType (a bitmap and vector renderer), MQLite (a 
+database engine),... The Android Runtime part is a number of core libraries which gives most Java functionalities. Last there is the Linux kernel which provides safety, memory
 managment, process managment, network stacking and driver models. It also functions as abstraction layer between the hardware and the rest of the software.
-
+\begin{figure}
+  \centering
+    \includegraphics[width=0.99\textwidth]{images/Android-System-Architecture.png}
+  \caption{Android System Architecture}
+\end{figure}
 \subsubsection{Open Handset Alliance}
 The Open Handset Alliance (OHA) is a consortsium of 84 firms to develop open standards for mobile devices. Practically this translates in promoting Android. OHA is founded
 on november 5th 2007, with as main founding company Google, together with 34 other firms. These firms are active in creating software, creating mobile devices or creating
-chips. The main goal was to make Android a worthy competitor of other mobile platforms like these developed by Apple, Microsoft, Nokia (Symbian), HP, Research in Motion 
+chips. The main goal was to make Android a worthy competitor of other mobile platforms like those developed by Apple, Microsoft, Nokia (Symbian), HP, Research in Motion 
 and Barda.
 
-Some of the company who aided founding OHA were, besides Google, HTC, Sony, Dell, Motorola, Qualcomm, Texas Instruments, Samsung Electronics, LG Electronics, T-Mobile,
+Some of the companies who aided founding OHA were, besides Google, HTC, Sony, Dell, Motorola, Qualcomm, Texas Instruments, Samsung Electronics, LG Electronics, T-Mobile,
 Nvidea,... 
 \subsection{MT4j}
 \subsubsection{General}
-Multi-Touch for Java is developed to make it possible to create multitouch applications within the Java programminglanguage. It's an open source Java Framework. It offers a GUI in which we can use
+Multi-Touch for Java is developed to make it possible to create multitouch applications within the Java programming language. It's an open source Java Framework. It offers a GUI in which we can use
 shapes like rectangles, rounded rectangles, ellipses, polygones,... To each of these forms gestures can be attached. These can be in 2D or 3D. Next to the predefined shapes you can also make use 
 of buttons, textareas, sliders and a multitouch keyboard.
 \subsubsection{Architecture}
-The architecture of MT4j is built in multiple layers which communicate with each other. Using events messages are sent from one layer to another. The different layers within MT4j are the 
+The architecture of MT4j is built in multiple layers which communicate with each other. Using event messages which are sent from one layer to another. The different layers within MT4j are the 
 Presentation Layer, Input Processing Layer, Input Hardware Abstraction Layer and the Input Hardware Layer.
+\begin{figure}
+  \centering
+    \includegraphics[width=0.99\textwidth]{images/ArchitectureOverview2.png}
+  \caption{MT4j Architecture}
+\end{figure}
 \\
 \\
 \textbf{Input Hardware Layer}
@@ -176,11 +202,11 @@ is at the component level. This means one can recognize gestures which are ment 
 \\
 \textbf{Presentation Layer}
 \\
-The Presentation Layer within MT4j uses scenes. Scenes are made to be able to separate  different aspects of a program, input and output, in a nice clean encapsulated 
+The Presentation Layer within MT4j uses scenes. Scenes are made to be able to separate different aspects of a program, input and output, in a nice clean encapsulated 
 manner. An example of multiple scenes could be a game where there's one scene to create the menu and an other scene in which the actual game is played.
 
 Next to scenes MT4j also uses components. Components are parts of a program which can be connected in a hyrachical manner. So one can use a basic component and add multiple
-components within this component. Here we can see the basic component the background of the application, and within this componen one or more other components are used.
+components within this component. Here we can see as the basic component the background of the application, and within this component one or more other components are used.
 
 The most basic component of MT4j is a canvas. A canvas is the link between multiple components and the input of the hardware. It can check what other components are on
 what place within the screen at a given time.
