@@ -8,7 +8,7 @@
 \BOOKMARK [2][-]{subsection.1.6.1}{AmbientTalk}{section.1.6}
 \BOOKMARK [2][-]{subsection.1.6.2}{Google Android}{section.1.6}
 \BOOKMARK [2][-]{subsection.1.6.3}{MT4j}{section.1.6}
-\BOOKMARK [0][-]{chapter.2}{Implementation}{}
+\BOOKMARK [0][-]{chapter.2}{Implementation Status}{}
 \BOOKMARK [1][-]{section.2.1}{ASTs}{chapter.2}
 \BOOKMARK [2][-]{subsection.2.1.1}{Making ASTs}{section.2.1}
 \BOOKMARK [2][-]{subsection.2.1.2}{Deleting ASTs}{section.2.1}
@@ -26,10 +26,10 @@
 \BOOKMARK [2][-]{subsection.2.3.5}{Views}{section.2.3}
 \BOOKMARK [2][-]{subsection.2.3.6}{Gestures}{section.2.3}
 \BOOKMARK [1][-]{section.2.4}{Evaluating code}{chapter.2}
-\BOOKMARK [2][-]{subsection.2.4.1}{Writing code to textfile}{section.2.4}
+\BOOKMARK [2][-]{subsection.2.4.1}{Writing code to text file}{section.2.4}
 \BOOKMARK [2][-]{subsection.2.4.2}{Call external AmbientTalk app}{section.2.4}
 \BOOKMARK [2][-]{subsection.2.4.3}{Return to TIAMAt after evaluating code}{section.2.4}
-\BOOKMARK [1][-]{section.2.5}{Features}{chapter.2}
+\BOOKMARK [1][-]{section.2.5}{Advanced Interactions}{chapter.2}
 \BOOKMARK [2][-]{subsection.2.5.1}{Extra interface for comments}{section.2.5}
 \BOOKMARK [2][-]{subsection.2.5.2}{Speaking comments}{section.2.5}
 \BOOKMARK [2][-]{subsection.2.5.3}{Selector for Java classes}{section.2.5}
@@ -38,6 +38,19 @@
 \BOOKMARK [0][-]{chapter.3}{Related work}{}
 \BOOKMARK [1][-]{section.3.1}{TouchDevelop}{chapter.3}
 \BOOKMARK [1][-]{section.3.2}{Touch Scheme}{chapter.3}
-\BOOKMARK [1][-]{section.3.3}{Editting Haskell as AST rather than text}{chapter.3}
-\BOOKMARK [0][-]{chapter.4}{Evaluation}{}
-\BOOKMARK [0][-]{chapter.5}{Conclusion}{}
+\BOOKMARK [1][-]{section.3.3}{Editing Haskell as AST rather than text}{chapter.3}
+\BOOKMARK [0][-]{chapter.4}{Status}{}
+\BOOKMARK [1][-]{section.4.1}{Progress}{chapter.4}
+\BOOKMARK [2][-]{subsection.4.1.1}{Lay-out engine}{section.4.1}
+\BOOKMARK [2][-]{subsection.4.1.2}{Creating templates from XML}{section.4.1}
+\BOOKMARK [2][-]{subsection.4.1.3}{Extra gestures}{section.4.1}
+\BOOKMARK [2][-]{subsection.4.1.4}{Writing code to text file}{section.4.1}
+\BOOKMARK [1][-]{section.4.2}{Planning}{chapter.4}
+\BOOKMARK [2][-]{subsection.4.2.1}{Templates creating ASTs}{section.4.2}
+\BOOKMARK [2][-]{subsection.4.2.2}{Lay-out engine}{section.4.2}
+\BOOKMARK [2][-]{subsection.4.2.3}{Gestures}{section.4.2}
+\BOOKMARK [2][-]{subsection.4.2.4}{Call external AmbienTalk app}{section.4.2}
+\BOOKMARK [2][-]{subsection.4.2.5}{Multiple tabs}{section.4.2}
+\BOOKMARK [2][-]{subsection.4.2.6}{Saving files, templates}{section.4.2}
+\BOOKMARK [2][-]{subsection.4.2.7}{Extra changes}{section.4.2}
+\BOOKMARK [2][-]{subsection.4.2.8}{Report}{section.4.2}
