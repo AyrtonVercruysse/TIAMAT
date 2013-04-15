@@ -25,26 +25,28 @@ public class RenderManager extends Renderer {
 	Vector3D under = new Vector3D(0,0);
 	MTPolygon node;
 	//MTPolygon parent;
-	MTRectangle drawing;
+	//MTRectangle drawing;
 
 	public RenderManager(MTAndroidApplication mtApplication, vub.ast.Node ast) {
 		super(mtApplication, ast);
 		//this.parent = parent;
-		drawing = super.drawing;
-		drawing.setNoFill(true);
-		drawing.setAnchor(PositionAnchor.UPPER_LEFT);
+		//this.drawing = super.drawing;
+		//drawing.setNoFill(true);
+		//drawing.setAnchor(PositionAnchor.UPPER_LEFT);
 		//parent.addChild(drawing);
 		// TODO Auto-generated constructor stub
 	}
 
-	public void MTRectangle(MTRectangle node, String type, Boolean indent, Boolean resetIndent) {
+	public  MTRectangle render(MTRectangle node, String type, Boolean indent, Boolean resetIndent) {
 		if (resetIndent)
 			indentionsteps = 0;
-		render(node, type, indent);
+		return render(node, type, indent);
 	}
 
 	public MTRectangle render(MTRectangle node, String type, Boolean indent) {
 		this.node = node;
+		//drawing.setStrokeColor(blue); // And the color gets added.
+		//drawing.setNoFill(false);
 		System.out.println("Renderer: Render");
 		nodeHeigth = node.getHeightXY(TransformSpace.RELATIVE_TO_PARENT);
 		nodeWidth = node.getWidthXY(TransformSpace.RELATIVE_TO_PARENT);
@@ -53,7 +55,12 @@ public class RenderManager extends Renderer {
 			indentionsteps++;
 
 		if (type == "next") {
-			next();
+			if (width > 700){
+				indentionsteps++;
+				under();
+			}else{
+				next();
+			}
 		} else if (type == "under") {
 			under();
 		} else {
@@ -62,15 +69,15 @@ public class RenderManager extends Renderer {
 		width = width + nodeWidth;
 		heigth = heigth + nodeHeigth;
 		//node.setPositionRelativeToParent(new Vector3D(1,1));
-		heigth = heigth+2;
-		width =width+2;
-		drawing.setHeightLocal(heigth+2);
-		drawing.setWidthLocal(width+2);
+		drawing.setHeightLocal(heigth);
+		drawing.setWidthLocal(width);
 		return drawing;
 	}
 
 	public MTRectangle render(MTTextArea node, String type, Boolean indent) {
 		System.out.println("Renderer: Render");
+		drawing.setStrokeColor(blue); // And the color gets added.
+		drawing.setNoFill(false);
 		nodeHeigth = node.getHeightXY(TransformSpace.RELATIVE_TO_PARENT);
 		nodeWidth = node.getWidthXY(TransformSpace.RELATIVE_TO_PARENT);
 		System.out.println("RENDERING: " + nodeHeigth + nodeWidth);
@@ -79,8 +86,6 @@ public class RenderManager extends Renderer {
 		width = width + nodeWidth;
 		heigth = heigth + nodeHeigth;
 		//node.setPositionRelativeToParent(new Vector3D(1,1));
-		heigth = nodeHeigth+2;
-		width = nodeWidth+2;
 		drawing.setHeightLocal(heigth);
 		drawing.setWidthLocal(width);
 		return drawing;
@@ -99,8 +104,6 @@ public class RenderManager extends Renderer {
 
 	private void under() {
 		System.out.println("Rendering under");
-		
-		
 		System.out.println("Rendering under2: " + heigth);
 		Vector3D newPos = new Vector3D(0, heigth);
 		System.out.println("Rendering under3:  " + nodeHeigth);
@@ -120,11 +123,9 @@ public class RenderManager extends Renderer {
 	}
 
 	private void next() {
-		
-		
-		System.out.println("Rendering under2: " + heigth);
-		Vector3D newPos = new Vector3D(width, 0);
-		System.out.println("Rendering under3:  " + nodeHeigth);
+		System.out.println("Rendering next2: " + heigth);
+		Vector3D newPos = new Vector3D(width, heigth-nodeHeigth);
+		System.out.println("Rendering next3:  " + nodeHeigth);
 		node.setPositionRelativeToParent(newPos);
 		// TODO Auto-generated method stub
 

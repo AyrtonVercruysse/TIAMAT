@@ -166,11 +166,9 @@ public class Tiamat extends AbstractScene {
 							if (StartTiamat.selected == null) {
 								System.out.println("Nothing selected");
 							} else {
-								vub.ast.Node parent = StartTiamat.selected
-										.getParent();
+								vub.ast.Node parent = StartTiamat.selected.getParent();
 								parent.setChild(StartTiamat.selected,
-										new vub.ast.Placeholder(parent, "deleted",
-												false));
+										new vub.ast.Placeholder(parent, "deleted", false));
 								StartTiamat.selected = null;
 								System.out.println("Deleting");
 								redraw();

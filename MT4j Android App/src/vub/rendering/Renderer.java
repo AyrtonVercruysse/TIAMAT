@@ -28,7 +28,7 @@ import vub.tiamat.StartTiamat;
 import vub.tiamat.Tiamat;
 
 public abstract class Renderer<T extends Node> extends AbstractScene {
-	static protected MTRectangle drawing; // The drawing in which the rendering of the node
+	MTRectangle drawing; // The drawing in which the rendering of the node
 							// happens.
 	miniMenu menu; 
 	MTAndroidApplication mtApplication;
@@ -43,7 +43,9 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 		drawing = new MTRectangle(mtApplication, 0, 0, 200, 200);
 		drawing.setNoFill(true);
 		drawing.setAnchor(PositionAnchor.UPPER_LEFT);
-		
+		drawing.setStrokeColor(red);
+		//drawing.setFillColor(blue); // And the color gets added.
+		drawing.setNoFill(false);
 		tap();
 		tapandhold();
 		rotate();
@@ -58,6 +60,9 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 	static MTColor green = new MTColor(0, 80, 0);
 	static MTColor orange = new MTColor(255,165,0);
 	
+	
+		
+	
 	public void tap(){
 		drawing.registerInputProcessor(new TapProcessor(mtApplication, 25,
 				true, 350));
@@ -70,11 +75,11 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 								System.out.println("new selected");
 								StartTiamat.selected = node;
 								drawing.setStrokeColor(red);
+								drawing.setFillColor(blue); // And the color gets added.
+								drawing.setNoFill(false);
 								if(node.getComments().inUse() ){
 									node.getComments().show();
 								}
-								//if ne value dan show comments.
-								//comments.show();
 							} else {
 								if (StartTiamat.selected == node) {
 									System.out.println("selected selected");

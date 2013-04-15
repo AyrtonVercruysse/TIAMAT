@@ -37,11 +37,15 @@ public class Begin extends Renderer<vub.ast.Begin>{
 	public MTRectangle display(){
 		renderManager= new RenderManager(mtApplication, ast);
 		renderManager.render(open, "next", false);
-		for(int i = 0; i < children.size(); i++){
-			Renderer<?> child = children.get(i);
+		Renderer<?> child = children.get(0);
+    	System.out.println("Render begin child");
+    	MTRectangle childRectangle = child.display();
+    	renderManager.render(childRectangle,"next", false); 
+		for(int i = 1; i < children.size(); i++){
+			child = children.get(i);
         	System.out.println("Render begin child");
-        	MTRectangle childRectangle = child.display();
-        	renderManager.render(childRectangle,"next", false); 
+        	childRectangle = child.display();
+        	renderManager.render(childRectangle,"under", false); 
         	
 		}
 		return renderManager.render(close, "next", false);
@@ -50,9 +54,6 @@ public class Begin extends Renderer<vub.ast.Begin>{
 	public void display(MTRectangle parent,Vector3D position) {
 		Vector3D newPos;
 		parent.addChild(drawing);
-		
-
-		
 		float openHeight;
 		float closeHeight;
 		float height;

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.11.20)  2 APR 2013 23:31
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.11.20)  4 APR 2013 23:59
 entering extended mode
  %&-line parsing enabled.
 **thesis.tex
@@ -249,7 +249,7 @@ LaTeX Info: Redefining \pageref on input line 25.
 \MPscratchDim=\dimen112
 \MPnumerator=\count103
 \everyMPtoPDFconversion=\toks18
-) <VUB_logo.pdf, id=227, 758.835pt x 153.57375pt>
+) <VUB_logo.pdf, id=199, 758.835pt x 153.57375pt>
 File: VUB_logo.pdf Graphic file (type pdf)
  <use VUB_logo.pdf>
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -259,7 +259,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 27.
 
-<VUB_schild.pdf, id=228, 260.975pt x 259.97125pt>
+<VUB_schild.pdf, id=200, 260.975pt x 259.97125pt>
 File: VUB_schild.pdf Graphic file (type pdf)
  <use VUB_schild.pdf>
 Overfull \hbox (88.74036pt too wide) in paragraph at lines 27--27
@@ -312,7 +312,7 @@ Overfull \hbox (13.01366pt too wide) in paragraph at lines 89--92
 -ing Am-bi-entTalk/2,
  []
 
-[5] <images/android.png, id=316, 508.94366pt x 508.94366pt>
+[5] <images/android.png, id=281, 508.94366pt x 508.94366pt>
 File: images/android.png Graphic file (type png)
 
 <use images/android.png>
@@ -321,18 +321,18 @@ Underfull \hbox (badness 2617) in paragraph at lines 120--122
  []
 
 
-<images/Android_historical_version_distribution.png, id=318, 602.25pt x 400.496
+<images/Android_historical_version_distribution.png, id=283, 602.25pt x 400.496
 25pt>
 File: images/Android_historical_version_distribution.png Graphic file (type png
 )
  <use images/Android_historical_version_distribution.png> [6 <./images/android.
 png>] [7 <./images/Android_historical_version_distribution.png>]
-<images/Android-System-Architecture.png, id=334, 741.77126pt x 602.25pt>
+<images/Android-System-Architecture.png, id=299, 741.77126pt x 602.25pt>
 File: images/Android-System-Architecture.png Graphic file (type png)
 
 <use images/Android-System-Architecture.png> [8] [9 <./images/Android-System-Ar
 chitecture.png>]
-<images/ArchitectureOverview2.png, id=347, 701.62125pt x 606.265pt>
+<images/ArchitectureOverview2.png, id=312, 701.62125pt x 606.265pt>
 File: images/ArchitectureOverview2.png Graphic file (type png)
 
 <use images/ArchitectureOverview2.png>
@@ -509,19 +509,19 @@ Missing character: There is no ° in font ptmr7t!
 
 ] [25] (./thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 4811 strings out of 495061
- 69335 string characters out of 1182620
+ 4797 strings out of 495061
+ 69097 string characters out of 1182620
  142680 words of memory out of 3000000
- 7810 multiletter control sequences out of 15000+50000
+ 7803 multiletter control sequences out of 15000+50000
  21819 words of font info for 43 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  38i,16n,36p,271b,382s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</
 usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texl
 ive/fonts/type1/urw/times/utmr8a.pfb>
-Output written on thesis.pdf (26 pages, 413134 bytes).
+Output written on thesis.pdf (26 pages, 408860 bytes).
 PDF statistics:
- 463 PDF objects out of 1000 (max. 8388607)
- 105 named destinations out of 1000 (max. 500000)
- 479 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 427 PDF objects out of 1000 (max. 8388607)
+ 98 named destinations out of 1000 (max. 500000)
+ 423 words of extra memory for PDF output out of 10000 (max. 10000000)
 
