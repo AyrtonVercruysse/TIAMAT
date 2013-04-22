@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Operation extends Node implements Serializable{
 	String operator;
 
-	public Operation(Node parent, String operator) {
+	public Operation(Node parent, String operator, Node[] args) {
 		super(parent);
 		this.operator = operator;
 		Node argument1 = new Placeholder(this, "Arg1", false);
@@ -14,9 +14,9 @@ public class Operation extends Node implements Serializable{
 		addChild(argument2);
 	}
 	
-	public Operation(Node parent, String[] operator, Node[] args) {
+	public Operation(Node parent, String operator) {
 		super(parent);
-		this.operator = operator[0];
+		this.operator = operator;
 		Node argument1 = new Placeholder(this, "Arg1", false);
 		Node argument2 = new Placeholder(this, "Arg2", false);
 		addChild(argument1);

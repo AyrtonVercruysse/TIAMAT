@@ -10,6 +10,12 @@ public class Begin extends Node implements Serializable {
 		Node child = new Placeholder(this, "content", true);
 		addChild(child);
 	}
+	
+	public Begin(Node parent, String content) {
+		super(parent);
+		Node child = new Placeholder(this, content, true);
+		addChild(child);
+	}
 
 	public Node getContent() {
 		return getChild(0);

@@ -38,12 +38,10 @@ public class Begin extends Renderer<vub.ast.Begin>{
 		renderManager= new RenderManager(mtApplication, ast);
 		renderManager.render(open, "next", false);
 		Renderer<?> child = children.get(0);
-    	System.out.println("Render begin child");
     	MTRectangle childRectangle = child.display();
     	renderManager.render(childRectangle,"next", false); 
 		for(int i = 1; i < children.size(); i++){
 			child = children.get(i);
-        	System.out.println("Render begin child");
         	childRectangle = child.display();
         	renderManager.render(childRectangle,"under", false); 
         	

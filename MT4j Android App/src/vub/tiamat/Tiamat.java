@@ -194,7 +194,7 @@ public class Tiamat extends AbstractScene {
 		beginRenderer = (Renderer<?>) visitor.visit(main); // Rendering the AST
 															// starting from the
 												// root.
-		MTRectangle result =beginRenderer.display();
+		MTRectangle result = beginRenderer.display();
 		StartTiamat.general.addChild(result);
 		result.setPositionRelativeToParent(new Vector3D(250,20));
 		//beginRenderer.display(StartTiamat.general, pos); // Display the rendered
@@ -232,11 +232,11 @@ public class Tiamat extends AbstractScene {
 		StartTiamat.definitions.add(Block());
 
 		// Operations
-		StartTiamat.operations.add(Plus());
-		StartTiamat.operations.add(Minus());
-		StartTiamat.operations.add(Devide());
-		StartTiamat.operations.add(Multiply());
-		StartTiamat.operations.add(LesserThan());
+		//StartTiamat.operations.add(Plus());
+		//StartTiamat.operations.add(Minus());
+		//StartTiamat.operations.add(Devide());
+		//StartTiamat.operations.add(Multiply());
+		//StartTiamat.operations.add(LesserThan());
 	}
 
 	/**

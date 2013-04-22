@@ -30,6 +30,7 @@ import vub.tiamat.Tiamat;
 public abstract class Renderer<T extends Node> extends AbstractScene {
 	MTRectangle drawing; // The drawing in which the rendering of the node
 							// happens.
+	boolean selected = false;
 	miniMenu menu; 
 	MTAndroidApplication mtApplication;
 	//static IFont fontArial;
@@ -40,12 +41,9 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 		node = ast;
 		this.mtApplication = mtApplication;
 		node.setComments(new Comments(mtApplication, ast));
-		drawing = new MTRectangle(mtApplication, 0, 0, 200, 200);
-		drawing.setNoFill(true);
+		drawing = new MTRectangle(mtApplication, 0, 0, 1, 1);
+		//drawing.setNoFill(true);
 		drawing.setAnchor(PositionAnchor.UPPER_LEFT);
-		drawing.setStrokeColor(red);
-		//drawing.setFillColor(blue); // And the color gets added.
-		drawing.setNoFill(false);
 		tap();
 		tapandhold();
 		rotate();
@@ -60,10 +58,8 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 	static MTColor green = new MTColor(0, 80, 0);
 	static MTColor orange = new MTColor(255,165,0);
 	
-	
-		
-	
 	public void tap(){
+		//drawing.setFillColor(blue);
 		drawing.registerInputProcessor(new TapProcessor(mtApplication, 25,
 				true, 350));
 		drawing.addGestureListener(TapProcessor.class,
@@ -72,31 +68,40 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 						TapEvent te = (TapEvent) ge;
 						if (te.isTapped()) {
 							if (StartTiamat.selected == null) {
-								System.out.println("new selected");
 								StartTiamat.selected = node;
+								selected = true;
 								drawing.setStrokeColor(red);
-								drawing.setFillColor(blue); // And the color gets added.
+								//drawing.setFillColor(blue);
 								drawing.setNoFill(false);
-								if(node.getComments().inUse() ){
-									node.getComments().show();
+								Tiamat.redraw();
+								if (node.isRoot()){
+									StartTiamat.selected = null;
+									//selecte = false;
+									//drawing.setStrokeColor(white);
 								}
+							//	if(node.getComments().inUse() ){
+							//		node.getComments().show();
+							//	}
 							} else {
 								if (StartTiamat.selected == node) {
-									System.out.println("selected selected");
-									drawing.setStrokeColor(white);
-									if(StartTiamat.selected.getComments().inUse()){
-										StartTiamat.selected.getComments().hide();
-									}
+									//selecte = false;
+									//drawing.setStrokeColor(white);
+									//if(StartTiamat.selected.getComments().inUse()){
+									//	StartTiamat.selected.getComments().hide();
+									//}
 									StartTiamat.selected = null;
 								} else {
-									System.out.println("other selected");
-									drawing.setStrokeColor(red);
-									RenderVisitor.mapping.get(
-											StartTiamat.selected).unselect();
+									//drawing.setStrokeColor(red);
+									//selecte = true;
+									RenderVisitor.mapping.get(StartTiamat.selected).unselect();
 									StartTiamat.selected = node;
-									if(node.getComments().inUse() ){
-										node.getComments().show();
+									if (node.isRoot()){
+										StartTiamat.selected = null;
+										//drawing.setStrokeColor(white);
 									}
+									//if(node.getComments().inUse() ){
+									//	node.getComments().show();
+									//}
 								}
 							}
 						}
@@ -220,6 +225,7 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 					}
 				});
 	}
+	
 	public static MTTextArea makeTextArea(MTAndroidApplication mtApplication,String text) {
 		MTTextArea temp = new MTTextArea(mtApplication, Tiamat.fontArial);
 		temp.setAnchor(PositionAnchor.UPPER_LEFT);
@@ -255,7 +261,7 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 	public void unselect() {
 		drawing.setStrokeColor(white);
 	}
-
+	
 	@Override
 	public void init() {
 	}

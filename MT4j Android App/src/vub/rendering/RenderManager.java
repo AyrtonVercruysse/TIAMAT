@@ -45,8 +45,6 @@ public class RenderManager extends Renderer {
 
 	public MTRectangle render(MTRectangle node, String type, Boolean indent) {
 		this.node = node;
-		//drawing.setStrokeColor(blue); // And the color gets added.
-		//drawing.setNoFill(false);
 		System.out.println("Renderer: Render");
 		nodeHeigth = node.getHeightXY(TransformSpace.RELATIVE_TO_PARENT);
 		nodeWidth = node.getWidthXY(TransformSpace.RELATIVE_TO_PARENT);
@@ -66,83 +64,55 @@ public class RenderManager extends Renderer {
 		} else {
 			System.out.println("RenderManager: Wrong placementtype");
 		}
-		width = width + nodeWidth;
-		heigth = heigth + nodeHeigth;
-		//node.setPositionRelativeToParent(new Vector3D(1,1));
-		drawing.setHeightLocal(heigth);
-		drawing.setWidthLocal(width);
-		return drawing;
-	}
-
-	public MTRectangle render(MTTextArea node, String type, Boolean indent) {
-		System.out.println("Renderer: Render");
-		drawing.setStrokeColor(blue); // And the color gets added.
+		drawing.setHeightLocal(heigth+2);
+		drawing.setWidthLocal(width+2);
+		Vector3D newPos = node.getPosition(TransformSpace.RELATIVE_TO_PARENT);
+		newPos.addLocal(new Vector3D(1,1));
+		node.setPositionRelativeToParent(newPos);
+		if(selected){
+			drawing.setStrokeColor(red);	
+			drawing.setFillColor(white);
+		}
+		
+		//drawing.setFillColor(blue); // And the color gets added.
+		//
 		drawing.setNoFill(false);
-		nodeHeigth = node.getHeightXY(TransformSpace.RELATIVE_TO_PARENT);
-		nodeWidth = node.getWidthXY(TransformSpace.RELATIVE_TO_PARENT);
-		System.out.println("RENDERING: " + nodeHeigth + nodeWidth);
-		drawing.addChild(node);
-		node.setPositionRelativeToParent(new Vector3D(1,1));
-		width = width + nodeWidth;
-		heigth = heigth + nodeHeigth;
-		//node.setPositionRelativeToParent(new Vector3D(1,1));
-		drawing.setHeightLocal(heigth);
-		drawing.setWidthLocal(width);
 		return drawing;
-
-		// We enteren een block met een message "naast of onder, afhankelijk van
-		// de width en hight wordt gekeken waar dit moet komen
-		// Eventueel iets toevoegen voor vaste waarden splittable ofzo.
-		// we kunnen aan kindere width vragen, om afhankelijk daarvan te kiezen
-		// of we eronder of ernaast zetten.
-
 	}
+	
 
 	private void unindent() {
 		indentionsteps = 0;
 	}
 
 	private void under() {
-		System.out.println("Rendering under");
-		System.out.println("Rendering under2: " + heigth);
-		Vector3D newPos = new Vector3D(0, heigth);
-		System.out.println("Rendering under3:  " + nodeHeigth);
+		Vector3D newPos = new Vector3D(indentionsteps*50, heigth);
 		node.setPositionRelativeToParent(newPos);
-	//	heigth = heigth + nodeHeigth;
-	//	width = width + nodeWidth;
-	//	node.setPositionRelativeToParent(new Vector3D(1,1));
-	//	drawing.setHeightLocal(heigth+2);
-	//	drawing.setWidthLocal(width+2);
-		//next.setX(width);
-		//under.setY(heigth);
-		//node.setPositionRelativeToParent(newPos);
-	//	drawing.setHeightLocal(height+2);
-	//	drawing.setWidthLocal(width+2);
-		// TODO Auto-generated method stub
-
+		heigth = heigth + nodeHeigth;
+		if(width < nodeWidth){
+			width = nodeWidth;
+		}
 	}
 
 	private void next() {
-		System.out.println("Rendering next2: " + heigth);
-		Vector3D newPos = new Vector3D(width, heigth-nodeHeigth);
-		System.out.println("Rendering next3:  " + nodeHeigth);
+		Vector3D newPos = new Vector3D(width, 0);
 		node.setPositionRelativeToParent(newPos);
-		// TODO Auto-generated method stub
-
+		width = width+nodeWidth;
+		if(nodeHeigth > heigth){
+			heigth = nodeHeigth;
+		}
 	}
 
 	@Override
 	public MTRectangle display() {
 		return drawing;
-		// TODO Auto-generated method stub
-		
+				
 	}
 
 	@Override
 	public void display(
 			org.mt4j.components.visibleComponents.shapes.MTRectangle parent,
 			Vector3D position) {
-		// TODO Auto-generated method stub
 		
 	}
 

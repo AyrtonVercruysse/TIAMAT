@@ -58,25 +58,33 @@ public class templateReader{
 				Class function = Class.forName(type);
 				Constructor constructor = function.getConstructors()[1];
 				NodeList args = template.getElementsByTagName("args").item(0).getChildNodes();
-				System.out.println("Templ: " + name);				
+				System.out.println("Templ: " + type);				
 				int nrOfArgs = args.getLength();
 				String names[] = new String[nrOfArgs];
 				vub.ast.Node contents[] = new vub.ast.Node[nrOfArgs];
 				for (int j = 0; j < nrOfArgs; j++){
 					Element argument = (Element) args.item(j);
-					
 					String argumentName = argument.getNodeName();
 					names[j] = argument.getAttribute("name");
-									
 					Class argumentsTypes = Class.forName(argumentName);
 					Constructor argumentConstructor = argumentsTypes.getConstructors()[0];
 					vub.ast.Node aerg = (vub.ast.Node)argumentConstructor.newInstance(null, argument.getAttribute("hint"));
 					contents[j] = aerg;
 				}
-					
-				vub.ast.Node tester = (vub.ast.Node)constructor.newInstance(null, names, contents);
-				StartTiamat.functions.add(new Templates(name, tester));
+								
+				if(sort.equals("function")){
+					vub.ast.Node tester = (vub.ast.Node)constructor.newInstance(null, names, contents);
+					StartTiamat.functions.add(new Templates(name, tester));
+					System.out.println("Temp: func");
+				}
+				if(sort.equals("operation")){
+					constructor = function.getConstructors()[0];
+					vub.ast.Node tester = (vub.ast.Node)constructor.newInstance(null, "+" );
+					StartTiamat.operations.add(new Templates(name, tester));
+					System.out.println("Temp: op");
+				}
 			}
+
 	
 		} catch (Exception ex) {
 			System.out.println("TemplatesError");

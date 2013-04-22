@@ -15,64 +15,64 @@
         <name>when:discovered:</name>
         <args>
             <vub.ast.Placeholder name="when" hint="predicate" />
-            <vub.ast.Block name="discovered" hint="block" />
+            <vub.ast.Placeholder name="discovered" hint="block" />
         </args>
     </vub.ast.Function>
 </template>
-<!--  <template type="function" name="while:do:">
-    <edu.vub.ast.Function>
+<template type="function" name="while:do:">
+    <vub.ast.Function>
         <name>while:do:</name>
         <args>
-            <edu.vub.ast.PlaceHolder text="while" hint="predicate" />
-            <edu.vub.ast.PlaceHolder text="do" type="block"/>
+            <vub.ast.Placeholder name="while" hint="predicate" />
+            <vub.ast.Placeholder name="do" hint="block"/>
         </args>
-    </edu.vub.ast.Function>
+    </vub.ast.Function>
 </template>
 <template type="function" name="when:becomes:">
-    <edu.vub.ast.Function>
+    <vub.ast.Function>
         <name>when:becomes:</name>
         <args>
-            <edu.vub.ast.PlaceHolder text="when" hint="predicate" />
-            <edu.vub.ast.PlaceHolder text="becomes" type="block" />
+            <vub.ast.Placeholder name="when" hint="predicate" />
+            <vub.ast.Placeholder name="becomes" hint="block" />
         </args>
-    </edu.vub.ast.Function>
+    </vub.ast.Function>
 </template>
 <template type="function" name="whenever:disconnected:">
-    <edu.vub.ast.Function>
+    <vub.ast.Function>
         <name>whenever:discovered:</name>
         <args>
-            <edu.vub.ast.PlaceHolder text="whenever" hint="predicate" />
-            <edu.vub.ast.PlaceHolder text="disconnected" type="block" />
+            <vub.ast.Placeholder name="whenever" hint="predicate" />
+            <vub.ast.Placeholder name="disconnected" hint="block" />
         </args>
-    </edu.vub.ast.Function>
+    </vub.ast.Function>
 </template>
 <template type="function" name="whenever:reconnected:">
-    <edu.vub.ast.Function>
+    <vub.ast.Function>
         <name>whenever:reconnected:</name>
         <args>
-            <edu.vub.ast.PlaceHolder text="whenever" hint="predicate" />
-            <edu.vub.ast.PlaceHolder text="reconnected" type="block" />
+            <vub.ast.Placeholder name="whenever" hint="predicate" />
+            <vub.ast.Placeholder name="reconnected" hint="block" />
         </args>
-    </edu.vub.ast.Function>
+    </vub.ast.Function>
 </template>
 <template type="function" name="PrintLine">
-    <edu.vub.ast.Function>
+    <vub.ast.Function>
         <name>printLn:</name>
         <args>
-            <edu.vub.ast.PlaceHolder text="system.println" />
+            <vub.ast.Placeholder name="system.println" hint="text" />
         </args>
-    </edu.vub.ast.Function>
+    </vub.ast.Function>
 </template>
 <template type="operation" name="plus">
-    <edu.vub.ast.Operation>
+    <vub.ast.Operation>
         <name>+</name>
         <args>
-            <edu.vub.ast.Placeholder />
-            <edu.vub.ast.Placeholder />
+            <vub.ast.Placeholder name="arg1" hint="arg1"/>
+            <vub.ast.Placeholder name="arg2" hint="arg2"/>
         </args>
-    </edu.vub.ast.Operation>
+    </vub.ast.Operation>
 </template>
-<template type="operation" name="minus">
+<!--  <template type="operation" name="minus">
     <edu.vub.ast.Operation>
         <name>-</name>
         <args>
