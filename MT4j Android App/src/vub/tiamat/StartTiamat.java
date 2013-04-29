@@ -48,7 +48,6 @@ public class StartTiamat extends MTAndroidApplication {
 	@Override
 	public void startUp() {
 		assetManager =  getAssets();
-		
 		addScene(new Tiamat(this, "vub.tiamat", assetManager));
 		boolean mExternalStorageAvailable = false;
 		boolean mExternalStorageWriteable = false;

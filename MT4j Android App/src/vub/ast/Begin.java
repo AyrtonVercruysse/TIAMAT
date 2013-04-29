@@ -2,6 +2,8 @@ package vub.ast;
 
 import java.io.Serializable;
 
+import org.w3c.dom.Element;
+
 import vub.ast.Node;
 
 public class Begin extends Node implements Serializable {
@@ -15,6 +17,11 @@ public class Begin extends Node implements Serializable {
 		super(parent);
 		Node child = new Placeholder(this, content, true);
 		addChild(child);
+	}
+	
+	public Begin(Element template){
+		super(null);
+		System.out.println("Template in de Begin");
 	}
 
 	public Node getContent() {

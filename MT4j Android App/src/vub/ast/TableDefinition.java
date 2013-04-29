@@ -2,6 +2,8 @@ package vub.ast;
 
 import java.io.Serializable;
 
+import org.w3c.dom.Element;
+
 public class TableDefinition extends Node implements Serializable {
 
 	public TableDefinition(Node parent) {
@@ -12,6 +14,11 @@ public class TableDefinition extends Node implements Serializable {
 		addChild(name);
 		addChild(number);
 		addChild(begin);
+	}
+	
+	public TableDefinition(Element template){
+		super(null);
+		System.out.println("Template in de TableDefinition");
 	}
 
 	public Node getNumberOfElements() {

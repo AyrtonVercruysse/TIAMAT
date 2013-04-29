@@ -2,6 +2,8 @@ package vub.ast;
 
 import java.io.Serializable;
 
+import org.w3c.dom.Element;
+
 public class FunctionCall extends Node implements Serializable{
 	String name;
 	FunctionDefinition function;
@@ -12,6 +14,11 @@ public class FunctionCall extends Node implements Serializable{
 		this.function = function;
 		Node argumentList = new ArgumentList(this, function.NumberOfArguments);
 		addChild(argumentList);
+	}
+	
+	public FunctionCall(Element template){
+		super(null);
+		System.out.println("Template in de FunctionCall");
 	}
 
 	public String getName() {

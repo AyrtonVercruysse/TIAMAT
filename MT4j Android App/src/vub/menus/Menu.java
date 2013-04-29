@@ -25,7 +25,7 @@ public abstract class Menu extends AbstractScene {
 	boolean doSlideIn = false;
 	MTRoundRectangle mapMenu;
 	private static String imagePath = "";
-	vub.ast.Begin test = new vub.ast.Begin(null);
+	vub.ast.Begin test = new vub.ast.Begin((vub.ast.Node)null);
 	MTTextArea listLabel;
 	MTListCell cell;
 	MTList list;

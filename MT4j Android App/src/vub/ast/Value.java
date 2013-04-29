@@ -2,6 +2,8 @@ package vub.ast;
 
 import java.io.Serializable;
 
+import org.w3c.dom.Element;
+
 public class Value extends Node implements Serializable{
 	String name;
 	String comments;
@@ -9,6 +11,11 @@ public class Value extends Node implements Serializable{
 		super(parent);
 		this.name = name;
 		type = "Value";
+	}
+	
+	public Value(Element template){
+		super(null);
+		System.out.println("Template in de Value");
 	}
 
 	public String getName() {

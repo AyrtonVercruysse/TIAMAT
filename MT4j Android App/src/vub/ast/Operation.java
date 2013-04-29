@@ -2,6 +2,8 @@ package vub.ast;
 
 import java.io.Serializable;
 
+import org.w3c.dom.Element;
+
 public class Operation extends Node implements Serializable{
 	String operator;
 
@@ -21,6 +23,11 @@ public class Operation extends Node implements Serializable{
 		Node argument2 = new Placeholder(this, "Arg2", false);
 		addChild(argument1);
 		addChild(argument2);
+	}
+	
+	public Operation(Element template){
+		super(null);
+		System.out.println("Template in de Operation");
 	}
 
 	public String getOperator() {

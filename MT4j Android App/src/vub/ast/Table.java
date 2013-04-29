@@ -2,6 +2,8 @@ package vub.ast;
 
 import java.io.Serializable;
 
+import org.w3c.dom.Element;
+
 public class Table extends Node implements Serializable{
 
 	public Table(Node parent, int numberOfElements) {
@@ -11,6 +13,11 @@ public class Table extends Node implements Serializable{
 			child = new Placeholder(this, "Ele " + Integer.toString(i));
 			addChild(child);
 		}
+	}
+	
+	public Table(Element template){
+		super(null);
+		System.out.println("Template in de Table");
 	}
 
 	@Override

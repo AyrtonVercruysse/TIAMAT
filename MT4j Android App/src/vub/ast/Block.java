@@ -2,6 +2,8 @@ package vub.ast;
 
 import java.io.Serializable;
 
+import org.w3c.dom.Element;
+
 public class Block extends Node implements Serializable {
 	int numberOfParameters;
 
@@ -23,6 +25,11 @@ public class Block extends Node implements Serializable {
 		addChild(child);
 		Node content = new Placeholder(this, "Content", true);
 		children.add(content);
+	}
+	
+	public Block(Element template){
+		super(null);
+		System.out.println("Template in de Block");
 	}
 
 	public Node getContent() {

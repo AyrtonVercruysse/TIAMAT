@@ -29,4 +29,5 @@
 <fullyQualifiedTypeName name="java.io.FileWriter"/>
 <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragEvent"/>
+<fullyQualifiedTypeName name="android.view.View"/>
 </qualifiedTypeNameHistroy>

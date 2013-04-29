@@ -8,6 +8,8 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.Vector;
 
+import org.w3c.dom.Element;
+
 import vub.rendering.Comments;
 
 public class Node implements Serializable {
@@ -80,6 +82,10 @@ public class Node implements Serializable {
 	public String toString() {
 		return null;
 	}
+	
+	public void Function(Element template){
+		return;
+	}
 
 	public Object clone() {
 		ObjectOutputStream outStream = null;
@@ -123,5 +129,9 @@ public class Node implements Serializable {
 		}
 		return null;
 	}
+	
+	
 
 }
+
+

@@ -1,6 +1,7 @@
 package vub.ast;
 
 import java.io.Serializable;
+import org.w3c.dom.Element;
 
 public class Function extends Node implements Serializable{
 	String[] names;
@@ -15,6 +16,12 @@ public class Function extends Node implements Serializable{
 			addChild(child);
 		}
 	}
+	
+	public Function(Element template){
+		super(null);
+		System.out.println("Template in de Function");
+	}
+	
 	public Function(Node parent, String[] names, String[] contents) {
 		super(parent);
 		int numberOfChildren = names.length;
@@ -25,6 +32,8 @@ public class Function extends Node implements Serializable{
 			addChild(child);
 		}
 	}
+	
+	
 
 
 	public String[] getNames() {

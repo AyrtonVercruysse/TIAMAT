@@ -38,7 +38,7 @@ public class Function extends Renderer<vub.ast.Function> {
 		for (int i = 0; i < names.length; i++)
 			texts[i] = makeTextArea(mtApplication, names[i]);
 	}
-
+	
 	@Override
 	public void display(MTRectangle parent, Vector3D position) {
 		float currentHeight = 0;

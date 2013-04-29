@@ -2,6 +2,8 @@ package vub.ast;
 
 import java.io.Serializable;
 
+import org.w3c.dom.Element;
+
 public class ArgumentList extends Node implements Serializable {
 
 	public ArgumentList(Node parent, int numberOfArguments) {
@@ -11,6 +13,11 @@ public class ArgumentList extends Node implements Serializable {
 			child = new Placeholder(this, "Arg" + Integer.toString(i), false);
 			addChild(child);
 		}
+	}
+	
+	public ArgumentList(Element template){
+		super(null);
+		System.out.println("Template in de ArgumentList");
 	}
 
 	@Override

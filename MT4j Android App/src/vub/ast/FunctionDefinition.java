@@ -2,6 +2,8 @@ package vub.ast;
 
 import java.io.Serializable;
 
+import org.w3c.dom.Element;
+
 public class FunctionDefinition extends Node implements Serializable{
 	int NumberOfArguments;
 
@@ -14,6 +16,11 @@ public class FunctionDefinition extends Node implements Serializable{
 		addChild(name);
 		addChild(argumentList);
 		addChild(begin);
+	}
+	
+	public FunctionDefinition(Element template){
+		super(null);
+		System.out.println("Template in de FunctionDefinition");
 	}
 
 	public String getName() {

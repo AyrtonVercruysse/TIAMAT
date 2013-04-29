@@ -21,11 +21,11 @@ import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapProces
 import org.mt4j.sceneManagement.AbstractScene;
 import org.mt4j.util.MTColor;
 import org.mt4j.util.math.Vector3D;
-
 import vub.ast.Node;
 import vub.menus.miniMenu;
 import vub.tiamat.StartTiamat;
 import vub.tiamat.Tiamat;
+
 
 public abstract class Renderer<T extends Node> extends AbstractScene {
 	MTRectangle drawing; // The drawing in which the rendering of the node
@@ -34,6 +34,7 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 	miniMenu menu; 
 	MTAndroidApplication mtApplication;
 	//static IFont fontArial;
+	
 	protected T node; // The AST node that needs to be rendered.
 
 	public Renderer(final MTAndroidApplication mtApplication, T ast) {
@@ -73,7 +74,7 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 								drawing.setStrokeColor(red);
 								//drawing.setFillColor(blue);
 								drawing.setNoFill(false);
-								Tiamat.redraw();
+								//Tiamat.redraw();
 								if (node.isRoot()){
 									StartTiamat.selected = null;
 									//selecte = false;
@@ -93,8 +94,9 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 								} else {
 									//drawing.setStrokeColor(red);
 									//selecte = true;
-									RenderVisitor.mapping.get(StartTiamat.selected).unselect();
+									//RenderVisitor.mapping.get(StartTiamat.selected).unselect();
 									StartTiamat.selected = node;
+									drawing.setStrokeColor(red);
 									if (node.isRoot()){
 										StartTiamat.selected = null;
 										//drawing.setStrokeColor(white);

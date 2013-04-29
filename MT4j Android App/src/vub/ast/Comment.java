@@ -2,12 +2,19 @@ package vub.ast;
 
 import java.io.Serializable;
 
+import org.w3c.dom.Element;
+
 import vub.ast.Node;
 
 public class Comment extends Node implements Serializable {
 	public Comment(Node parent, Node item) {
 		super(parent);
 		addChild(item);
+	}
+	
+	public Comment(Element template){
+		super(null);
+		System.out.println("Template in de Comment");
 	}
 
 	public Node getContent() {

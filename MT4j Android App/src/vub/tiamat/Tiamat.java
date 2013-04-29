@@ -25,6 +25,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.net.Uri;
+
 import processing.core.PImage;
 import vub.menus.BeginMenu;
 import vub.menus.DefinitionsMenu;
@@ -52,7 +53,7 @@ public class Tiamat extends AbstractScene {
 										// (the root).
 	static RenderVisitor visitor; // The visitor to the renderers.
 	
-	public static vub.ast.Node main = new vub.ast.Begin(null); // The root node.
+	public static vub.ast.Node main = new vub.ast.Begin((vub.ast.Node)null); // The root node.
 	static MTAndroidApplication mtApplication;
 	static String name;
 	public static BeginMenu beginMenu;
@@ -190,6 +191,7 @@ public class Tiamat extends AbstractScene {
 
 		StartTiamat.general.removeAllChildren(); // All currently used childeren
 													// are removed.
+		System.out.println("Testertje: REDRAW");
 
 		beginRenderer = (Renderer<?>) visitor.visit(main); // Rendering the AST
 															// starting from the
@@ -224,12 +226,12 @@ public class Tiamat extends AbstractScene {
 		new templateReader().templateReader(assetManager);
 
 		// Definitions
-		StartTiamat.definitions.add(Value());
+	/*	StartTiamat.definitions.add(Value());
 		StartTiamat.definitions.add(Definition());
 		StartTiamat.definitions.add(FunctionDefinition());
 		StartTiamat.definitions.add(TableDefinition());
 		StartTiamat.definitions.add(Begin());
-		StartTiamat.definitions.add(Block());
+		StartTiamat.definitions.add(Block());*/
 
 		// Operations
 		//StartTiamat.operations.add(Plus());
@@ -243,7 +245,7 @@ public class Tiamat extends AbstractScene {
 	 * The implementation of the templates.
 	 * */
 	// Definitions
-	public Templates Value() {
+/*	public Templates Value() {
 		vub.ast.Node node = new vub.ast.Value(null, "Empty");
 		return new Templates("Value", node);
 	}
@@ -353,7 +355,7 @@ public class Tiamat extends AbstractScene {
 	public Templates LesserThan() {
 		vub.ast.Node node = new vub.ast.Operation(null, "<");
 		return new Templates("<", node);
-	}
+	}*/
 
 	@Override
 	public void init() {

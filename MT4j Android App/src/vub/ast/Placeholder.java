@@ -2,6 +2,8 @@ package vub.ast;
 
 import java.io.Serializable;
 
+import org.w3c.dom.Element;
+
 public class Placeholder extends Node implements Serializable{
 	String name;
 	Boolean everlasting = false;
@@ -14,6 +16,11 @@ public class Placeholder extends Node implements Serializable{
 	public Placeholder(Node parent, String name) {
 		super(parent);
 		this.name = name;
+	}
+	
+	public Placeholder(Element template){
+		super(null);
+		System.out.println("Template in de Placeholder");
 	}
 
 	public String getName() {

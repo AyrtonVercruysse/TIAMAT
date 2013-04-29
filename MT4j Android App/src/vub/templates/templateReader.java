@@ -51,10 +51,19 @@ public class templateReader{
 			NodeList templates = file.getChildNodes(); //Template
 			for (int i = 0; i < templates.getLength(); i++){
 				Element template = (Element) templates.item(i); 
-				String name = template.getAttribute("name");
-				String sort = template.getAttribute("type");
 				template = (Element) template.getFirstChild();
 				String type = template.getNodeName();
+				System.out.println("Blur:" + type);
+				Class argumentsTypes = Class.forName(type);
+				Constructor argumentConstructor = argumentsTypes.getConstructor(Element.class);
+				vub.ast.Node aerg = (vub.ast.Node)argumentConstructor.newInstance(template);
+				
+				//Constructor argumentConstructor = type.getConstructors()[0];
+				
+				/*String name = template.getAttribute("name");
+				String sort = template.getAttribute("type");
+				template = (Element) template.getFirstChild();
+				
 				Class function = Class.forName(type);
 				Constructor constructor = function.getConstructors()[1];
 				NodeList args = template.getElementsByTagName("args").item(0).getChildNodes();
@@ -82,7 +91,7 @@ public class templateReader{
 					vub.ast.Node tester = (vub.ast.Node)constructor.newInstance(null, "+" );
 					StartTiamat.operations.add(new Templates(name, tester));
 					System.out.println("Temp: op");
-				}
+				}*/
 			}
 
 	
