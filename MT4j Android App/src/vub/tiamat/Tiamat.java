@@ -6,7 +6,10 @@ import java.io.IOException;
 
 import org.mt4j.MTAndroidApplication;
 import org.mt4j.components.visibleComponents.shapes.MTRectangle;
+import org.mt4j.components.visibleComponents.shapes.MTRoundRectangle;
 import org.mt4j.components.visibleComponents.shapes.MTRectangle.PositionAnchor;
+import org.mt4j.components.visibleComponents.widgets.MTList;
+import org.mt4j.components.visibleComponents.widgets.MTListCell;
 import org.mt4j.components.visibleComponents.widgets.MTTextArea;
 import org.mt4j.components.visibleComponents.widgets.buttons.MTImageButton;
 import org.mt4j.input.inputProcessors.IGestureEventListener;
@@ -66,6 +69,8 @@ public class Tiamat extends AbstractScene {
 	public static IFont menuFont;
 	public static IFont fontArial;
 	AssetManager assetManager;
+	static MTRectangle mapMenu;
+	static MTRectangle listLabel;
 	/**
 	 * Initializes a Tiamat instance.
 	 * 
@@ -87,6 +92,38 @@ public class Tiamat extends AbstractScene {
 		Tiamat.name = name;
 		StartTiamat.general = new MTRectangle(mtApplication, 0, 0, 1920, 3200);
 		StartTiamat.general.setPickable(false);
+		
+		mapMenu = new MTRectangle(mtApplication, 0, 0, 0, 1920, 3200);
+		mapMenu.setFillColor(new MTColor(35, 35, 35, 180));
+		mapMenu.setNoFill(true);
+		//mapMenu.setStrokeColor(new MTColor(35, 35, 35, 180));
+		StartTiamat.general.addChild(mapMenu);
+		//StartTiamat.general.setAnchor(PositionAnchor.UPPER_LEFT);
+		mapMenu.setPositionRelativeToParent(new Vector3D(960,1600));
+		MTList list = new MTList(mtApplication, 0, 0, 100, 100);
+		
+		list.setChildClip(null);
+		list.setNoFill(true);
+		list.setNoStroke(true);
+		//list.unregisterAllInputProcessors();
+		list.setAnchor(PositionAnchor.CENTER);
+		mapMenu.addChild(list);
+		
+		MTListCell cell = new MTListCell(mtApplication, 1920, 4000);
+		cell.setChildClip(null);
+		//cell.setFillColor(new MTColor(35, 35, 35, 180));
+		cell.setNoFill(true);
+		
+		listLabel = new MTRectangle(mtApplication, 0, 0, 0, 1920, 4000);
+		//MTRectangle lol= new MTRectangle(mtApplication, 0, 0, 0, 400, 400);
+		//listLabel.addChild(lol);
+		listLabel.setNoFill(true);
+		//lol.setFillColor(vub.rendering.Renderer.red);
+		listLabel.setNoStroke(true);
+		//listLabel.setText("test");
+		cell.addChild(listLabel);
+		list.addListElement(cell);
+
 		//runAT at = new runAT();
 		getCanvas().addChild(StartTiamat.general);
 		beginMenu = new BeginMenu(mtApplication, name);
@@ -192,12 +229,14 @@ public class Tiamat extends AbstractScene {
 		StartTiamat.general.removeAllChildren(); // All currently used childeren
 													// are removed.
 		System.out.println("Testertje: REDRAW");
+		StartTiamat.general.addChild(mapMenu);
 
 		beginRenderer = (Renderer<?>) visitor.visit(main); // Rendering the AST
 															// starting from the
 												// root.
 		MTRectangle result = beginRenderer.display();
-		StartTiamat.general.addChild(result);
+		listLabel.addChild(result);
+		//StartTiamat.general.addChild(result);
 		result.setPositionRelativeToParent(new Vector3D(250,20));
 		//beginRenderer.display(StartTiamat.general, pos); // Display the rendered
 											// AST.

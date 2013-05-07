@@ -54,7 +54,7 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 	// Some colors.
 	static MTColor white = new MTColor(255, 255, 255);
 	static MTColor black = new MTColor(0, 0, 0);
-	static MTColor red = new MTColor(255, 0, 0);
+	public static MTColor red = new MTColor(255, 0, 0);
 	static MTColor blue = new MTColor(0, 0, 255);
 	static MTColor green = new MTColor(0, 80, 0);
 	static MTColor orange = new MTColor(255,165,0);

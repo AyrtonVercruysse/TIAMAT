@@ -12,14 +12,11 @@
 <fullyQualifiedTypeName name="java.lang.Class"/>
 <fullyQualifiedTypeName name="vub.ast.Function"/>
 <fullyQualifiedTypeName name="org.w3c.dom.Text"/>
-<fullyQualifiedTypeName name="java.lang.reflect.Constructor"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTRectangle"/>
 <fullyQualifiedTypeName name="java.util.Vector"/>
 <fullyQualifiedTypeName name="vub.rendering.RenderManager"/>
-<fullyQualifiedTypeName name="vub.tiamat.StartTiamat"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTPolygon"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.widgets.MTTextArea"/>
-<fullyQualifiedTypeName name="vub.ast.Node"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.rotateProcessor.RotateProcessor"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.rotateProcessor.RotateEvent"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.AbstractComponentProcessor"/>
@@ -30,4 +27,9 @@
 <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragEvent"/>
 <fullyQualifiedTypeName name="android.view.View"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Constructor"/>
+<fullyQualifiedTypeName name="org.w3c.dom.NodeList"/>
+<fullyQualifiedTypeName name="vub.tiamat.StartTiamat"/>
+<fullyQualifiedTypeName name="vub.templates.Templates"/>
+<fullyQualifiedTypeName name="vub.ast.Node"/>
 </qualifiedTypeNameHistroy>

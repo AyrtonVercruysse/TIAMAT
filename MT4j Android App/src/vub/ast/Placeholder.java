@@ -1,8 +1,13 @@
 package vub.ast;
 
 import java.io.Serializable;
+import java.lang.reflect.Constructor;
 
 import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+
+import vub.templates.Templates;
+import vub.tiamat.StartTiamat;
 
 public class Placeholder extends Node implements Serializable{
 	String name;
@@ -18,11 +23,16 @@ public class Placeholder extends Node implements Serializable{
 		this.name = name;
 	}
 	
-	public Placeholder(Element template){
+	public Placeholder(Element template) {
 		super(null);
-		System.out.println("Template in de Placeholder");
+		try {
+			this.name = template.getAttribute("hint");
+		} catch (Exception ex) {
+			System.out.println("TemplatesError");
+			ex.printStackTrace();
+		}
 	}
-
+	
 	public String getName() {
 		return name;
 	}
