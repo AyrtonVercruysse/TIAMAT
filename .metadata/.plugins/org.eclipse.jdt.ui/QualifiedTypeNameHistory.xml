@@ -23,13 +23,18 @@
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.scaleProcessor.ScaleProcessor"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragProcessor"/>
 <fullyQualifiedTypeName name="android.os.Environment"/>
-<fullyQualifiedTypeName name="java.io.FileWriter"/>
-<fullyQualifiedTypeName name="java.io.BufferedWriter"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragEvent"/>
 <fullyQualifiedTypeName name="android.view.View"/>
 <fullyQualifiedTypeName name="java.lang.reflect.Constructor"/>
 <fullyQualifiedTypeName name="org.w3c.dom.NodeList"/>
-<fullyQualifiedTypeName name="vub.tiamat.StartTiamat"/>
 <fullyQualifiedTypeName name="vub.templates.Templates"/>
 <fullyQualifiedTypeName name="vub.ast.Node"/>
+<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+<fullyQualifiedTypeName name="android.content.Context"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.io.FileWriter"/>
+<fullyQualifiedTypeName name="java.io.BufferedWriter"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="vub.templates.TemplateWriter"/>
+<fullyQualifiedTypeName name="vub.tiamat.StartTiamat"/>
 </qualifiedTypeNameHistroy>

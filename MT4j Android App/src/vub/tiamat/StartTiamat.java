@@ -42,7 +42,7 @@ public class StartTiamat extends MTAndroidApplication {
 	public static Vector<Templates> variables = new Vector<Templates>();
 	public static Vector<Templates> definitions = new Vector<Templates>();
 	AssetManager assetManager;
-	static BufferedWriter out;
+	public static BufferedWriter out;
 	static BufferedWriter templateBuffered;
 
 	@Override
@@ -68,13 +68,13 @@ public class StartTiamat extends MTAndroidApplication {
                         FileWriter filewriter2 = new FileWriter(templates);
                         out = new BufferedWriter(filewriter);
                         templateBuffered = new BufferedWriter(filewriter2);
-                       // out.write("test");
+                        out.write("test");
                /*         for (int i=0; i<assignArr.size(); i++)
                         {
                             out.write(assignArr.get(i) + "\n");
                             Toast.makeText(MainActivity.this, "out: " + assignArr.get(i), Toast.LENGTH_LONG).show();
                         }*/
-                    //    out.close();
+                        //out.close();
                     }
                 } catch (IOException e) {
                   //  Log.e("TAG", "Could not write file " + e.getMessage());

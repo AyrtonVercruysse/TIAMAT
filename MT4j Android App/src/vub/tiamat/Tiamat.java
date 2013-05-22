@@ -39,6 +39,7 @@ import vub.menus.VariablesMenu;
 import vub.rendering.RenderManager;
 import vub.rendering.RenderVisitor;
 import vub.rendering.Renderer;
+import vub.templates.TemplateWriter;
 import vub.templates.Templates;
 import vub.templates.templateReader;
 import vub.tiamat.StartTiamat;
@@ -71,6 +72,8 @@ public class Tiamat extends AbstractScene {
 	AssetManager assetManager;
 	static MTRectangle mapMenu;
 	static MTRectangle listLabel;
+	static MTListCell cell;
+	
 	/**
 	 * Initializes a Tiamat instance.
 	 * 
@@ -93,38 +96,32 @@ public class Tiamat extends AbstractScene {
 		StartTiamat.general = new MTRectangle(mtApplication, 0, 0, 1920, 3200);
 		StartTiamat.general.setPickable(false);
 		
+		
 		mapMenu = new MTRectangle(mtApplication, 0, 0, 0, 1920, 3200);
 		mapMenu.setFillColor(new MTColor(35, 35, 35, 180));
 		mapMenu.setNoFill(true);
-		//mapMenu.setStrokeColor(new MTColor(35, 35, 35, 180));
 		StartTiamat.general.addChild(mapMenu);
-		//StartTiamat.general.setAnchor(PositionAnchor.UPPER_LEFT);
 		mapMenu.setPositionRelativeToParent(new Vector3D(960,1600));
-		MTList list = new MTList(mtApplication, 0, 0, 100, 100);
 		
+		MTList list = new MTList(mtApplication, 0, 0, 100, 100);
 		list.setChildClip(null);
 		list.setNoFill(true);
 		list.setNoStroke(true);
-		//list.unregisterAllInputProcessors();
+		list.unregisterAllInputProcessors();
 		list.setAnchor(PositionAnchor.CENTER);
 		mapMenu.addChild(list);
 		
 		MTListCell cell = new MTListCell(mtApplication, 1920, 4000);
 		cell.setChildClip(null);
-		//cell.setFillColor(new MTColor(35, 35, 35, 180));
 		cell.setNoFill(true);
+		cell.unregisterAllInputProcessors();
 		
 		listLabel = new MTRectangle(mtApplication, 0, 0, 0, 1920, 4000);
-		//MTRectangle lol= new MTRectangle(mtApplication, 0, 0, 0, 400, 400);
-		//listLabel.addChild(lol);
 		listLabel.setNoFill(true);
-		//lol.setFillColor(vub.rendering.Renderer.red);
 		listLabel.setNoStroke(true);
-		//listLabel.setText("test");
-		cell.addChild(listLabel);
+		listLabel.unregisterAllInputProcessors();
 		list.addListElement(cell);
 
-		//runAT at = new runAT();
 		getCanvas().addChild(StartTiamat.general);
 		beginMenu = new BeginMenu(mtApplication, name);
 		functionsMenu = new FunctionsMenu(mtApplication, name);
@@ -166,7 +163,6 @@ public class Tiamat extends AbstractScene {
 										StartTiamat.out.write(main.toString());
 										StartTiamat.out.close();
 									} catch (IOException e) {
-										// TODO Auto-generated catch block
 										e.printStackTrace();
 									}
 									//at.execute(main.toString());
@@ -220,6 +216,32 @@ public class Tiamat extends AbstractScene {
 		return runButton;
 	}
 
+	
+	public static MTImageButton saveButton(MTAndroidApplication mtApplication) {
+		PImage arrow = mtApplication.loadImage(imagePath + "save.jpg");
+		MTImageButton runButton = new MTImageButton(mtApplication, arrow);
+		runButton.setNoStroke(true);
+		if (MT4jSettings.getInstance().isOpenGlMode())
+			runButton.setUseDirectGL(true);
+		runButton.addGestureListener(TapProcessor.class,
+				new IGestureEventListener() {
+					public boolean processGestureEvent(MTGestureEvent ge) {
+						TapEvent te = (TapEvent) ge;
+						if (te.isTapped()) {
+							System.out.println("save clicked");
+							TemplateWriter b = new TemplateWriter();
+							b.write();
+						}
+						return true;
+					}
+				});
+		runButton.setAnchor(PositionAnchor.UPPER_LEFT);
+		runButton.setPositionRelativeToParent(new Vector3D(1750, 800));
+		return runButton;
+	}
+	
+	
+	
 	/**
 	 * The redraw function rerenders the entire screen.
 	 */
@@ -235,8 +257,8 @@ public class Tiamat extends AbstractScene {
 															// starting from the
 												// root.
 		MTRectangle result = beginRenderer.display();
-		listLabel.addChild(result);
-		//StartTiamat.general.addChild(result);
+		//listLabel.addChild(result);
+		StartTiamat.general.addChild(result);
 		result.setPositionRelativeToParent(new Vector3D(250,20));
 		//beginRenderer.display(StartTiamat.general, pos); // Display the rendered
 											// AST.
@@ -247,6 +269,7 @@ public class Tiamat extends AbstractScene {
 		StartTiamat.general.addChild(deleteButton(mtApplication)); // Add the
 																	// delete
 																	// button.
+		StartTiamat.general.addChild(saveButton(mtApplication));
 	}
 
 	/**

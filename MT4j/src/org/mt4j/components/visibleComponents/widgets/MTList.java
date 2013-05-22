@@ -485,7 +485,7 @@ public class MTList extends MTClipRectangle {
 					theListCellContainer.setAnchor(PositionAnchor.UPPER_LEFT);
 					theListCellContainer.setPositionRelativeToParent(listUpperLeftLocal);
 					//Bounce off list end					
-					startVelocityVec.scaleLocal(-0.25f);
+					//startVelocityVec.scaleLocal(-0.25f);
 				}
 				
 				Vector3D listLowLeftLocal = getListLowerLeftLocal();
@@ -493,7 +493,7 @@ public class MTList extends MTClipRectangle {
 					theListCellContainer.setAnchor(PositionAnchor.LOWER_LEFT);
 					theListCellContainer.setPositionRelativeToParent(listLowLeftLocal);
 					//Bounce off list end
-					startVelocityVec.scaleLocal(-0.25f);
+					//startVelocityVec.scaleLocal(-0.25f);
 				}
 				
 				if (oldController != null){

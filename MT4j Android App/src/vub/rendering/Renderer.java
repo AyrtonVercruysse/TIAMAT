@@ -188,23 +188,23 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 		drawing.removeAllGestureEventListeners(DragProcessor.class);*/
 		
 		drawing.registerInputProcessor(new RotateProcessor(mtApplication));
-		//drawing.addGestureListener(RotateProcessor.class, new RotateVisualizer(mtApplication, getCanvas()));
+		//drawing.addGestureListener(RotateProcessor.class, new IGestureEventListener(mtApplication, getCanvas()));
 		drawing.addGestureListener(RotateProcessor.class,
 				new IGestureEventListener() {
 					public boolean processGestureEvent(MTGestureEvent ge) {
 						RotateEvent th = (RotateEvent) ge;
 						switch (th.getId()) {
-						case RotateEvent.GESTURE_ENDED:
-							if (th.getRotationDegrees() > 1) {
-								th.setRotationDegrees(0);
-								System.out.print("Rotater yest!");
-						}else{
-							System.out.print("Rotaternot!");
-							System.out.print("Rotator" + th.getRotationDegrees());
-							th.setRotationDegrees(0);
+						case RotateEvent.GESTURE_UPDATED:
+							//if (th.getRotationDegrees() > 1) {
+								//th.setRotationDegrees(0);
+								System.out.print("Rotater yest!"+ th.getRotationDegrees());
+						//}else{
+							//System.out.print("Rotaternot!");
+							//System.out.print("Rotator" + th.getRotationDegrees());
+							//th.setRotationDegrees(0);
 
-							Tiamat.redraw();
-						}
+							//Tiamat.redraw();
+						//}
 						return false;
 					}
 						return false;
