@@ -23,7 +23,6 @@
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.scaleProcessor.ScaleProcessor"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragProcessor"/>
 <fullyQualifiedTypeName name="android.os.Environment"/>
-<fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragEvent"/>
 <fullyQualifiedTypeName name="android.view.View"/>
 <fullyQualifiedTypeName name="java.lang.reflect.Constructor"/>
 <fullyQualifiedTypeName name="org.w3c.dom.NodeList"/>
@@ -37,4 +36,7 @@
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="vub.templates.TemplateWriter"/>
 <fullyQualifiedTypeName name="vub.tiamat.StartTiamat"/>
+<fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragEvent"/>
+<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.AbstractShape"/>
+<fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.panProcessor.PanEvent"/>
 </qualifiedTypeNameHistroy>

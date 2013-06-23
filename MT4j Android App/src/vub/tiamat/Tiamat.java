@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 import org.mt4j.MTAndroidApplication;
+import org.mt4j.components.visibleComponents.shapes.AbstractShape;
 import org.mt4j.components.visibleComponents.shapes.MTRectangle;
 import org.mt4j.components.visibleComponents.shapes.MTRoundRectangle;
 import org.mt4j.components.visibleComponents.shapes.MTRectangle.PositionAnchor;
@@ -12,8 +13,12 @@ import org.mt4j.components.visibleComponents.widgets.MTList;
 import org.mt4j.components.visibleComponents.widgets.MTListCell;
 import org.mt4j.components.visibleComponents.widgets.MTTextArea;
 import org.mt4j.components.visibleComponents.widgets.buttons.MTImageButton;
+import org.mt4j.input.gestureAction.DefaultPanAction;
 import org.mt4j.input.inputProcessors.IGestureEventListener;
 import org.mt4j.input.inputProcessors.MTGestureEvent;
+import org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragEvent;
+import org.mt4j.input.inputProcessors.componentProcessors.panProcessor.PanEvent;
+import org.mt4j.input.inputProcessors.componentProcessors.panProcessor.PanProcessorTwoFingers;
 import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapEvent;
 import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapProcessor;
 import org.mt4j.sceneManagement.AbstractScene;
@@ -73,6 +78,7 @@ public class Tiamat extends AbstractScene {
 	static MTRectangle mapMenu;
 	static MTRectangle listLabel;
 	static MTListCell cell;
+	static MTRectangle codeRectangle;
 	
 	/**
 	 * Initializes a Tiamat instance.
@@ -93,36 +99,15 @@ public class Tiamat extends AbstractScene {
 					new MTColor(0, 0, 0));	//Font outline color
 		Tiamat.mtApplication = mtApplication;
 		Tiamat.name = name;
-		StartTiamat.general = new MTRectangle(mtApplication, 0, 0, 1920, 3200);
+		StartTiamat.general = new MTRectangle(mtApplication, 0, 0, 1920, 1200);
 		StartTiamat.general.setPickable(false);
-		
-		
-		mapMenu = new MTRectangle(mtApplication, 0, 0, 0, 1920, 3200);
-		mapMenu.setFillColor(new MTColor(35, 35, 35, 180));
-		mapMenu.setNoFill(true);
-		StartTiamat.general.addChild(mapMenu);
-		mapMenu.setPositionRelativeToParent(new Vector3D(960,1600));
-		
-		MTList list = new MTList(mtApplication, 0, 0, 100, 100);
-		list.setChildClip(null);
-		list.setNoFill(true);
-		list.setNoStroke(true);
-		list.unregisterAllInputProcessors();
-		list.setAnchor(PositionAnchor.CENTER);
-		mapMenu.addChild(list);
-		
-		MTListCell cell = new MTListCell(mtApplication, 1920, 4000);
-		cell.setChildClip(null);
-		cell.setNoFill(true);
-		cell.unregisterAllInputProcessors();
-		
-		listLabel = new MTRectangle(mtApplication, 0, 0, 0, 1920, 4000);
-		listLabel.setNoFill(true);
-		listLabel.setNoStroke(true);
-		listLabel.unregisterAllInputProcessors();
-		list.addListElement(cell);
-
+		codeRectangle = new MTRectangle(mtApplication, 0,0, 1920, 3200);
+		codeRectangle.setAnchor(PositionAnchor.UPPER_LEFT);
+		//codeRectangle.setFillColor(new MTColor(0, 0, 0));
+		codeRectangle.setNoFill(true);
+		codeRectangle.setPositionRelativeToParent(new Vector3D(0,0));
 		getCanvas().addChild(StartTiamat.general);
+		StartTiamat.general.addChild(codeRectangle);
 		beginMenu = new BeginMenu(mtApplication, name);
 		functionsMenu = new FunctionsMenu(mtApplication, name);
 		myFunctionsMenu = new MyFunctionsMenu(mtApplication, name);
@@ -131,6 +116,32 @@ public class Tiamat extends AbstractScene {
 		definitionsMenu = new DefinitionsMenu(mtApplication, name);
 		visitor = new RenderVisitor(mtApplication);
 		
+
+		codeRectangle.unregisterAllInputProcessors();
+		codeRectangle.registerInputProcessor(new PanProcessorTwoFingers(mtApplication));
+		codeRectangle.addGestureListener(PanProcessorTwoFingers.class, new IGestureEventListener() {
+
+            float maxY = 3000;
+            float minY = 10;
+            public boolean processGestureEvent(MTGestureEvent ge) {
+                PanEvent de = (PanEvent)ge;
+                Vector3D moveVector = de.getTranslationVector();
+                if (de.getTarget() instanceof AbstractShape){
+                    AbstractShape s = (AbstractShape)de.getTarget();
+                    de.getTarget().translateGlobal(new Vector3D(0, moveVector.y));
+                    Vector3D center = s.getCenterPointGlobal();
+                    if (center.y > maxY){
+                    	s.setPositionGlobal(new Vector3D(center.x, maxY));
+                        //s.setPositionGlobal(new Vector3D(maxX, center.y));
+                    }else if (center.y < minY){
+                    	s.setPositionGlobal(new Vector3D(center.x, minY));
+                        //s.setPositionGlobal(new Vector3D(minX, center.y));
+                    }
+                }
+                return false;
+            }
+        });
+	
 		redraw();
 	}
 
@@ -248,19 +259,19 @@ public class Tiamat extends AbstractScene {
 	public static void redraw() {
 		Vector3D pos = new Vector3D(250, 0); // The position where the nodes are
 
-		StartTiamat.general.removeAllChildren(); // All currently used childeren
+		codeRectangle.removeAllChildren(); // All currently used childeren
 													// are removed.
 		System.out.println("Testertje: REDRAW");
-		StartTiamat.general.addChild(mapMenu);
+	//	StartTiamat.general.addChild(mapMenu);
 
 		beginRenderer = (Renderer<?>) visitor.visit(main); // Rendering the AST
 															// starting from the
 												// root.
 		MTRectangle result = beginRenderer.display();
 		//listLabel.addChild(result);
-		StartTiamat.general.addChild(result);
+		//codeRectangle.addChild(result);
 		result.setPositionRelativeToParent(new Vector3D(250,20));
-		//beginRenderer.display(StartTiamat.general, pos); // Display the rendered
+		beginRenderer.display(codeRectangle, pos); // Display the rendered
 											// AST.
 		beginMenu.Make(mtApplication, name, false); // Make the begin menu.
 
