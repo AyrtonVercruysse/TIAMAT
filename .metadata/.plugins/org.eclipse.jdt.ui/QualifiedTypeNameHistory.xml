@@ -39,4 +39,5 @@
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragEvent"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.AbstractShape"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.panProcessor.PanEvent"/>
+<fullyQualifiedTypeName name="org.mt4j.components.PickResult"/>
 </qualifiedTypeNameHistroy>

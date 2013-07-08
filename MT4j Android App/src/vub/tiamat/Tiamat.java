@@ -187,6 +187,7 @@ public class Tiamat extends AbstractScene {
 				});
 		runButton.setAnchor(PositionAnchor.UPPER_LEFT);
 		runButton.setPositionRelativeToParent(new Vector3D(1720, 1050));
+		runButton.setName("runbutton");
 		return runButton;
 	}
 
@@ -224,6 +225,7 @@ public class Tiamat extends AbstractScene {
 				});
 		runButton.setAnchor(PositionAnchor.UPPER_LEFT);
 		runButton.setPositionRelativeToParent(new Vector3D(1750, 900));
+		runButton.setName("deletebutton");
 		return runButton;
 	}
 
@@ -248,6 +250,7 @@ public class Tiamat extends AbstractScene {
 				});
 		runButton.setAnchor(PositionAnchor.UPPER_LEFT);
 		runButton.setPositionRelativeToParent(new Vector3D(1750, 800));
+		runButton.setName("savebutton");
 		return runButton;
 	}
 	

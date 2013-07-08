@@ -1,6 +1,8 @@
 package vub.rendering;
 
 import org.mt4j.MTAndroidApplication;
+import org.mt4j.components.MTComponent;
+import org.mt4j.components.PickResult;
 import org.mt4j.components.TransformSpace;
 import org.mt4j.components.visibleComponents.shapes.MTRectangle;
 import org.mt4j.components.visibleComponents.shapes.MTRectangle.PositionAnchor;
@@ -213,7 +215,6 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 		
 		
 		drawing.registerInputProcessor(new DragProcessor(mtApplication));
-		//drawing.addGestureListener(RotateProcessor.class, new RotateVisualizer(mtApplication, getCanvas()));
 		drawing.addGestureListener(DragProcessor.class,
 				new IGestureEventListener() {
 					public boolean processGestureEvent(MTGestureEvent ge) {
@@ -221,6 +222,23 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 						switch (th.getId()) {
 						case DragEvent.GESTURE_ENDED:
 							Tiamat.redraw();
+							Vector3D to = th.getTo();
+							MTComponent test = StartTiamat.general.pick(to.getX(), to.getY()).getNearestPickResult();
+							//test.getNode();
+							System.out.println("Naar waar:" + test);
+							if(test.getName().equals("deletebutton")){
+								Renderer bla = (Renderer) th.getTarget();
+								bla.getNode();
+								
+								
+								vub.ast.Node parent = bla.getNode().getParent();
+								
+								parent.setChild(StartTiamat.selected, new vub.ast.Placeholder(parent, "deleted", false));
+								
+								System.out.println("Deleting");
+								Tiamat.redraw();
+								
+							}
 						return false;
 					}
 						return false;
@@ -262,6 +280,10 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 
 	public void unselect() {
 		drawing.setStrokeColor(white);
+	}
+	
+	public T getNode(){
+		return node;
 	}
 	
 	@Override
