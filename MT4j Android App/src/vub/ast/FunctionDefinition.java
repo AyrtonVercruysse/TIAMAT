@@ -3,6 +3,7 @@ package vub.ast;
 import java.io.Serializable;
 
 import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 public class FunctionDefinition extends Node implements Serializable{
 	int NumberOfArguments;
@@ -19,9 +20,24 @@ public class FunctionDefinition extends Node implements Serializable{
 	}
 	
 	public FunctionDefinition(Element template){
+		/*
+		public Templates FunctionDefinition() {
+		vub.ast.Node node = new vub.ast.FunctionDefinition(null, 0);
+		return new Templates("Function", node);
+		}
+		 */
 		super(null);
-		System.out.println("Template in de FunctionDefinition");
+		try {
+			NodeList args = template.getElementsByTagName("args").item(0).getChildNodes();
+			Element argument = (Element) args.item(0);
+			String argumentName = argument.getNodeValue();
+			System.out.println("FuncDef" + argumentName);
+		} catch (Exception ex) {
+			System.out.println("TemplatesError");
+			ex.printStackTrace();
+		}
 	}
+
 
 	public String getName() {
 		return ((Value) getChild(0)).getName();

@@ -25,6 +25,7 @@ public class Placeholder extends Renderer<vub.ast.Placeholder>{
 		String contentName = node.getName();
 		textArea = makeTextArea(mtApplication, contentName, red);
 		textArea.setFontColor(red);
+		drawing.setName("placeholder");
 	}
 	@Override
 	public void display(MTRectangle parent, Vector3D position) {

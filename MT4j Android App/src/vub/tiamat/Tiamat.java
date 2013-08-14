@@ -3,6 +3,11 @@ package vub.tiamat;
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.lang.reflect.Constructor;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.mt4j.MTAndroidApplication;
 import org.mt4j.components.visibleComponents.shapes.AbstractShape;
@@ -28,11 +33,20 @@ import org.mt4j.util.MTColor;
 import org.mt4j.util.font.FontManager;
 import org.mt4j.util.font.IFont;
 import org.mt4j.util.math.Vector3D;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.w3c.dom.Text;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.net.Uri;
+import android.text.Editable;
+import android.widget.EditText;
 
 import processing.core.PImage;
 import vub.menus.BeginMenu;
@@ -79,6 +93,9 @@ public class Tiamat extends AbstractScene {
 	static MTRectangle listLabel;
 	static MTListCell cell;
 	static MTRectangle codeRectangle;
+	static TemplateWriter b = new TemplateWriter();
+	static String ActionText;
+	static String ActionReply;
 	
 	/**
 	 * Initializes a Tiamat instance.
@@ -91,8 +108,10 @@ public class Tiamat extends AbstractScene {
 	public Tiamat(MTAndroidApplication mtApplication, String name, AssetManager am) {
 		super(mtApplication, name);
 		this.assetManager = am;
+		this.mtApplication = mtApplication;
 		menuFont =FontManager.getInstance().createFont(mtApplication,"arial20.fnt", 12, MTColor.WHITE);
 		makeTemplates();
+		
 		fontArial = FontManager.getInstance().createFont(mtApplication, 
 					"courier20.fnt",  
 					40, 	//Font size
@@ -115,12 +134,12 @@ public class Tiamat extends AbstractScene {
 		variablesMenu = new VariablesMenu(mtApplication, name);
 		definitionsMenu = new DefinitionsMenu(mtApplication, name);
 		visitor = new RenderVisitor(mtApplication);
-		
+		run();
 
 		codeRectangle.unregisterAllInputProcessors();
 		codeRectangle.registerInputProcessor(new PanProcessorTwoFingers(mtApplication));
 		codeRectangle.addGestureListener(PanProcessorTwoFingers.class, new IGestureEventListener() {
-
+			
             float maxY = 3000;
             float minY = 10;
             public boolean processGestureEvent(MTGestureEvent ge) {
@@ -144,6 +163,79 @@ public class Tiamat extends AbstractScene {
 	
 		redraw();
 	}
+	
+	public void run() {
+		final AlertDialog.Builder alert = new AlertDialog.Builder(mtApplication);
+		alert.setTitle("TIAMAT");
+		ActionText = "Do you want to load the files?";
+		alert.setMessage(ActionText);
+		// Set an EditText view to get user input
+		//final EditText input = new EditText(mtApplication);
+		//alert.setView(input);
+		alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int whichButton) {
+				try {
+					System.out.println("Loading23");
+					InputStream is = assetManager.open("save.xml");
+					DocumentBuilderFactory dbFactory = DocumentBuilderFactory
+							.newInstance();
+					DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+					dbFactory.setValidating(true);
+					dbFactory.setIgnoringElementContentWhitespace(true);
+					Document doc = dBuilder.parse(is);
+					doc.getDocumentElement().normalize();
+					Node file = doc.getFirstChild(); //Templates
+					removeWhitespaceNodes((Element) file);
+					NodeList templates = file.getChildNodes(); //Template
+					for (int i = 0; i < templates.getLength(); i++){
+						Element template = (Element) templates.item(i); //Template
+						String name =  template.getAttribute("name");
+						template = (Element) template.getFirstChild(); //Type
+						String type = template.getNodeName();
+						Class argumentsTypes = Class.forName(type); // e.g. Function
+						
+						Constructor argumentConstructor = argumentsTypes.getConstructor(Element.class);
+						vub.ast.Node func = (vub.ast.Node)argumentConstructor.newInstance(template); // Node
+						
+						main = func;
+					}
+				} catch (Exception ex) {
+					System.out.println("TemplatesError");
+					ex.printStackTrace();
+				}
+				//Editable value = input.getText();
+				//ActionReply = value.toString();
+				
+				
+				// Do something with value!
+			}
+		});
+		alert.setNegativeButton("No",
+				new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int whichButton) {
+						// Canceled.
+					}
+				});
+		mtApplication.runOnUiThread(new Runnable() {
+			public void run() {
+				// * The Complete ProgressBar does not appear
+				alert.show();
+			}
+		});
+	}
+	
+	public static void removeWhitespaceNodes(Element e) {
+		NodeList children = e.getChildNodes();
+		for (int i = children.getLength() - 1; i >= 0; i--) {
+		Node child = children.item(i);
+		if (child instanceof Text && ((Text) child).getData().trim().length() == 0) {
+		e.removeChild(child);
+		}
+		else if (child instanceof Element) {
+		removeWhitespaceNodes((Element) child);
+		}
+		}
+		}
 
 	/**
 	 * The runButton makes a button what runs the made code true the AmbientTalk
@@ -171,8 +263,8 @@ public class Tiamat extends AbstractScene {
 									// * The Complete ProgressBar does not appear
 									//runAT at = new runAT();
 									try {
-										StartTiamat.out.write(main.toString());
-										StartTiamat.out.close();
+										StartTiamat.at.write(main.toString());
+										StartTiamat.at.close();
 									} catch (IOException e) {
 										e.printStackTrace();
 									}
@@ -242,8 +334,8 @@ public class Tiamat extends AbstractScene {
 						TapEvent te = (TapEvent) ge;
 						if (te.isTapped()) {
 							System.out.println("save clicked");
-							TemplateWriter b = new TemplateWriter();
-							b.write();
+							
+							b.write(); 
 						}
 						return true;
 					}
@@ -264,6 +356,8 @@ public class Tiamat extends AbstractScene {
 
 		codeRectangle.removeAllChildren(); // All currently used childeren
 													// are removed.
+		StartTiamat.general.removeAllChildren();
+		StartTiamat.general.addChild(codeRectangle);
 		System.out.println("Testertje: REDRAW");
 	//	StartTiamat.general.addChild(mapMenu);
 

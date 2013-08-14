@@ -3,6 +3,7 @@ package vub.ast;
 import java.io.Serializable;
 
 import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 public class Definition extends Node implements Serializable {
 
@@ -16,7 +17,15 @@ public class Definition extends Node implements Serializable {
 
 	public Definition(Element template){
 		super(null);
-		System.out.println("Template in de Definition");
+		Node name = new Placeholder(this, "Function Name", false);
+		Node content = new Placeholder(this, "content", false);
+		addChild(name);
+		addChild(content);
+	
+		/*public Templates Definition() {
+			vub.ast.Node node = new vub.ast.Definition(null);
+			return new Templates("Definition", node);
+		}*/
 	}
 	
 	public Node getName() {

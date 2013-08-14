@@ -37,13 +37,13 @@
 \BOOKMARK [2][-]{subsection.2.5.5}{Saving files}{section.2.5}
 \BOOKMARK [0][-]{chapter.3}{Related work}{}
 \BOOKMARK [1][-]{section.3.1}{TouchDevelop}{chapter.3}
-\BOOKMARK [1][-]{section.3.2}{Touch Scheme}{chapter.3}
-\BOOKMARK [1][-]{section.3.3}{Editing Haskell as AST rather than text}{chapter.3}
+\BOOKMARK [1][-]{section.3.2}{CodeToGo}{chapter.3}
+\BOOKMARK [1][-]{section.3.3}{Lisping}{chapter.3}
+\BOOKMARK [1][-]{section.3.4}{Editing Haskell as AST rather than text}{chapter.3}
 \BOOKMARK [0][-]{chapter.4}{Status}{}
 \BOOKMARK [1][-]{section.4.1}{Progress}{chapter.4}
 \BOOKMARK [2][-]{subsection.4.1.1}{Lay-out engine}{section.4.1}
 \BOOKMARK [2][-]{subsection.4.1.2}{Creating templates from XML}{section.4.1}
 \BOOKMARK [2][-]{subsection.4.1.3}{Extra gestures}{section.4.1}
 \BOOKMARK [2][-]{subsection.4.1.4}{Writing code to text file}{section.4.1}
-\BOOKMARK [1][-]{section.4.2}{Planning}{chapter.4}
-\BOOKMARK [2][-]{subsection.4.2.1}{Extra changes}{section.4.2}
+\BOOKMARK [2][-]{subsection.4.1.5}{Extra changes}{section.4.1}

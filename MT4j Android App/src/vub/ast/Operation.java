@@ -33,25 +33,26 @@ public class Operation extends Node implements Serializable{
 	public Operation(Element template){
 		super(null);
 		try {
-			String name = template.getElementsByTagName("name").item(0).getTextContent();
+			String operator = template.getElementsByTagName("operator").item(0).getTextContent();
 			NodeList args = template.getElementsByTagName("args").item(0).getChildNodes();
-			System.out.println("Templ: " + name);
+			System.out.println("Templ: " + operator);
+			this.operator = operator;
 			int nrOfArgs = args.getLength();
 			String names[] = new String[nrOfArgs];
 			vub.ast.Node contents[] = new vub.ast.Node[nrOfArgs];
 			for (int j = 0; j < nrOfArgs; j++) {
 				Element argument = (Element) args.item(j);
-				names[j] = argument.getAttribute("name");
+				//names[j] = argument.getAttribute("name");
+				argument = (Element) argument.getFirstChild();
 				String argumentName = argument.getNodeName();
 				Class argumentsTypes;
 				argumentsTypes = Class.forName(argumentName);
 				Constructor argumentConstructor = argumentsTypes.getConstructor(Element.class);
 				vub.ast.Node aerg = (vub.ast.Node)argumentConstructor.newInstance(argument);
-				contents[j] = aerg;
-
+				addChild(aerg);
 			}
-			vub.ast.Node func = new Operation(null, name, contents);
-			StartTiamat.operations.add(new Templates(name, func));
+			
+			
 		} catch (Exception ex) {
 			System.out.println("TemplatesError");
 			ex.printStackTrace();

@@ -393,7 +393,9 @@ reconstruct our program. \newline
 \textbf{Priority:} Low \newline
 \textbf{Status: }
 \chapter{Related work}
-\section{TouchDevelop}
+\section{AST manipulation}
+\section{Related software}
+\subsection{TouchDevelop}
 TouchDevelop is a programming environment made for Windows phones. TouchDevelop allows you to create some simple applications for your phone and add these later to the Windows Phone Marketplace. 
 Because TouchDevelop is made to create applications for the device on which they are developed they can make use of really powerful templates. TouchDevelop offers you the possibility to make use 
 of most of the built in sensors and files upon your device, such like media files, web cloud, network, gps,... This makes it possible to develop apps which only react when one shakes the phone or
@@ -405,9 +407,29 @@ is made from scratch to work with Windows Phones, while AmbientTalk was develope
 
 The goal of TouchDevelop was not to be and IDE for an existing programming language, like TIAMAT, but to develop an entire way to create some application on the device for which the application
 is meant to run.  
-\section{Touch Scheme}
-Touch Scheme is developed by a programmer who wanted to program during his vacation on his iPad. To be able to do so he developed an app. His main idea was to edit the parse tree within the app.
-\section{Editing Haskell as AST rather than text}
+
+\subsection{CodeToGo}
+The best known app to create programs on tablets is called CodeToGo. CodeToGo is an app created for iPhone which makes you able to program
+for a wide vary of languages, like C, C++, Clojure, Erlang, Fortran, Haskell Java, PHP, Ruby, Scheme... For each of these languages a built in HelloWorld example. This gives you a good idea of how
+you can create new programs with these languages. It looks like it is a good IDE for programmers, with guidance for 
+
+\subsection{Lisping}
+Lisping is a program formally known as Touch Scheme. Touch Scheme was developed by a programmer who wanted to program during his vacation on his iPad. To be able to do so he developed an app. 
+His main idea was to edit the parse tree within the app.
+
+The huge success of Touch Scheme resulted in a more mature program called Lisping. Lisping is an app which makes you able to write Scheme and Clojure on you iPad. For the same reason as with Tiamat, 
+the unability of tablets to easy change text, they here chose to edit your code via the parse tree. ``Rather than manipulting ranges of characters Lisping focusses on selecting, creating and moving 
+syntax elements''. This sentence from the Lisping website could come straigth from a Tiamat website. The idea behind both apps are clearly the same.
+
+Some differences between Lisping and Tiamat is that with Lisping they don't use templates as frequent as Tiamat. The goal of Tiamat is to make the user able to built an entire programe with even touching the 
+keyboard. If you want the create a function then you click on the create function template within Tiamat, in Lisping you need to start typing (define.... 
+\begin{figure}
+  \centering
+    \includegraphics[width=0.99\textwidth]{images/lisping1.jpg}
+  \caption{Lisping}
+\end{figure}
+
+\subsection{Editing Haskell as AST rather than text}
 Christopher Done has created 'A concept for editing Haskell as an AST rather than text'. This works in a similar way as Tiamat. The idea here is to change certain parts of the AST to the piece of 
 code we want. In the video made by Chistopher Done you can see how he edits his Haskell program by clicking on the places where new parts of the code should come. He fills in the parts of the AST
 by clicking on them and choosing from a list (of templates) what should be entered on this spot.
@@ -426,21 +448,9 @@ After moving code the code returns to its original position when no useful move 
 \subsection{Writing code to text file}
 The basics of writing a string to a text file on the Android device has been implemented.
 
-\section{Planning}
-\subsection{Templates creating ASTs}
-1/4/2013-15/4/2013
-\subsection{Lay-out engine}
-15/4/2013-29/4/2013
-\subsection{Gestures}
-29/4/2013-13/5/2013
-\subsection{Call external AmbienTalk app}
-13/5/2013-20/5/2013
-\subsection{Multiple tabs}
-20/5/2013-27/5/2013
-\subsection{Saving files, templates}
-27/5/2013-3/6/2013
 \subsection{Extra changes}
-\subsection{Report}
-3/6/2013-17/6/2013
+During the changes made in described in the previous sections some extra changes can be made. This could be changes to the lay-out in general,like changing the colors that are being used now, or using the Android 
+back button in stead of the one we created ourselves.
+
 \end{document}
 

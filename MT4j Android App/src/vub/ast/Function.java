@@ -15,27 +15,31 @@ public class Function extends Node implements Serializable {
 	public Function(Element template) {
 		super(null);
 		try {
-			String name = template.getElementsByTagName("name").item(0).getTextContent();
 			NodeList args = template.getElementsByTagName("args").item(0).getChildNodes();
-			System.out.println("Templ: " + name);
 			int nrOfArgs = args.getLength();
 			String names[] = new String[nrOfArgs];
 			vub.ast.Node contents[] = new vub.ast.Node[nrOfArgs];
 			for (int j = 0; j < nrOfArgs; j++) {
 				Element argument = (Element) args.item(j);
-				names[j] = argument.getAttribute("name");
+				names[j] = argument.getAttribute("name"); 
+				argument = (Element) argument.getFirstChild();
 				String argumentName = argument.getNodeName();
 				Class argumentsTypes;
 				argumentsTypes = Class.forName(argumentName);
 				Constructor argumentConstructor = argumentsTypes.getConstructor(Element.class);
 				vub.ast.Node aerg = (vub.ast.Node)argumentConstructor.newInstance(argument);
 				contents[j] = aerg;
-
 			}
-			vub.ast.Node func = new Function(null, names, contents);
-			StartTiamat.functions.add(new Templates(name, func));
+			int numberOfChildren = names.length;
+			this.names = names;
+			Node child;
+			for (int i = 0; i < numberOfChildren; i++) {
+				child = contents[i];
+				addChild(child);
+			}
+			
 		} catch (Exception ex) {
-			System.out.println("TemplatesError");
+			System.out.println("TemplatesError2");
 			ex.printStackTrace();
 		}
 	}
@@ -74,4 +78,32 @@ public class Function extends Node implements Serializable {
 		}
 		return string;
 	}
+	
+	@Override
+	public String toXML(){
+	/*	<vub.ast.Function>
+        <args>
+            <arg name="if">
+                <vub.ast.Placeholder name="condition"/>
+            </arg>
+            <arg name="then">
+                <vub.ast.Placeholder name="consequent"/>
+            </arg>
+            <arg name="else">
+                <vub.ast.Placeholder name="alternative"/>
+            </arg>
+        </args>
+    </vub.ast.Function>*/
+		
+		
+		
+		String string = "<vub.ast.Function><args>" ;
+		for(int i = 0; i < names.length; i++){
+			string = string + "<arg name=\"" + names[i] + "\">" + getChild(i).toXML();
+						
+		}
+		string = string + "</args></vub.ast.Function>";
+		return string;
+	}
+	
 }

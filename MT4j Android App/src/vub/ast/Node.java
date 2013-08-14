@@ -83,6 +83,10 @@ public class Node implements Serializable {
 		return null;
 	}
 	
+	public String toXML() {
+		return null;
+	}
+	
 	public void Function(Element template){
 		return;
 	}
@@ -129,8 +133,6 @@ public class Node implements Serializable {
 		}
 		return null;
 	}
-	
-	
 
 }
 

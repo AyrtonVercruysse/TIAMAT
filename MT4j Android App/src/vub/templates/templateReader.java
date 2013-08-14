@@ -34,67 +34,37 @@ public class templateReader{
 
 	public static void templateReader(AssetManager assetManager) {
 		try {
-		
+			
 			InputStream is = assetManager.open("templates.xml");
-					
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory
 					.newInstance();
-			
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			dbFactory.setValidating(true);
 			dbFactory.setIgnoringElementContentWhitespace(true);
 			Document doc = dBuilder.parse(is);
 			doc.getDocumentElement().normalize();
-				
 			Node file = doc.getFirstChild(); //Templates
 			removeWhitespaceNodes((Element) file);
 			NodeList templates = file.getChildNodes(); //Template
 			for (int i = 0; i < templates.getLength(); i++){
-				Element template = (Element) templates.item(i); 
-				template = (Element) template.getFirstChild();
+				Element template = (Element) templates.item(i); //Template
+				String name =  template.getAttribute("name");
+				template = (Element) template.getFirstChild(); //Type
 				String type = template.getNodeName();
-				System.out.println("Blur:" + type);
-				Class argumentsTypes = Class.forName(type);
+				Class argumentsTypes = Class.forName(type); // e.g. Function
+				
 				Constructor argumentConstructor = argumentsTypes.getConstructor(Element.class);
-				vub.ast.Node aerg = (vub.ast.Node)argumentConstructor.newInstance(template);
-				
-				//Constructor argumentConstructor = type.getConstructors()[0];
-				
-				/*String name = template.getAttribute("name");
-				String sort = template.getAttribute("type");
-				template = (Element) template.getFirstChild();
-				
-				Class function = Class.forName(type);
-				Constructor constructor = function.getConstructors()[1];
-				NodeList args = template.getElementsByTagName("args").item(0).getChildNodes();
-				System.out.println("Templ: " + type);				
-				int nrOfArgs = args.getLength();
-				String names[] = new String[nrOfArgs];
-				vub.ast.Node contents[] = new vub.ast.Node[nrOfArgs];
-				for (int j = 0; j < nrOfArgs; j++){
-					Element argument = (Element) args.item(j);
-					String argumentName = argument.getNodeName();
-					names[j] = argument.getAttribute("name");
-					Class argumentsTypes = Class.forName(argumentName);
-					Constructor argumentConstructor = argumentsTypes.getConstructors()[0];
-					vub.ast.Node aerg = (vub.ast.Node)argumentConstructor.newInstance(null, argument.getAttribute("hint"));
-					contents[j] = aerg;
+				vub.ast.Node func = (vub.ast.Node)argumentConstructor.newInstance(template); // Node
+				System.out.println("Temp" + type);
+				if(type.equals("vub.ast.Function")){
+					StartTiamat.functions.add(new Templates(name, func));
+				}else if(type.equals("vub.ast.Operation")){
+					StartTiamat.operations.add(new Templates(name, func));
+				} else{
+					StartTiamat.definitions.add(new Templates(name, func));
 				}
-								
-				if(sort.equals("function")){
-					vub.ast.Node tester = (vub.ast.Node)constructor.newInstance(null, names, contents);
-					StartTiamat.functions.add(new Templates(name, tester));
-					System.out.println("Temp: func");
-				}
-				if(sort.equals("operation")){
-					constructor = function.getConstructors()[0];
-					vub.ast.Node tester = (vub.ast.Node)constructor.newInstance(null, "+" );
-					StartTiamat.operations.add(new Templates(name, tester));
-					System.out.println("Temp: op");
-				}*/
+				
 			}
-
-	
 		} catch (Exception ex) {
 			System.out.println("TemplatesError");
 			ex.printStackTrace();

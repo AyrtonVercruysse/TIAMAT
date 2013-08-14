@@ -26,7 +26,7 @@ public class Placeholder extends Node implements Serializable{
 	public Placeholder(Element template) {
 		super(null);
 		try {
-			this.name = template.getAttribute("hint");
+			this.name = template.getAttribute("name");
 		} catch (Exception ex) {
 			System.out.println("TemplatesError");
 			ex.printStackTrace();
@@ -39,6 +39,17 @@ public class Placeholder extends Node implements Serializable{
 
 	public void setName(String newName) {
 		name = newName;
+	}
+	
+	@Override
+	public String toString(){
+		return name;
+	}
+	
+	@Override
+	public String toXML(){
+		//  <vub.ast.Placeholder name="consequent"/>
+		return "<vub.ast.Placeholder name=\"" + name + "\"/>";
 	}
 
 }

@@ -1,8 +1,10 @@
 package vub.ast;
 
 import java.io.Serializable;
+import java.lang.reflect.Constructor;
 
 import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 public class Value extends Node implements Serializable{
 	String name;
@@ -15,7 +17,16 @@ public class Value extends Node implements Serializable{
 	
 	public Value(Element template){
 		super(null);
-		System.out.println("Template in de Value");
+		try {
+			type = "Value";
+			NodeList args = template.getElementsByTagName("args").item(0).getChildNodes();
+			Element argument = (Element) args.item(0);
+			String argumentName = argument.getNodeName();
+			this.name = name;
+		} catch (Exception ex) {
+			System.out.println("TemplatesError");
+			ex.printStackTrace();
+		}
 	}
 
 	public String getName() {

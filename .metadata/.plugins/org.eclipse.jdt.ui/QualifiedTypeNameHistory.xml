@@ -27,7 +27,6 @@
 <fullyQualifiedTypeName name="java.lang.reflect.Constructor"/>
 <fullyQualifiedTypeName name="org.w3c.dom.NodeList"/>
 <fullyQualifiedTypeName name="vub.templates.Templates"/>
-<fullyQualifiedTypeName name="vub.ast.Node"/>
 <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
 <fullyQualifiedTypeName name="android.content.Context"/>
 <fullyQualifiedTypeName name="java.io.File"/>
@@ -40,4 +39,9 @@
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.AbstractShape"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.panProcessor.PanEvent"/>
 <fullyQualifiedTypeName name="org.mt4j.components.PickResult"/>
+<fullyQualifiedTypeName name="vub.ast.Node"/>
+<fullyQualifiedTypeName name="android.view.Menu"/>
+<fullyQualifiedTypeName name="android.view.MenuInflater"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="android.view.MenuItem"/>
 </qualifiedTypeNameHistroy>

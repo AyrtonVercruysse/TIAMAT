@@ -18,14 +18,16 @@ public class TemplateWriter{
 
 	public void write() {
 		try {
-			System.out.println("TemplateWriter");
-			StartTiamat.out.write("test");
+			//StartTiamat.reOpen();
+			String XML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?> <templates>" + vub.tiamat.Tiamat.main.toXML()+ "</templates>";
+			System.out.println("TemplateWriter"+ XML);
+			StartTiamat.out.write("XML:" + XML+ "yr");
 			StartTiamat.out.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-	}
+	} 
 
 }

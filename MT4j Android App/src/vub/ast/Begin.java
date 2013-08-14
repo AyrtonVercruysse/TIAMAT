@@ -42,4 +42,14 @@ public class Begin extends Node implements Serializable {
 		return string;
 
 	}
+	
+	@Override
+	public String toXML() {
+		//String string = null;
+		//for (int i = 0; i < numberOfChildren(); i++) {
+		//	string = string + getChild(i).toXML();
+		//}
+		//return string;
+		return getChild(0).toXML();
+	}
 }
