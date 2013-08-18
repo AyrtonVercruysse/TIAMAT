@@ -39,9 +39,22 @@
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.AbstractShape"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.panProcessor.PanEvent"/>
 <fullyQualifiedTypeName name="org.mt4j.components.PickResult"/>
-<fullyQualifiedTypeName name="vub.ast.Node"/>
 <fullyQualifiedTypeName name="android.view.Menu"/>
 <fullyQualifiedTypeName name="android.view.MenuInflater"/>
 <fullyQualifiedTypeName name="android.widget.Toast"/>
 <fullyQualifiedTypeName name="android.view.MenuItem"/>
+<fullyQualifiedTypeName name="vub.tiamat.R.id"/>
+<fullyQualifiedTypeName name="javax.xml.parsers.ParserConfigurationException"/>
+<fullyQualifiedTypeName name="javax.xml.transform.stream.StreamResult"/>
+<fullyQualifiedTypeName name="javax.xml.transform.Transformer"/>
+<fullyQualifiedTypeName name="javax.xml.transform.TransformerFactory"/>
+<fullyQualifiedTypeName name="org.w3c.dom.Element"/>
+<fullyQualifiedTypeName name="javax.xml.transform.dom.DOMSource"/>
+<fullyQualifiedTypeName name="javax.xml.transform.TransformerException"/>
+<fullyQualifiedTypeName name="javax.xml.parsers.DocumentBuilderFactory"/>
+<fullyQualifiedTypeName name="javax.xml.parsers.DocumentBuilder"/>
+<fullyQualifiedTypeName name="org.w3c.dom.Document"/>
+<fullyQualifiedTypeName name="org.w3c.dom.Attr"/>
+<fullyQualifiedTypeName name="vub.ast.Node"/>
+<fullyQualifiedTypeName name="vub.tiamat.Tiamat"/>
 </qualifiedTypeNameHistroy>

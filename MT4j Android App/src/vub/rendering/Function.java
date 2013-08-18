@@ -42,6 +42,7 @@ public class Function extends Renderer<vub.ast.Function> {
 	@Override
 	public void display(MTRectangle parent, Vector3D position) {
 		float currentHeight = 0;
+		
 		System.out.println("Display Funtion");
 		Vector3D newTextPos;
 		Vector3D newPlaceholderPos;

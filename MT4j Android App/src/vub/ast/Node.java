@@ -8,6 +8,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.Vector;
 
+import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 import vub.rendering.Comments;
@@ -83,9 +84,8 @@ public class Node implements Serializable {
 		return null;
 	}
 	
-	public String toXML() {
-		return null;
-	}
+	public void toXML(Element rootElement, Document doc) {
+		}
 	
 	public void Function(Element template){
 		return;

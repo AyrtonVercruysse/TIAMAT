@@ -49,6 +49,7 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 		this.mtApplication = mtApplication;
 		node.setComments(new Comments(mtApplication, ast));
 		drawing = new MTRectangle(mtApplication, 0, 0, 1, 1);
+		//drawing.setFillColor(green);
 		vub.tiamat.StartTiamat.mapping.put(drawing, this);
 		// drawing.setNoFill(true);
 		drawing.setAnchor(PositionAnchor.UPPER_LEFT);
@@ -68,43 +69,30 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 	static MTColor orange = new MTColor(255, 165, 0);
 
 	public void tap() {
-		// drawing.setFillColor(blue);
-		drawing.registerInputProcessor(new TapProcessor(mtApplication, 25,
-				true, 350));
-		drawing.addGestureListener(TapProcessor.class,
-				new IGestureEventListener() {
+		drawing.registerInputProcessor(new TapProcessor(mtApplication, 25, true, 350));
+		drawing.addGestureListener(TapProcessor.class, new IGestureEventListener() {
 					public boolean processGestureEvent(MTGestureEvent ge) {
 						TapEvent te = (TapEvent) ge;
 						if (te.isTapped()) {
 							if (StartTiamat.selected == null) {
+								System.out.println("Selected!" + node);
 								StartTiamat.selected = node;
-								selected = true;
-								drawing.setStrokeColor(red);
-								//drawing.setFillColor(blue);
-								drawing.setNoFill(false);
-								// Tiamat.redraw();
+								Tiamat.redraw();
 								if (node.isRoot()) {
 									StartTiamat.selected = null;
-									// selecte = false;
-									// drawing.setStrokeColor(white);
 								}
-								// if(node.getComments().inUse() ){
-								// node.getComments().show();
-								// }
+								
 							} else {
 								if (StartTiamat.selected == node) {
-									// selecte = false;
-									// drawing.setStrokeColor(white);
-									// if(StartTiamat.selected.getComments().inUse()){
-									// StartTiamat.selected.getComments().hide();
-									// }
 									StartTiamat.selected = null;
+									System.out.println("UnSelected!" + node);
+									Tiamat.redraw();
 								} else {
 									// drawing.setStrokeColor(red);
 									// selecte = true;
 									// RenderVisitor.mapping.get(StartTiamat.selected).unselect();
 									StartTiamat.selected = node;
-									drawing.setStrokeColor(red);
+									Tiamat.redraw();
 									if (node.isRoot()) {
 										StartTiamat.selected = null;
 										// drawing.setStrokeColor(white);
@@ -160,8 +148,6 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 									}
 
 								} else {
-									drawing.setNoFill(false);
-									drawing.setFillColor(green);
 									vub.ast.Node parent = node.getParent();
 									vub.ast.Node newNode = new vub.ast.Comment(
 											parent, node);

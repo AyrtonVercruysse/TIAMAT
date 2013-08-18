@@ -334,8 +334,8 @@ public class Tiamat extends AbstractScene {
 						TapEvent te = (TapEvent) ge;
 						if (te.isTapped()) {
 							System.out.println("save clicked");
-							
-							b.write(); 
+							b.write2();
+							//b.write(); 
 						}
 						return true;
 					}
@@ -366,9 +366,9 @@ public class Tiamat extends AbstractScene {
 												// root.
 		MTRectangle result = beginRenderer.display();
 		//listLabel.addChild(result);
-		//codeRectangle.addChild(result);
+		codeRectangle.addChild(result);
 		result.setPositionRelativeToParent(new Vector3D(250,20));
-		beginRenderer.display(codeRectangle, pos); // Display the rendered
+		//beginRenderer.display(codeRectangle, pos); // Display the rendered
 											// AST.
 		beginMenu.Make(mtApplication, name, false); // Make the begin menu.
 

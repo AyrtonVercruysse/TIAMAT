@@ -3,6 +3,7 @@ package vub.ast;
 import java.io.Serializable;
 import java.lang.reflect.Constructor;
 
+import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
@@ -80,7 +81,7 @@ public class Function extends Node implements Serializable {
 	}
 	
 	@Override
-	public String toXML(){
+	public void toXML(Element rootElement, Document doc){
 	/*	<vub.ast.Function>
         <args>
             <arg name="if">
@@ -95,15 +96,29 @@ public class Function extends Node implements Serializable {
         </args>
     </vub.ast.Function>*/
 		
+		// staff elements 
+		//Element staff = doc.createElement("Staff");
+		//rootElement.appendChild(staff);
+ 
+		// set attribute to staff element
+		//Attr attr = doc.createAttribute("id");
+		//attr.setValue("1");
+		//staff.setAttributeNode(attr);
+ 
+		// shorten way
+		// staff.setAttribute("id", "1");
 		
+		Element function = doc.createElement("vub.ast.Function");
 		
-		String string = "<vub.ast.Function><args>" ;
+		Element args  = doc.createElement("args");
 		for(int i = 0; i < names.length; i++){
-			string = string + "<arg name=\"" + names[i] + "\">" + getChild(i).toXML();
-						
+			Element arg = doc.createElement("arg");
+			getChild(i).toXML(arg, doc);
+			args.appendChild(arg);
 		}
-		string = string + "</args></vub.ast.Function>";
-		return string;
+		function.appendChild(args);
+		rootElement.appendChild(function);
+					
 	}
 	
 }

@@ -8,11 +8,17 @@ import org.mt4j.components.visibleComponents.shapes.MTPolygon;
 import org.mt4j.components.visibleComponents.shapes.MTRectangle;
 import org.mt4j.components.visibleComponents.shapes.MTRectangle.PositionAnchor;
 import org.mt4j.components.visibleComponents.widgets.MTTextArea;
+import org.mt4j.input.inputProcessors.IGestureEventListener;
+import org.mt4j.input.inputProcessors.MTGestureEvent;
+import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapEvent;
+import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapProcessor;
 import org.mt4j.util.math.Vector3D;
 
 import vub.ast.Definition;
 import vub.ast.Node;
 import vub.tiamat.StartTiamat;
+import vub.tiamat.Tiamat;
+import vub.menus.miniMenu;
 import vub.rendering.Renderer;
 
 public class RenderManager extends Renderer {
@@ -23,12 +29,14 @@ public class RenderManager extends Renderer {
 	private float nodeHeigth;
 	Vector3D next = new Vector3D(0,0);
 	Vector3D under = new Vector3D(0,0);
+	vub.ast.Node ast;
 	MTPolygon node;
 	//MTPolygon parent;
 	//MTRectangle drawing;
 
 	public RenderManager(MTAndroidApplication mtApplication, vub.ast.Node ast) {
 		super(mtApplication, ast);
+		this.ast = ast;
 		//this.parent = parent;
 		//this.drawing = super.drawing;
 		//drawing.setNoFill(true);
@@ -43,9 +51,33 @@ public class RenderManager extends Renderer {
 		return render(node, type, indent);
 	}
 
-	public MTRectangle render(MTRectangle node, String type, Boolean indent) {
+	public MTRectangle render(final MTRectangle node, String type, Boolean indent) {
 		this.node = node;
+		/*if(StartTiamat.selected == null){
+			StartTiamat.general.setFillColor(white);
+			
+			System.out.println("RenderRender");
+			
+		}else StartTiamat.general.setFillColor(green);*/
+		StartTiamat.general.setFillColor(white);
+		System.out.println("Kleur" + drawing.getFillColor());
+		if(ast == StartTiamat.selected){
+			System.out.println("Ja Hoor!"+ ast);
+			drawing.setNoFill(false);
+			drawing.setStrokeColor(red);
+			//StartTiamat.general.setFillColor(green);
+			System.out.println("Kleur" + drawing.getFillColor());
+			
+			//node.setFillColor(blue);
+			
+		}//else node.setFillColor(white);
+		//if (ast == StartTiamat.selected){
+		//	node.setNoFill(false);
+		//	node.setStrokeColor(green);
+		//}
+		
 		System.out.println("Renderer: Render");
+		
 		nodeHeigth = node.getHeightXY(TransformSpace.RELATIVE_TO_PARENT);
 		nodeWidth = node.getWidthXY(TransformSpace.RELATIVE_TO_PARENT);
 		drawing.addChild(node);
@@ -64,19 +96,26 @@ public class RenderManager extends Renderer {
 		} else {
 			System.out.println("RenderManager: Wrong placementtype");
 		}
+		
 		drawing.setHeightLocal(heigth+2);
 		drawing.setWidthLocal(width+2);
+		//super.drawing.setHeightLocal(5);
+		//super.drawing.setWidthLocal(5);
+		//super.drawing.setFillColor(green);
 		Vector3D newPos = node.getPosition(TransformSpace.RELATIVE_TO_PARENT);
 		newPos.addLocal(new Vector3D(1,1));
 		node.setPositionRelativeToParent(newPos);
-		if(selected){
+		/*if(selected){
 			drawing.setStrokeColor(red);	
 			drawing.setFillColor(white);
 		}
-		
+		*/
 		//drawing.setFillColor(blue); // And the color gets added.
 		//
-		drawing.setNoFill(false);
+		//drawing.setNoFill(false);
+		
+		
+		
 		return drawing;
 	}
 	

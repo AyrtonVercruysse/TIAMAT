@@ -2,6 +2,7 @@ package vub.ast;
 
 import java.io.Serializable;
 
+import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 import vub.ast.Node;
@@ -21,7 +22,8 @@ public class Begin extends Node implements Serializable {
 	
 	public Begin(Element template){
 		super(null);
-		System.out.println("Template in de Begin");
+		Node child = new Placeholder(this, "content", true);
+		addChild(child);
 	}
 
 	public Node getContent() {
@@ -44,12 +46,16 @@ public class Begin extends Node implements Serializable {
 	}
 	
 	@Override
-	public String toXML() {
+	public void toXML(Element rootElement, Document doc) {
 		//String string = null;
 		//for (int i = 0; i < numberOfChildren(); i++) {
 		//	string = string + getChild(i).toXML();
 		//}
 		//return string;
-		return getChild(0).toXML();
+		Element begin = doc.createElement("vub.ast.Begin");
+		for (int i = 0; i < numberOfChildren(); i++) {
+			getChild(i).toXML(begin, doc);
+		}
+		rootElement.appendChild(begin);
 	}
 }

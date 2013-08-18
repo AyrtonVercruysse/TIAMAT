@@ -3,6 +3,7 @@ package vub.ast;
 import java.io.Serializable;
 import java.lang.reflect.Constructor;
 
+import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
@@ -47,9 +48,13 @@ public class Placeholder extends Node implements Serializable{
 	}
 	
 	@Override
-	public String toXML(){
+	public void toXML(Element rootElement, Document doc){
 		//  <vub.ast.Placeholder name="consequent"/>
-		return "<vub.ast.Placeholder name=\"" + name + "\"/>";
+		// staff elements 
+		//<vub.ast.Placeholder name="condition"/>
+		Element placeholder = doc.createElement("vub.ast.Placeholder");
+		placeholder.setAttribute("name", name);
+		rootElement.appendChild(placeholder);
 	}
 
 }

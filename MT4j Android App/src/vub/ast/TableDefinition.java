@@ -18,7 +18,12 @@ public class TableDefinition extends Node implements Serializable {
 	
 	public TableDefinition(Element template){
 		super(null);
-		System.out.println("Template in de TableDefinition");
+		Node name = new Placeholder(this, "Name");
+		Node number = new Placeholder(this, "Number");
+		Node begin = new Begin(this);
+		addChild(name);
+		addChild(number);
+		addChild(begin);
 	}
 
 	public Node getNumberOfElements() {

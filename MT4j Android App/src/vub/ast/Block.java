@@ -5,7 +5,7 @@ import java.io.Serializable;
 import org.w3c.dom.Element;
 
 public class Block extends Node implements Serializable {
-	int numberOfParameters;
+	int numberOfParameters = 0;
 
 	public Block(Node parent, int numberOfParameters) {
 		super(parent);
@@ -29,7 +29,14 @@ public class Block extends Node implements Serializable {
 	
 	public Block(Element template){
 		super(null);
-		System.out.println("Template in de Block");
+		Node child;
+		for (int i = 0; i < numberOfParameters; i++) {
+			child = new Placeholder(this, "Par" + Integer.toString(i), false);
+			addChild(child);
+		}
+		Node content = new Placeholder(this, "Content", true);
+		this.numberOfParameters = numberOfParameters;
+		children.add(content);
 	}
 
 	public Node getContent() {

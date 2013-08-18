@@ -23,6 +23,7 @@ import processing.core.PImage;
 import vub.ast.Node;
 import vub.rendering.Renderer;
 import vub.templates.Templates;
+import vub.tiamat.R;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -137,5 +138,27 @@ public class StartTiamat extends MTAndroidApplication {
 
 	}
 
+	/*@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.game_menu, menu);
+	    return true;
+	}
+	
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Handle item selection
+	    switch (item.getItemId()) {
+	        case R.id.new_game:
+	            //newGame();
+	            return true;
+	        case R.id.help:
+	            //showHelp();
+	            return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}*/
 	
 }

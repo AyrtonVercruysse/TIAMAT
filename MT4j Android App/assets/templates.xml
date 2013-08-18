@@ -15,7 +15,7 @@
         </args>
     </vub.ast.Function>
 </template>
-<template name="when:discovered:">
+<!--<template name="when:discovered:">
     <vub.ast.Function>
         <args>
             <arg name="when">
@@ -137,7 +137,7 @@
         </args>
     </vub.ast.Operation>
 </template>
-<!--<template name="value">
+<template name="value">
     <vub.ast.Value>
         <name>value</name>
         <args>
@@ -148,7 +148,7 @@
   <template name="definition">
     <vub.ast.Definition>
     </vub.ast.Definition>
-</template>-->
+</template>
 <template name="functionDefinition">
     <vub.ast.FunctionDefinition>
         <name>function</name>
@@ -157,27 +157,27 @@
         </args>
     </vub.ast.FunctionDefinition>
 </template>
-<!--<template type="definition" name="tableDefinition">
-    <edu.vub.ast.TableDefinition>
+<template name="tableDefinition">
+    <vub.ast.TableDefinition>
         <name>table</name>
         <args>
         </args>
-    </edu.vub.ast.TableDefinition>
+    </vub.ast.TableDefinition>
 </template>
-<template type="definition" name="begin">
-    <edu.vub.ast.Begin>
+<template  name="begin">
+    <vub.ast.Begin>
         <name>begin</name>
         <args>
-            <edu.vub.ast.Placeholder />
+            <vub.ast.Placeholder />
         </args>
-    </edu.vub.ast.Begin>
+    </vub.ast.Begin>
 </template>
-<template type="definition" name="block">
-    <edu.vub.ast.block>
+<template name="block">
+    <vub.ast.Block>
         <name>block</name>
         <args>
         </args>
-    </edu.vub.ast.Block>
-</template>
--->
+    <vub.ast.Block>
+</template>-->
+
 </templates>
