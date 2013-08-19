@@ -22,6 +22,8 @@ import org.mt4j.input.inputProcessors.componentProcessors.tapAndHoldProcessor.Ta
 import org.mt4j.input.inputProcessors.componentProcessors.tapAndHoldProcessor.TapAndHoldProcessor;
 import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapEvent;
 import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapProcessor;
+import org.mt4j.input.inputProcessors.componentProcessors.zoomProcessor.ZoomEvent;
+import org.mt4j.input.inputProcessors.componentProcessors.zoomProcessor.ZoomProcessor;
 import org.mt4j.sceneManagement.AbstractScene;
 import org.mt4j.util.MTColor;
 import org.mt4j.util.math.Vector3D;
@@ -31,9 +33,9 @@ import vub.tiamat.StartTiamat;
 import vub.tiamat.Tiamat;
 
 public abstract class Renderer<T extends Node> extends AbstractScene {
-	MTRectangle drawing; // The drawing in which the rendering of the node
-							// happens.
+	MTRectangle drawing; // The drawing in which the rendering of the node happens.
 	boolean selected = false;
+	boolean turned = false;
 	miniMenu menu;
 	MTAndroidApplication mtApplication;
 	float x_start;
@@ -49,15 +51,13 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 		this.mtApplication = mtApplication;
 		node.setComments(new Comments(mtApplication, ast));
 		drawing = new MTRectangle(mtApplication, 0, 0, 1, 1);
-		//drawing.setFillColor(green);
 		vub.tiamat.StartTiamat.mapping.put(drawing, this);
-		// drawing.setNoFill(true);
 		drawing.setAnchor(PositionAnchor.UPPER_LEFT);
 		drawing.setName("content");
 		tap();
 		tapandhold();
 		rotate();
-
+		zoom();
 	}
 
 	// Some colors.
@@ -81,40 +81,30 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 								if (node.isRoot()) {
 									StartTiamat.selected = null;
 								}
-								
 							} else {
 								if (StartTiamat.selected == node) {
 									StartTiamat.selected = null;
 									System.out.println("UnSelected!" + node);
 									Tiamat.redraw();
 								} else {
-									// drawing.setStrokeColor(red);
-									// selecte = true;
-									// RenderVisitor.mapping.get(StartTiamat.selected).unselect();
 									StartTiamat.selected = node;
 									Tiamat.redraw();
 									if (node.isRoot()) {
 										StartTiamat.selected = null;
-										// drawing.setStrokeColor(white);
 									}
-									// if(node.getComments().inUse() ){
-									// node.getComments().show();
-									// }
 								}
 							}
 						}
 						if (te.isDoubleTap()) {
 							System.out.println("Dubbeltapped");
-
-							if (menu == null) {
+						/*	if (menu == null) {
 								menu = new miniMenu(mtApplication, "minimenu");
 								StartTiamat.menuNode = node;
 								menu.show(drawing);
 							} else {
 								menu.hide();
 								menu = null;
-
-							}
+							}*/
 						}
 						return false;
 					}
@@ -122,42 +112,21 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 	}
 
 	public void tapandhold() {
-		drawing.registerInputProcessor(new TapAndHoldProcessor(mtApplication,
-				2000));
-		drawing.addGestureListener(TapAndHoldProcessor.class,
-				new TapAndHoldVisualizer(mtApplication, getCanvas()));
-		drawing.addGestureListener(TapAndHoldProcessor.class,
-				new IGestureEventListener() {
-					public boolean processGestureEvent(MTGestureEvent ge) {
+		drawing.registerInputProcessor(new TapAndHoldProcessor(mtApplication, 2000));
+		drawing.addGestureListener(TapAndHoldProcessor.class, new TapAndHoldVisualizer(mtApplication, getCanvas()));
+		drawing.addGestureListener(TapAndHoldProcessor.class, new IGestureEventListener() {
+			public boolean processGestureEvent(MTGestureEvent ge) {
 						TapAndHoldEvent th = (TapAndHoldEvent) ge;
 						switch (th.getId()) {
 						case TapAndHoldEvent.GESTURE_ENDED:
 							if (th.isHoldComplete()) {
-								if (drawing.isNoFill() == false) {
-									drawing.setNoFill(true);
-									vub.ast.Node parent = node.getParent();
-									System.out.println("Node" + node.isRoot());
-									System.out.println("Parent" + parent);
-									if (parent == null) {
-										Tiamat.main = ((vub.ast.Comment) node)
-												.getContent();
-									} else {
-										parent.setChild(node,
-												((vub.ast.Comment) node)
-														.getContent());
-									}
-
-								} else {
-									vub.ast.Node parent = node.getParent();
-									vub.ast.Node newNode = new vub.ast.Comment(
-											parent, node);
-									if (parent == null) {
-										Tiamat.main = newNode;
-									} else {
-										parent.setChild(node, newNode);
-									}
+								System.out.println("Tapped and holded");
+								node.getParent().setChild(node, (Node) StartTiamat.selected.clone());
+								System.out.println("Tapped and holded2");
+								Tiamat.redraw();
+								System.out.println("Tapped and holded3");
 								}
-							}
+							
 							break;
 						default:
 							break;
@@ -167,8 +136,43 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 				});
 
 	}
+	
+	public void zoom() {
+		drawing.registerInputProcessor(new ZoomProcessor(mtApplication));
+		// drawing.addGestureListener(RotateProcessor.class, new
+		// IGestureEventListener(mtApplication, getCanvas()));
+		drawing.addGestureListener(ZoomProcessor.class,
+				new IGestureEventListener() {
+					public boolean processGestureEvent(MTGestureEvent ge) {
+						ZoomEvent th = (ZoomEvent) ge;
+						switch (th.getId()) {
+						case ZoomEvent.GESTURE_UPDATED:
+							// if (th.getRotationDegrees() > 1) {
+							// th.setRotationDegrees(0);
+							System.out.println("Zoomed yes!"+ th.getCamZoomAmount());
+
+							// }else{
+							// System.out.print("Rotaternot!");
+							// System.out.print("Rotator" +
+							// th.getRotationDegrees());
+							// th.setRotationDegrees(0);
+
+							// Tiamat.redraw();
+							// }
+
+						case ZoomEvent.GESTURE_ENDED:
+							System.out.println("Zoomed");
+						return false;
+						}
+						return false;
+					}
+				});
+
+		
+	}
 
 	public void rotate() {
+
 		for (AbstractComponentProcessor ip : drawing.getInputProcessors()) {
 			if (ip instanceof ScaleProcessor) {
 				drawing.unregisterInputProcessor(ip);
@@ -193,8 +197,18 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 						case RotateEvent.GESTURE_UPDATED:
 							// if (th.getRotationDegrees() > 1) {
 							// th.setRotationDegrees(0);
-							System.out.print("Rotater yest!"
-									+ th.getRotationDegrees());
+							System.out.println("Rotator yest!"+ th.getRotationDegrees());
+							if(th.getRotationDegrees() > 0.45){
+								System.out.println("Rotator draaien");
+								turned = true;
+								
+							}
+						case RotateEvent.GESTURE_ENDED:
+							if(turned){
+								System.out.println("Rotator draaien2");
+								//Tiamat.redraw();
+								turned = false;
+							}
 							// }else{
 							// System.out.print("Rotaternot!");
 							// System.out.print("Rotator" +

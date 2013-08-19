@@ -22,7 +22,6 @@
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.AbstractComponentProcessor"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.scaleProcessor.ScaleProcessor"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragProcessor"/>
-<fullyQualifiedTypeName name="android.os.Environment"/>
 <fullyQualifiedTypeName name="android.view.View"/>
 <fullyQualifiedTypeName name="java.lang.reflect.Constructor"/>
 <fullyQualifiedTypeName name="org.w3c.dom.NodeList"/>
@@ -57,4 +56,5 @@
 <fullyQualifiedTypeName name="org.w3c.dom.Attr"/>
 <fullyQualifiedTypeName name="vub.ast.Node"/>
 <fullyQualifiedTypeName name="vub.tiamat.Tiamat"/>
+<fullyQualifiedTypeName name="android.os.Environment"/>
 </qualifiedTypeNameHistroy>

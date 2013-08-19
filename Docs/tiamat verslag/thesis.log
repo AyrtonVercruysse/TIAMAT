@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.11.20)  12 AUG 2013 23:29
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.11.20)  20 AUG 2013 01:34
 entering extended mode
  %&-line parsing enabled.
 **thesis.tex
@@ -385,16 +385,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 263--268
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 269--273
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 275--282
+Underfull \hbox (badness 10000) in paragraph at lines 269--274
 
  []
 
 [15]
+Underfull \hbox (badness 10000) in paragraph at lines 276--282
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 283--289
 
  []
@@ -404,12 +404,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 290--295
 
  []
 
-
+[16]
 Underfull \hbox (badness 10000) in paragraph at lines 297--301
 
  []
 
-[16]
+
 Underfull \hbox (badness 10000) in paragraph at lines 302--306
 
  []
@@ -451,6 +451,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 340--344
 
 Missing character: There is no Â in font ptmb7t!
 Missing character: There is no ° in font ptmb7t!
+Missing character: There is no Â in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
 
 Underfull \hbox (badness 10000) in paragraph at lines 345--349
 
@@ -466,12 +468,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 355--359
 
  []
 
-
+[19]
 Underfull \hbox (badness 10000) in paragraph at lines 360--364
 
  []
 
-[19]
+
 Underfull \hbox (badness 10000) in paragraph at lines 365--369
 
  []
@@ -481,7 +483,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 371--375
 
  []
 
-
+[20]
 Underfull \hbox (badness 10000) in paragraph at lines 376--380
 
  []
@@ -491,54 +493,61 @@ Underfull \hbox (badness 10000) in paragraph at lines 381--385
 
  []
 
-[20] [21]
+[21] [22]
 Chapter 3.
 
-Overfull \hbox (10.3177pt too wide) in paragraph at lines 399--403
+Overfull \hbox (10.3177pt too wide) in paragraph at lines 400--404
 \OT1/ptm/m/n/12 TouchDevelop is a pro-gram-ming en-vi-ron-ment made for Win-dow
 s phones. TouchDe-
  []
 
-[22
+[23
 
-] <images/codetogo1.jpeg, id=382, 321.2pt x 570.13pt>
+] <images/codetogo1.jpeg, id=386, 321.2pt x 570.13pt>
 File: images/codetogo1.jpeg Graphic file (type jpg)
 
 <use images/codetogo1.jpeg>
-<images/codetogo2.jpeg, id=383, 321.2pt x 570.13pt>
+<images/codetogo2.jpeg, id=387, 321.2pt x 570.13pt>
 File: images/codetogo2.jpeg Graphic file (type jpg)
 
 <use images/codetogo2.jpeg>
-Overfull \hbox (1.7345pt too wide) in paragraph at lines 421--429
+Overfull \hbox (1.7345pt too wide) in paragraph at lines 422--430
 []\OT1/ptm/m/n/12 To ease up the use of the key-board of the iPhone/iPad the cr
 e-ators of CodeToGo
  []
 
-[23 <./images/codetogo1.jpeg> <./images/codetogo2.jpeg>]
-<images/lisping1.jpg, id=389, 481.8pt x 271.0125pt>
+[24 <./images/codetogo1.jpeg> <./images/codetogo2.jpeg>]
+<images/lisping1.jpg, id=394, 481.8pt x 271.0125pt>
 File: images/lisping1.jpg Graphic file (type jpg)
  <use images/lisping1.jpg>
-[24 <./images/lisping1.jpg>] [25]
+[25 <./images/lisping1.jpg>] [26]
 Chapter 4.
 Missing character: There is no Â in font ptmr7t!
 Missing character: There is no ° in font ptmr7t!
-[26
+[27
 
-] [27] (./thesis.aux) ) 
+] [28]
+Underfull \hbox (badness 10000) in paragraph at lines 477--487
+
+ []
+
+[29
+
+] (./thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 4817 strings out of 495061
- 69471 string characters out of 1182620
+ 4821 strings out of 495061
+ 69514 string characters out of 1182620
  142680 words of memory out of 3000000
- 7814 multiletter control sequences out of 15000+50000
+ 7815 multiletter control sequences out of 15000+50000
  21819 words of font info for 43 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  38i,16n,36p,271b,382s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</
-usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texl
-ive/fonts/type1/urw/times/utmr8a.pfb>
-Output written on thesis.pdf (28 pages, 502668 bytes).
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/s
+hare/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/f
+onts/type1/urw/times/utmr8a.pfb>
+Output written on thesis.pdf (30 pages, 506513 bytes).
 PDF statistics:
- 440 PDF objects out of 1000 (max. 8388607)
- 102 named destinations out of 1000 (max. 500000)
+ 450 PDF objects out of 1000 (max. 8388607)
+ 105 named destinations out of 1000 (max. 500000)
  438 words of extra memory for PDF output out of 10000 (max. 10000000)
 

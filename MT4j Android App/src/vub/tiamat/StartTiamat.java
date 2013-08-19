@@ -56,7 +56,7 @@ public class StartTiamat extends MTAndroidApplication {
 	public static Vector<Templates> myFunctions = new Vector<Templates>();
 	public static Vector<Templates> variables = new Vector<Templates>();
 	public static Vector<Templates> definitions = new Vector<Templates>();
-	AssetManager assetManager;
+	static AssetManager assetManager;
 	public static BufferedWriter out;
 	public static BufferedWriter at;
 	static BufferedWriter templateBuffered;
@@ -108,15 +108,15 @@ public class StartTiamat extends MTAndroidApplication {
 			mExternalStorageAvailable = mExternalStorageWriteable = true;
 			System.out.println("Goowd");
 			File root = Environment.getExternalStorageDirectory();
-			File file = new File(root, "save.txt");
+			//File file = new File(root, "save.xml");
 			File templates = new File(root, "templates.xml");
 			File ambienttalk = new File(root, "ambienttalk.txt");
 			try {
 				if (root.canWrite()) {
-					FileWriter filewriter = new FileWriter(file);
+					//FileWriter filewriter = new FileWriter(file);
 					FileWriter filewriter2 = new FileWriter(templates);
 					FileWriter filewriter3 = new FileWriter(ambienttalk);
-					out = new BufferedWriter(filewriter);
+					//out = new BufferedWriter(filewriter);
 					templateBuffered = new BufferedWriter(filewriter2);
 					at = new BufferedWriter(filewriter3);
 				}
