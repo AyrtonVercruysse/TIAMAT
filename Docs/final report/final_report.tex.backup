@@ -419,7 +419,17 @@ Drag & Dragging code is only usefull when you drop it on a usefull place,\\
 
 
 \section{Evaluating code}
-A next impotant part of the IDE is to 
+A next impotant part of the IDE is to evaluating code. To evaluate code we have an extra app to do so. The only thing this needs 
+it a textfile with AmbientTalk code. To create this code we have to toText() function in every node, so getting this done is not a 
+real problem. So after that we have translated the code to AmbientTalk code, written this code to a textfile and read we only have to
+call the app, this app will return a resultvalue and then we have to return to TIAMAT. To get all this done we have the RunAT class 
+within the vub.tiamat package. 
+
+If we look at the requirements we need we need to meet for evaluating code. Requirement 2.4.1 Writing code to text file is allready
+fulfilled by the toText() function defined in the Nodes. This combined with writing to a file we have met this requirement.
+
+Requirement 2.4.2 Call external AmbientTalk app is met within the runAT() clall, same count for Requirement 2.4.3 Return to TIAMAT after
+evaluating code. 
 
 
 % \subsection{Creating functions on the spot}
@@ -447,36 +457,33 @@ A next impotant part of the IDE is to
 % \textbf{Status: } \newline
 
 
-\section{Advanced Interactions}
-\subsection{Extra interface for comments}
-\textbf{Description: } An extra interface can be created in which we can store extra comments. This interface should only be called on object which could get any use of extra comments.
- \newline
-\textbf{Priority:} Low \newline
-\textbf{Status: } There is an extra interface for comments implemented, but currently not in use.\newline
-\subsection{Speaking comments}
-\textbf{Description: } A nice feature is to add spoken comments to our program. The possibility to add spoken comments will be integrated in the
-extra interface for spoken comments, announced in requirement 5.1. There will be added extra buttons to record comments and play these comments.\newline
-\textbf{Priority:} Low \newline
-\textbf{Status: } \newline
-\subsection{Selector for Java classes}
-\textbf{Description: } Within the AmbientTalk language it's possible to make use of a Java class selector. Adding this feature to this implementation
-will make sure that our project becomes a better alternative to the pc one.\newline
-\textbf{Priority:} Low \newline
-\textbf{Status: } \newline
-\subsection{Multiple tabs}
-\textbf{Description: } If we want to make bigger programs it would be easy to be able to have multiple tabs. Certainly when big programs exist of multiple files. To make this possible we would need
-to save multiple AST trees and implement a possibility to switch between the different tabs.\newline
-\textbf{Priority:} Low \newline
-\textbf{Status: }
-\subsection{Saving files}
-\textbf{Description: } As we will implement a write to XML to save new Template into an XML file we could use this procedure to save an entire program in XML, and later rebuild our AST and on this way 
-reconstruct our program. \newline
-\textbf{Priority:} Low \newline
-\textbf{Status: } Every Node has the possibilty to show it's own XML representation. This representation can be saved by clicking the save button. Whenever the app starts again there will be asked if you want to open
-previously stored code.
-
-
-\chapter{Use case}
+% \section{Advanced Interactions}
+% \subsection{Extra interface for comments}
+% \textbf{Description: } An extra interface can be created in which we can store extra comments. This interface should only be called on object which could get any use of extra comments.
+%  \newline
+% \textbf{Priority:} Low \newline
+% \textbf{Status: } There is an extra interface for comments implemented, but currently not in use.\newline
+% \subsection{Speaking comments}
+% \textbf{Description: } A nice feature is to add spoken comments to our program. The possibility to add spoken comments will be integrated in the
+% extra interface for spoken comments, announced in requirement 5.1. There will be added extra buttons to record comments and play these comments.\newline
+% \textbf{Priority:} Low \newline
+% \textbf{Status: } \newline
+% \subsection{Selector for Java classes}
+% \textbf{Description: } Within the AmbientTalk language it's possible to make use of a Java class selector. Adding this feature to this implementation
+% will make sure that our project becomes a better alternative to the pc one.\newline
+% \textbf{Priority:} Low \newline
+% \textbf{Status: } \newline
+% \subsection{Multiple tabs}
+% \textbf{Description: } If we want to make bigger programs it would be easy to be able to have multiple tabs. Certainly when big programs exist of multiple files. To make this possible we would need
+% to save multiple AST trees and implement a possibility to switch between the different tabs.\newline
+% \textbf{Priority:} Low \newline
+% \textbf{Status: }
+% \subsection{Saving files}
+% \textbf{Description: } As we will implement a write to XML to save new Template into an XML file we could use this procedure to save an entire program in XML, and later rebuild our AST and on this way 
+% reconstruct our program. \newline
+% \textbf{Priority:} Low \newline
+% \textbf{Status: } Every Node has the possibilty to show it's own XML representation. This representation can be saved by clicking the save button. Whenever the app starts again there will be asked if you want to open
+% previously stored code.
 
 \chapter{Reflection and future work}
 

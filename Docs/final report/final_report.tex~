@@ -38,11 +38,11 @@ is to let the bachelor students  participate in some actual research at the univ
 
 \begin{tabular}{ l l }
   VUB & Vrije Universiteit Brussel \\
-  IDE & Integreted Develepment Enviorment \\
+  IDE & Integreted Develepment Environment \\
   AST & Abstract Syntax Tree \\
   MANET 	& Mobile Ad-Hoc Network \\
   OHA & Open Handset Alliance \\
-  App & Application. Programs on smartphones and tablets \\
+  App & Application. Programs on smart phones and tablets \\
   MT4j & Multi-Touch for Java \\
 \end{tabular}
 \chapter{Implementation}
@@ -203,11 +203,11 @@ a list of possible nodes with which basic programs can be made. Later extra kind
 A superclass Node will be implemented which will organize the tree structure by providing operations as follows;
 \newline\textbf{getParent()}: gets the parent of a Node, this function is used when we want to replace a node, to do so we replace the child of the parent (this node) to another node.
 \newline\textbf{setParent(Node parent} : sets the parent to a new node. This function is used when we want to copy our node to another place, or when a new node is introduced as a child of another node.
-\newline\textbf{getChilderen()}:  this functions returns a vector with all childnodes of the node. 
+\newline\textbf{getChilderen()}:  this functions returns a vector with all child nodes of the node. 
 \newline\textbf{getChild(int i)}: returns the i'th child in the children vector of the node. This is often used when we use some tree traversing trough the tree. For example when we call toXML() on a Node we will also 
 use a for loop over all of it's children calling the toXML() function.
-\newline\textbf{addChild(Node node)}: This function adds a child to the Node. This function is used when we create certain instances of Nodes. By initiliasation they often add children.
-\newline\textbf{setChild(Node oldChild, Node newChild)}: This function replaces an old childnode with a new childnode. This function is mostly used to replace Placeholdernodes with actual nodes.
+\newline\textbf{addChild(Node node)}: This function adds a child to the Node. This function is used when we create certain instances of Nodes. By initializations they often add children.
+\newline\textbf{setChild(Node oldChild, Node newChild)}: This function replaces an old child node with a new child node. This function is mostly used to replace Placeholder nodes with actual nodes.
 \newline\textbf{getNumberofChildren()}: This function return the total number of children, or the length of the children vector. Just like the getChild(int i) operation this function is used to traverse all children of a node
 using a for-loop.
 \newline\textbf{isRoot()}: This function checks whether this function is the root node. In other words it checks if the parent of the function is null.
@@ -484,9 +484,6 @@ evaluating code.
 % \textbf{Priority:} Low \newline
 % \textbf{Status: } Every Node has the possibilty to show it's own XML representation. This representation can be saved by clicking the save button. Whenever the app starts again there will be asked if you want to open
 % previously stored code.
-
-
-\chapter{Use case}
 
 \chapter{Reflection and future work}
 
