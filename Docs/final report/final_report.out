@@ -9,31 +9,15 @@
 \BOOKMARK [2][-]{subsection.2.1.3}{MT4j}{section.2.1}
 \BOOKMARK [0][-]{chapter.3}{Implementation Details}{}
 \BOOKMARK [1][-]{section.3.1}{ASTs}{chapter.3}
-\BOOKMARK [2][-]{subsection.3.1.1}{Making ASTs}{section.3.1}
-\BOOKMARK [2][-]{subsection.3.1.2}{Deleting ASTs}{section.3.1}
-\BOOKMARK [2][-]{subsection.3.1.3}{Replacing parts of ASTs}{section.3.1}
-\BOOKMARK [2][-]{subsection.3.1.4}{Rendering ASTs to text}{section.3.1}
 \BOOKMARK [1][-]{section.3.2}{Templates}{chapter.3}
-\BOOKMARK [2][-]{subsection.3.2.1}{Templates creating ASTs}{section.3.2}
-\BOOKMARK [2][-]{subsection.3.2.2}{Creating templates from XML}{section.3.2}
-\BOOKMARK [2][-]{subsection.3.2.3}{Create templates from functions}{section.3.2}
 \BOOKMARK [1][-]{section.3.3}{Interface}{chapter.3}
 \BOOKMARK [2][-]{subsection.3.3.1}{Rendering of nodes}{section.3.3}
-\BOOKMARK [2][-]{subsection.3.3.2}{Lay-out engine}{section.3.3}
-\BOOKMARK [2][-]{subsection.3.3.3}{Creating functions on the spot}{section.3.3}
-\BOOKMARK [2][-]{subsection.3.3.4}{Buttons}{section.3.3}
-\BOOKMARK [2][-]{subsection.3.3.5}{Views}{section.3.3}
-\BOOKMARK [2][-]{subsection.3.3.6}{Gestures}{section.3.3}
+\BOOKMARK [2][-]{subsection.3.3.2}{Buttons}{section.3.3}
+\BOOKMARK [2][-]{subsection.3.3.3}{Gestures}{section.3.3}
 \BOOKMARK [1][-]{section.3.4}{Evaluating code}{chapter.3}
-\BOOKMARK [2][-]{subsection.3.4.1}{Writing code to text file}{section.3.4}
-\BOOKMARK [2][-]{subsection.3.4.2}{Call external AmbientTalk app}{section.3.4}
-\BOOKMARK [2][-]{subsection.3.4.3}{Return to TIAMAt after evaluating code}{section.3.4}
-\BOOKMARK [1][-]{section.3.5}{Advanced Interactions}{chapter.3}
-\BOOKMARK [2][-]{subsection.3.5.1}{Extra interface for comments}{section.3.5}
-\BOOKMARK [2][-]{subsection.3.5.2}{Speaking comments}{section.3.5}
-\BOOKMARK [2][-]{subsection.3.5.3}{Selector for Java classes}{section.3.5}
-\BOOKMARK [2][-]{subsection.3.5.4}{Multiple tabs}{section.3.5}
-\BOOKMARK [2][-]{subsection.3.5.5}{Saving files}{section.3.5}
-\BOOKMARK [0][-]{chapter.4}{Use case}{}
-\BOOKMARK [0][-]{chapter.5}{Reflection and future work}{}
-\BOOKMARK [0][-]{chapter.6}{Bibliography}{}
+\BOOKMARK [0][-]{chapter.4}{Reflection and future work}{}
+\BOOKMARK [1][-]{section.4.1}{Reflection}{chapter.4}
+\BOOKMARK [2][-]{subsection.4.1.1}{Project}{section.4.1}
+\BOOKMARK [2][-]{subsection.4.1.2}{Used software}{section.4.1}
+\BOOKMARK [1][-]{section.4.2}{Future work}{chapter.4}
+\BOOKMARK [0][-]{chapter.5}{Bibliography}{}

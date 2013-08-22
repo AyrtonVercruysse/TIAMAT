@@ -3816,3 +3816,48 @@ Caused by: org.eclipse.core.runtime.AssertionFailedException: null argument:
 	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
 	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
 	... 22 more
+
+!ENTRY org.eclipse.ui 4 4 2013-08-20 02:00:34.980
+!MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2013-08-20 15:36:09.492 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_27
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_GB
+Framework arguments:  -product org.eclipse.epp.package.modeling.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.modeling.product
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-20 15:36:44.154
+!MESSAGE Failed to load properties file for project 'mtj4-android'
+
+!ENTRY org.eclipse.ui 4 4 2013-08-21 01:53:43.537
+!MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2013-08-21 14:26:24.005 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_27
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_GB
+Framework arguments:  -product org.eclipse.epp.package.modeling.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.modeling.product
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-21 14:26:40.857
+!MESSAGE Failed to load properties file for project 'mtj4-android'
+
+!ENTRY org.eclipse.ui 4 4 2013-08-22 02:21:04.548
+!MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2013-08-22 14:21:36.268 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_27
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_GB
+Framework arguments:  -product org.eclipse.epp.package.modeling.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.modeling.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2013-08-22 14:21:40.126
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-22 14:21:58.697
+!MESSAGE Failed to load properties file for project 'mtj4-android'
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2013-08-22 14:27:50.778
+!MESSAGE No valid Android XML Editor Delegate found for file /MT4j Android App/assets/templates.xml [Res null, type null]

@@ -57,4 +57,6 @@
 <fullyQualifiedTypeName name="vub.ast.Node"/>
 <fullyQualifiedTypeName name="vub.tiamat.Tiamat"/>
 <fullyQualifiedTypeName name="android.os.Environment"/>
+<fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.zoomProcessor.ZoomProcessor"/>
+<fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.zoomProcessor.ZoomEvent"/>
 </qualifiedTypeNameHistroy>
