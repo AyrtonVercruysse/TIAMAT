@@ -112,7 +112,9 @@ public class Function extends Node implements Serializable {
 		
 		Element args  = doc.createElement("args");
 		for(int i = 0; i < names.length; i++){
+			
 			Element arg = doc.createElement("arg");
+			arg.setAttribute("name", names[i]);
 			getChild(i).toXML(arg, doc);
 			args.appendChild(arg);
 		}

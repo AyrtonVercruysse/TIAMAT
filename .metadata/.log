@@ -4188,3 +4188,6 @@ Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.pa
 
 !ENTRY com.android.ide.eclipse.adt 1 0 2013-08-26 13:51:04.231
 !MESSAGE No valid Android XML Editor Delegate found for file /MT4j Android App/assets/templates.xml [Res null, type null]
+
+!ENTRY org.eclipse.ui 4 4 2013-08-26 22:33:08.583
+!MESSAGE Invalid preference page path: XML Syntax

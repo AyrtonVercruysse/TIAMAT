@@ -58,6 +58,6 @@
 <fullyQualifiedTypeName name="android.content.Intent"/>
 <fullyQualifiedTypeName name="android.net.Uri"/>
 <fullyQualifiedTypeName name="vub.ast.Node"/>
-<fullyQualifiedTypeName name="vub.ast.Begin"/>
 <fullyQualifiedTypeName name="vub.ast.Placeholder"/>
+<fullyQualifiedTypeName name="vub.ast.Begin"/>
 </qualifiedTypeNameHistroy>

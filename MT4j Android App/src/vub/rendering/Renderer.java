@@ -38,6 +38,7 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 	boolean turned = false;
 	miniMenu menu;
 	double max = 3.5;
+	//double turn = 0.9;
 	MTAndroidApplication mtApplication;
 	float x_start;
 	float y_start;
@@ -217,9 +218,11 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 							// if (th.getRotationDegrees() > 1) {
 							// th.setRotationDegrees(0);
 							System.out.println("Rotator yest!"+ th.getRotationDegrees());
-							if(th.getRotationDegrees() > 0.45){
+							if(th.getRotationDegrees() > 0.9){
+								//turn = 3;
 								System.out.println("Rotator draaien");
 								turned = true;
+								Tiamat.redraw();
 								
 							}
 						case RotateEvent.GESTURE_ENDED:
@@ -274,7 +277,8 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 								}
 								
 								Renderer target = vub.tiamat.StartTiamat.mapping.get(test);
-								System.out.println("Target" + target.getNode());
+								//System.out.println("Target" + target.getNode());
+								if(target != null){
 								Node targetNode = target.getNode();
 								Node targetNodeParent = targetNode.getParent();
 								Node parent = node.getParent();
@@ -285,9 +289,9 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 										//node.setParent(null);
 										//parent.setChild(node, new vub.ast.Placeholder(null, "moved"));
 										targetNodeParent.setChild(targetNode, node);
-										node.setParent(targetNodeParent);
+										//node.setParent(targetNodeParent);
 										}
-									}
+									}}
 								}
 								//
 								//node.getParent().setChild(node, new vub.ast.Placeholder(null, "moved"));
