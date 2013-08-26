@@ -72,9 +72,10 @@ public class FunctionsMenu extends Menu {
 							if (StartTiamat.selected == null) {
 								System.out.println("There is no node selected");
 							} else {
+								System.out.println("Tapped and " + node);
 								Node newNode = (Node) node.clone();
-								vub.ast.Node parent = StartTiamat.selected
-										.getParent();
+								
+								vub.ast.Node parent = StartTiamat.selected.getParent();
 								parent.setChild(StartTiamat.selected,
 										(vub.ast.Node) newNode);
 								((vub.ast.Node) newNode).setParent(parent);

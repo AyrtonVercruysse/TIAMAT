@@ -15,7 +15,7 @@
         </args>
     </vub.ast.Function>
 </template>
-<!--<template name="when:discovered:">
+<template name="when:discovered:">
     <vub.ast.Function>
         <args>
             <arg name="when">
@@ -172,12 +172,11 @@
         </args>
     </vub.ast.Begin>
 </template>
-<template name="block">
+<!--<template name="block">
     <vub.ast.Block>
         <name>block</name>
         <args>
         </args>
     <vub.ast.Block>
-</template>-->
-
+</template>  -->
 </templates>

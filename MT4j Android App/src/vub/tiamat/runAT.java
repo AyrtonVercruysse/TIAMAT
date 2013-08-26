@@ -1,6 +1,8 @@
 package vub.tiamat;
 import java.io.*;
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.*;
@@ -16,7 +18,7 @@ public class runAT extends Activity {
 	if (Environment.MEDIA_MOUNTED.equals(state)) {
 	    // We can read and write the media
 	    mExternalStorageAvailable = mExternalStorageWriteable = true;
-	   /* File root = Environment.getExternalStorageDirectory();
+	    File root = Environment.getExternalStorageDirectory();
 	    System.out.println("Goowd");
 	    
         File file = new File(root, "tomato50.txt");
@@ -28,12 +30,13 @@ public class runAT extends Activity {
                 }
            
             } catch (IOException e) {
-                
+            
+            
+                	Intent i = new Intent("edu.vub.at.launcher.RUN");
+	i.setData(Uri.fromFile(new File(root, "ambienttalk.txt")));
+	startActivity(i);
             }
 
-           
-
-      */
   	} else if (Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
 	    // We can only read the media
 	    mExternalStorageAvailable = true;

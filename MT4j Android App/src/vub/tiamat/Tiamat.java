@@ -232,7 +232,7 @@ public class Tiamat extends AbstractScene {
 									// * The Complete ProgressBar does not appear
 									//runAT at = new runAT();
 									try {
-										StartTiamat.at.write(main.toString());
+										 
 										StartTiamat.at.close();
 									} catch (IOException e) {
 										e.printStackTrace();

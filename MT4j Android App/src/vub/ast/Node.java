@@ -92,27 +92,29 @@ public class Node implements Serializable {
 	}
 
 	public Object clone() {
+		parent = null;
 		ObjectOutputStream outStream = null;
 		ObjectInputStream inStream = null;
 		Object ret = false;
 		System.out.println("Copy Called");
 		try {
-			System.out.println("in de Try");
+			System.out.println("in de Try1");
 			ByteArrayOutputStream byteOut = new ByteArrayOutputStream();
 			outStream = new ObjectOutputStream(byteOut);
 			// serialize and write obj2DeepCopy to
 			// byteOut
 			System.out.println("This: " + this);
+			System.out.println("in de Try2");
 			outStream.writeObject(this);
-
+			System.out.println("in de Try2");
 			// always flush your stream
 			outStream.flush();
-
-			ByteArrayInputStream byteIn = new ByteArrayInputStream(
-					byteOut.toByteArray());
-
+			System.out.println("in de Try3");
+			ByteArrayInputStream byteIn = new ByteArrayInputStream(byteOut.toByteArray());
+			System.out.println("in de Try4");
 			inStream = new ObjectInputStream(byteIn);
 			ret = inStream.readObject();
+			System.out.println("in de Try5");
 			return ret;
 		} catch (Exception e) {
 			System.out.println("Exception 1");

@@ -1,9 +1,12 @@
 package vub.ast;
 
 import java.io.Serializable;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 import vub.ast.Node;
 
@@ -20,10 +23,18 @@ public class Begin extends Node implements Serializable {
 		addChild(child);
 	}
 	
-	public Begin(Element template){
+	public Begin(Element template) throws ClassNotFoundException, SecurityException, NoSuchMethodException, IllegalArgumentException, InstantiationException, IllegalAccessException, InvocationTargetException{
 		super(null);
-		Node child = new Placeholder(this, "content", true);
-		addChild(child);
+		NodeList args = template.getChildNodes();
+		for (int i = 0; i < args.getLength(); i++) {
+			Element temp = (Element) args.item(i); //Template
+			String type = temp.getNodeName();
+			Class argumentsTypes = Class.forName(type); // e.g. Function
+			Constructor argumentConstructor = argumentsTypes.getConstructor(Element.class);
+			vub.ast.Node func = (vub.ast.Node)argumentConstructor.newInstance(template); // Node
+			System.out.println("Temp" + type);
+			addChild(func);
+		}
 	}
 
 	public Node getContent() {

@@ -37,6 +37,7 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 	boolean selected = false;
 	boolean turned = false;
 	miniMenu menu;
+	double max = 3.5;
 	MTAndroidApplication mtApplication;
 	float x_start;
 	float y_start;
@@ -47,6 +48,7 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 
 	public Renderer(final MTAndroidApplication mtApplication, T ast) {
 		super(mtApplication, "Node:" + ast.getClass().getSimpleName());
+		StartTiamat.mapping.put(drawing, this);
 		node = ast;
 		this.mtApplication = mtApplication;
 		node.setComments(new Comments(mtApplication, ast));
@@ -54,12 +56,14 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 		vub.tiamat.StartTiamat.mapping.put(drawing, this);
 		drawing.setAnchor(PositionAnchor.UPPER_LEFT);
 		drawing.setName("content");
+		zoom();
 		tap();
 		tapandhold();
-		rotate();
-		zoom();
-	}
+		drag();
+		//rotate();
 
+	}
+	
 	// Some colors.
 	static MTColor white = new MTColor(255, 255, 255);
 	static MTColor black = new MTColor(0, 0, 0);
@@ -120,11 +124,27 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 						switch (th.getId()) {
 						case TapAndHoldEvent.GESTURE_ENDED:
 							if (th.isHoldComplete()) {
-								System.out.println("Tapped and holded");
-								node.getParent().setChild(node, (Node) StartTiamat.selected.clone());
+								System.out.println("Tapped and holded"+ StartTiamat.selected);
+								StartTiamat.selected.setParent(null);
+								Node sel = StartTiamat.selected;
+								//StartTiamat.selected = new vub.ast.Begin(new vub.ast.Begin((Node)null));
+								Node newNode = (Node) sel.clone();
+								
+								
+								System.out.println("Tapped and holded2"+ newNode);
+								
+								vub.ast.Node parent = node.getParent();
+								
+								parent.setChild(node, (vub.ast.Node) newNode);
+								
 								System.out.println("Tapped and holded2");
+								
+								((vub.ast.Node) newNode).setParent(parent);
+								
 								Tiamat.redraw();
 								System.out.println("Tapped and holded3");
+
+								
 								}
 							
 							break;
@@ -138,6 +158,14 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 	}
 	
 	public void zoom() {
+		for (AbstractComponentProcessor ip : drawing.getInputProcessors()) {
+			if (ip instanceof ScaleProcessor) {
+				drawing.unregisterInputProcessor(ip);
+			}
+		}
+		drawing.removeAllGestureEventListeners(ScaleProcessor.class);
+		drawing.removeAllGestureEventListeners(RotateProcessor.class);
+		
 		drawing.registerInputProcessor(new ZoomProcessor(mtApplication));
 		// drawing.addGestureListener(RotateProcessor.class, new
 		// IGestureEventListener(mtApplication, getCanvas()));
@@ -147,21 +175,17 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 						ZoomEvent th = (ZoomEvent) ge;
 						switch (th.getId()) {
 						case ZoomEvent.GESTURE_UPDATED:
-							// if (th.getRotationDegrees() > 1) {
-							// th.setRotationDegrees(0);
-							System.out.println("Zoomed yes!"+ th.getCamZoomAmount());
-
-							// }else{
-							// System.out.print("Rotaternot!");
-							// System.out.print("Rotator" +
-							// th.getRotationDegrees());
-							// th.setRotationDegrees(0);
-
-							// Tiamat.redraw();
-							// }
-
+							if(Math.abs(th.getCamZoomAmount()) > max){
+								max = max + 3.5;
+								if(StartTiamat.selected == (Node) node){
+								Node parent = (Node) node.getParent();
+								if(parent != null){
+								StartTiamat.selected = parent;
+								Tiamat.redraw();}
+			 				}}
 						case ZoomEvent.GESTURE_ENDED:
-							System.out.println("Zoomed");
+							System.out.println("Zoomed exoabded" + th.getCamZoomAmount());
+							
 						return false;
 						}
 						return false;
@@ -173,12 +197,7 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 
 	public void rotate() {
 
-		for (AbstractComponentProcessor ip : drawing.getInputProcessors()) {
-			if (ip instanceof ScaleProcessor) {
-				drawing.unregisterInputProcessor(ip);
-			}
-		}
-		drawing.removeAllGestureEventListeners(ScaleProcessor.class);
+
 		/*
 		 * for (AbstractComponentProcessor ip : drawing.getInputProcessors()){
 		 * if (ip instanceof DragProcessor) {
@@ -222,6 +241,9 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 						return false;
 					}
 				});
+		
+	}
+	public void drag() {
 
 		drawing.registerInputProcessor(new DragProcessor(mtApplication));
 		drawing.addGestureListener(DragProcessor.class,
@@ -246,13 +268,32 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 								test.getID();
 								if (test.getName().equals("deletebutton")) {
 									vub.ast.Node parent = node.getParent();
-									parent.setChild(node,
-											new vub.ast.Placeholder(parent,
-													"deleted", false));
+									parent.setChild(node,new vub.ast.Placeholder(parent,"deleted", false));
 									Tiamat.redraw();
 
 								}
-								if (test.getName().equals("content")) {
+								
+								Renderer target = vub.tiamat.StartTiamat.mapping.get(test);
+								System.out.println("Target" + target.getNode());
+								Node targetNode = target.getNode();
+								Node targetNodeParent = targetNode.getParent();
+								Node parent = node.getParent();
+								if( targetNode != node){
+									if(targetNodeParent != node){
+										if(targetNodeParent != null){
+										System.out.println("Target2"+ targetNodeParent + node);
+										//node.setParent(null);
+										//parent.setChild(node, new vub.ast.Placeholder(null, "moved"));
+										targetNodeParent.setChild(targetNode, node);
+										node.setParent(targetNodeParent);
+										}
+									}
+								}
+								//
+								//node.getParent().setChild(node, new vub.ast.Placeholder(null, "moved"));
+								
+								
+								/*if (test.getName().equals("content")) {
 								}
 								if (test.getName().equals("placeholder")) {
 									Renderer bla = StartTiamat.mapping.get(test);
@@ -262,7 +303,7 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 									//parent.setChild(selNode, node);
 									//node.setParent(parent);
 									//selNode.setParent(null);
-								}
+								}*/
 							}
 
 							return false;
@@ -311,8 +352,8 @@ public abstract class Renderer<T extends Node> extends AbstractScene {
 		drawing.setStrokeColor(white);
 	}
 
-	public T getNode() {
-		return node;
+	public Node getNode() {
+		return (Node) node;
 	}
 
 	@Override
